@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIT HEAD — The Card Game That Hits Back</title>
+  <meta name="description" content="HIT HEAD is a fast strategic card game with bombs, jokers, and wild twists. Play free on Android." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:     #e03030;
+      --dark:    #1a1a1a;
+      --darker:  #111111;
+      --gold:    #d4a017;
+      --text:    #f0f0f0;
+      --muted:   #999;
+      --card-bg: #222;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(17,17,17,0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 100;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img {
+      width: 36px; height: 36px; border-radius: 8px;
+    }
+    .nav-logo-text {
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--gold); letter-spacing: 2px;
+    }
+    .nav-logo-text span { color: var(--red); }
+    nav ul {
+      list-style: none; display: flex; gap: 28px;
+    }
+    nav ul a {
+      color: var(--text); font-size: 0.9rem; font-weight: 500;
+    }
+    nav ul a:hover { color: var(--gold); text-decoration: none; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: radial-gradient(ellipse at center, #2a0a0a 0%, var(--darker) 70%);
+    }
+    .hero-logo {
+      width: 140px; height: 140px;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(224,48,48,0.4);
+      margin-bottom: 28px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900; letter-spacing: 4px;
+      color: var(--gold); line-height: 1;
+      margin-bottom: 8px;
+    }
+    #hero h1 span { color: var(--red); }
+    #hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--muted); margin: 16px 0 40px;
+      max-width: 500px;
+    }
+    .hero-buttons {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      background: var(--red); color: #fff;
+      padding: 16px 36px; border-radius: 8px;
+      font-weight: 700; font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .btn-primary:hover {
+      background: #c02020; text-decoration: none; transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 1px solid #444; color: var(--text);
+      padding: 16px 36px; border-radius: 8px;
+      font-weight: 600; font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--gold); color: var(--gold); text-decoration: none;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-tag {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--muted); max-width: 560px; margin-bottom: 56px;
+    }
+
+    /* ── FEATURES ── */
+    #features { background: var(--dark); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: var(--red); }
+    .feature-icon { font-size: 2rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── SCREENSHOTS ── */
+    #screenshots { background: var(--darker); }
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .screenshot-slot {
+      aspect-ratio: 16/9;
+      background: var(--card-bg);
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .screenshot-slot img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .screenshot-slot:hover img { transform: scale(1.04); }
+    .screenshot-placeholder {
+      color: #444; font-size: 0.8rem; text-align: center; padding: 16px;
+    }
+
+    /* ── VIDEO ── */
+    #watch { background: var(--dark); }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ── HOW TO PLAY ── */
+    #how-to-play { background: var(--dark); }
+    .steps { display: flex; flex-direction: column; gap: 28px; }
+    .step { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--red); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem;
+    }
+    .step-content h4 { font-weight: 700; margin-bottom: 4px; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── SUPPORT ── */
+    #support { background: var(--darker); }
+    .support-box {
+      background: var(--card-bg);
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 40px 32px;
+      max-width: 560px;
+    }
+    .support-box p { color: var(--muted); margin-bottom: 20px; }
+
+    /* ── PRIVACY ── */
+    #privacy { background: var(--dark); }
+    .privacy-content {
+      background: var(--card-bg);
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 40px 32px;
+      font-size: 0.88rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+    .privacy-content h3 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--text); margin: 28px 0 8px;
+    }
+    .privacy-content h3:first-child { margin-top: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d0d0d;
+      border-top: 1px solid #1e1e1e;
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); margin: 0 12px; }
+    footer a:hover { color: var(--gold); text-decoration: none; }
+    .footer-logo {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 6px; }
+    .footer-logo-text {
+      font-size: 1.1rem; font-weight: 900;
+      color: var(--gold); letter-spacing: 2px;
+    }
+    .footer-logo-text span { color: var(--red); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .step { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="Assets/Sprites/app icon 512x512.png" alt="Hit Head icon" />
+    <span class="nav-logo-text">HIT <span>HEAD</span></span>
+  </div>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#watch">Watch</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-logo" src="Assets/Sprites/app icon 512x512.png" alt="Hit Head logo" />
+  <div class="hero-badge">Now on Android</div>
+  <h1>HIT <span>HEAD</span></h1>
+  <p class="subtitle">The card game that hits back. Bombs, jokers, and wild strategy twists. Free to play.</p>
+  <div class="hero-buttons">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank">
+      &#9654; Get it on Google Play
+    </a>
+    <a class="btn-secondary" href="#watch">Watch How to Play</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <p class="section-tag">Features</p>
+    <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+    <p class="section-sub">Fast rounds, smart bots, and special cards that flip the whole game in one move.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#127760;</div>
+        <h3>Multiplayer</h3>
+        <p>Challenge players from around the world. Jump into a live match and prove you're the best Hit Head player out there.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129302;</div>
+        <h3>Single Player</h3>
+        <p>Play against smart opponents anytime, anywhere. No internet needed — perfect for sharpening your strategy on the go.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127942;</div>
+        <h3>Tournament</h3>
+        <p>Enter a tournament, win three rounds, and claim the championship cup. Earn coins and glory with every victory.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128722;</div>
+        <h3>Game Store</h3>
+        <p>Unlock unique avatars, buy coin packs, double your winnings with XP boosts, and remove ads — all in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127881;</div>
+        <h3>Personal Profile</h3>
+        <p>Track your rank, achievements, and coins earned. See exactly where you stand on the global leaderboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section id="screenshots">
+  <div class="section-inner">
+    <p class="section-tag">Screenshots</p>
+    <h2 class="section-title">See the game in action.</h2>
+    <p class="section-sub"><!-- Add 4–6 screenshots from the Samsung device --></p>
+    <div class="screenshots-grid">
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115622_HIT HEAD.jpg" alt="Main menu" /></div>
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115850_HIT HEAD.jpg" alt="Gameplay — green table" /></div>
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115829_HIT HEAD.jpg" alt="Gameplay — brown table" /></div>
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115818_HIT HEAD.jpg" alt="Tournament" /></div>
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115752_HIT HEAD.jpg" alt="Game Store" /></div>
+      <div class="screenshot-slot"><img src="../SCREEN SHOT FROM THE APP/Screenshot_20260528_115639_HIT HEAD.jpg" alt="My Profile" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- WATCH HOW TO PLAY -->
+<section id="watch">
+  <div class="section-inner">
+    <p class="section-tag">How to Play</p>
+    <h2 class="section-title">Watch and learn in minutes.</h2>
+    <p class="section-sub" style="margin-bottom: 32px;">See every rule, special card, and strategy explained step by step.</p>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/PUHHX1wD2Wg?start=40"
+        title="HIT HEAD — How to Play"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-to-play">
+  <div class="section-inner">
+    <p class="section-tag">Rules</p>
+    <h2 class="section-title">Simple to learn. Hard to master.</h2>
+    <p class="section-sub">The core rule is one sentence. Everything else is tactics.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Play a card equal to or higher</h4>
+          <p>Each player plays a card that matches or beats the previous one. Stack identical cards for bonus effects.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Can't play? Take the pile</h4>
+          <p>No valid card? You take the entire discard pile into your hand. The next player starts fresh.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Use special cards wisely</h4>
+          <p>Bombs clear the pile. Jokers redirect it. Reset zeros everything. Timing is everything.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Empty your hand to win</h4>
+          <p>Clear your hand cards, then your revealed cards, then your hidden ones. Last player holding cards loses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="section-inner">
+    <p class="section-tag">Support</p>
+    <h2 class="section-title">We're here to help.</h2>
+    <div class="support-box">
+      <p>Found a bug? Have a question? Want to suggest a feature? Reach out directly — we read every message.</p>
+      <a class="btn-primary" href="mailto:hithead.game@gmail.com">
+        &#9993; hithead.game@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY POLICY -->
+<section id="privacy">
+  <div class="section-inner">
+    <p class="section-tag">Legal</p>
+    <h2 class="section-title">Privacy Policy</h2>
+    <p class="section-sub">Last updated: May 28, 2026</p>
+    <div class="privacy-content">
+
+      <h3>1. Overview</h3>
+      <p>HIT HEAD ("the App") is developed by Matter Full Games. This Privacy Policy describes how we collect, use, and protect your information when you use our App.</p>
+
+      <h3>2. Data We Collect</h3>
+      <p>We collect the following types of data:</p>
+      <ul style="margin: 8px 0 8px 20px;">
+        <li><strong>Account data</strong> — If you sign in with Google, we receive your display name and profile picture.</li>
+        <li><strong>Usage data</strong> — Game progress, XP, coins, and purchase history stored via Firebase.</li>
+        <li><strong>Device data</strong> — Device type, OS version, and advertising ID (used for personalized ads).</li>
+        <li><strong>Analytics</strong> — Crash reports and usage statistics collected via Firebase Analytics.</li>
+      </ul>
+
+      <h3>3. Advertising (Google AdMob)</h3>
+      <p>We use Google AdMob to display advertisements. AdMob may collect and use your Advertising ID (GAID) to show you personalized ads. You can opt out of personalized advertising in your device settings under <em>Google &rarr; Ads &rarr; Opt out of Ads Personalization</em>.</p>
+      <p style="margin-top: 8px;">For more information, see <a href="https://policies.google.com/technologies/ads" target="_blank">Google's Advertising Policy</a>.</p>
+
+      <h3>4. Firebase (Google)</h3>
+      <p>We use Firebase (by Google) for authentication, real-time database, and analytics. Firebase may collect device identifiers and usage data. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a> for full details.</p>
+
+      <h3>5. In-App Purchases</h3>
+      <p>The app offers optional purchases (virtual coins, ad removal). All transactions are processed exclusively through Google Play Store. We do not store financial information. All transactions are governed by <a href="https://play.google.com/about/play-terms/" target="_blank">Google Play Terms of Service</a>.</p>
+
+      <h3>6. Children's Privacy</h3>
+      <p>Our App is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
+
+      <h3>7. Data Retention &amp; Deletion</h3>
+      <p>Your game data is stored in Firebase and linked to your Google account. To request deletion of your data, email us at <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a> and we will remove your data within 30 days.</p>
+
+      <h3>8. Your Rights</h3>
+      <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us directly.</p>
+
+      <h3>9. Contact</h3>
+      <p>Matter Full Games<br>
+      Email: <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a></p>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="Assets/Sprites/app icon 512x512.png" alt="Hit Head" />
+    <span class="footer-logo-text">HIT <span>HEAD</span></span>
+  </div>
+  <p>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#support">Support</a>
+    <a href="mailto:hithead.game@gmail.com">Contact</a>
+  </p>
+  <p style="margin-top: 12px;">&copy; 2026 Matter Full Games. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
