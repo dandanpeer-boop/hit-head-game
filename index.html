@@ -290,11 +290,26 @@
     body[dir="rtl"] .screenshot-caption { text-align: center; }
     body[dir="rtl"] nav ul { flex-direction: row-reverse; }
 
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta { display: none; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav ul { display: none; }
       .step { flex-direction: column; }
       body[dir="rtl"] .step { flex-direction: column; }
+      body { padding-bottom: 66px; }
+      .sticky-cta {
+        display: block; position: fixed; bottom: 0; left: 0; right: 0;
+        background: rgba(17,17,17,0.97); border-top: 1px solid #2a2a2a;
+        backdrop-filter: blur(8px); padding: 10px 16px; z-index: 90;
+      }
+      .sticky-cta a {
+        display: block; background: var(--red); color: #fff;
+        padding: 13px; border-radius: 8px; font-weight: 700;
+        text-align: center; font-size: 1rem;
+      }
+      .sticky-cta a:hover { text-decoration: none; }
     }
   </style>
 </head>
@@ -481,7 +496,7 @@
     <h2 class="section-title" data-i18n="support_title">We're here to help.</h2>
     <div class="support-box">
       <p data-i18n="support_p">Found a bug? Have a question? Want to suggest a feature? Reach out directly — we read every message.</p>
-      <a class="btn-primary" href="mailto:hithead.game@gmail.com">
+      <a class="btn-primary" href="mailto:hithead.game@gmail.com?subject=Hit%20Head%20%E2%80%94%20Bug%20Report%20%2F%20Feedback">
         &#9993; hithead.game@gmail.com
       </a>
     </div>
@@ -549,6 +564,11 @@
   <p style="margin-top: 12px;" data-i18n="footer_rights">&copy; 2026 Matter Full Games. All rights reserved.</p>
 </footer>
 
+<!-- STICKY DOWNLOAD BAR (mobile only) -->
+<div class="sticky-cta">
+  <a href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" data-i18n="sticky_btn">&#9654; Get it Free on Google Play</a>
+</div>
+
 <script>
 const TEXTS = {
   en: {
@@ -565,6 +585,7 @@ const TEXTS = {
     story_p2: "I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.",
     story_p3: "<strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.",
     story_btn: "&#9654; Download Free on Google Play",
+    sticky_btn: "&#9654; Get it Free on Google Play",
     feat_tag: "Features",
     feat_title: "Everything you need. Nothing you don't.",
     feat_sub: "Fast rounds, smart bots, and special cards that flip the whole game in one move.",
@@ -622,6 +643,7 @@ const TEXTS = {
     story_p2: "אני במאי דוקו, לא מתכנת. אבל התגעגעתי לתחושה הזאת – אז בניתי את המשחק מאפס ולימדתי בינה מלאכותית לשחק כמו יריב אמיתי מההוסטל. הלילה שבו זה קרה, כשקלטתי שאני משחק נגד בוט ושכחתי מזה לגמרי – הבנתי שזה היה שווה את כל הפרויקט.",
     story_p3: "<strong>Hit Head הוא בחינם.</strong> כל הבלאגן שאתה זוכר מהטיולים: ג'וקרים, פצצות, היפוכים ומהלכים שמשנים את כל התמונה. שחק לבד בטיסה, או תעביר את הטלפון למי שיושב לידך.",
     story_btn: "&#9654; הורד חינם ב-Google Play",
+    sticky_btn: "&#9654; הורד עכשיו בחינם ב-Google Play",
     feat_tag: "פיצ'רים",
     feat_title: "כל מה שצריך. בלי שום דבר מיותר.",
     feat_sub: "סיבובים מהירים, בוטים חכמים, וקלפים מיוחדים שהופכים את כל המשחק במהלך אחד.",
