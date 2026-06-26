@@ -253,6 +253,25 @@
     }
     .footer-logo-text span { color: var(--red); }
 
+    /* ── STORY ── */
+    #story { background: var(--darker); padding: 80px 24px; border-top: 1px solid #1e1e1e; }
+    .story-inner {
+      max-width: 680px; margin: 0 auto;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.9; color: #ccc;
+    }
+    .story-inner p { margin-bottom: 20px; }
+    .story-inner strong { color: var(--text); }
+    .story-cta { margin-top: 40px; display: flex; justify-content: center; }
+
+    /* ── SCREENSHOT CAPTIONS ── */
+    .screenshot-wrap { display: flex; flex-direction: column; }
+    .screenshot-caption {
+      text-align: center; font-size: 0.82rem;
+      color: var(--muted); padding: 10px 8px 2px;
+      font-style: italic; line-height: 1.4;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav ul { display: none; }
@@ -288,6 +307,20 @@
       &#9654; Get it on Google Play
     </a>
     <a class="btn-secondary" href="#watch">Watch How to Play</a>
+  </div>
+</section>
+
+<!-- ORIGIN STORY -->
+<section id="story">
+  <div class="story-inner">
+    <p>If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
+    <p>I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
+    <p><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
+    <div class="story-cta">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank">
+        &#9654; Download Free on Google Play
+      </a>
+    </div>
   </div>
 </section>
 
@@ -334,12 +367,30 @@
     <h2 class="section-title">See the game in action.</h2>
     <p class="section-sub"><!-- Add 4–6 screenshots from the Samsung device --></p>
     <div class="screenshots-grid">
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115622_HIT HEAD.jpg" alt="Main menu" /></div>
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115850_HIT HEAD.jpg" alt="Gameplay — green table" /></div>
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115829_HIT HEAD.jpg" alt="Gameplay — brown table" /></div>
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115818_HIT HEAD.jpg" alt="Tournament" /></div>
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115752_HIT HEAD.jpg" alt="Game Store" /></div>
-      <div class="screenshot-slot"><img src="images/Screenshot_20260528_115639_HIT HEAD.jpg" alt="My Profile" /></div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115622_HIT HEAD.jpg" alt="Main menu" /></div>
+        <p class="screenshot-caption">Your table is ready. Pick your rivals.</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115850_HIT HEAD.jpg" alt="Gameplay — green table" /></div>
+        <p class="screenshot-caption">Every card is a weapon. Play it, or pay for it.</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115829_HIT HEAD.jpg" alt="Gameplay — brown table" /></div>
+        <p class="screenshot-caption">Land four in a row — watch the pile explode.</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115818_HIT HEAD.jpg" alt="Tournament" /></div>
+        <p class="screenshot-caption">Climb the ranks. Own the table.</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115752_HIT HEAD.jpg" alt="Game Store" /></div>
+        <p class="screenshot-caption">Jokers. Bombs. Reversals. Pure chaos — and it's free.</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-slot"><img src="images/Screenshot_20260528_115639_HIT HEAD.jpg" alt="My Profile" /></div>
+        <p class="screenshot-caption">Track your rise. Chase the global TOP 20.</p>
+      </div>
     </div>
   </div>
 </section>
