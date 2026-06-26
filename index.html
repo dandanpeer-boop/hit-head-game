@@ -61,13 +61,14 @@
     .lang-toggle { display: flex; gap: 6px; align-items: center; }
     .lang-btn {
       background: none; border: 1px solid #444;
-      border-radius: 6px; padding: 4px 8px;
-      font-size: 1.1rem; cursor: pointer;
-      transition: border-color 0.2s;
+      border-radius: 6px; padding: 5px 12px;
+      font-size: 0.85rem; font-weight: 700; cursor: pointer;
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
       line-height: 1;
     }
-    .lang-btn.active { border-color: var(--gold); }
-    .lang-btn:hover { border-color: var(--gold); }
+    .lang-btn.active { border-color: var(--gold); color: var(--gold); }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ── HERO ── */
     #hero {
@@ -312,8 +313,8 @@
     <li><a href="#privacy" data-i18n="nav_privacy">Privacy</a></li>
   </ul>
   <div class="lang-toggle">
-    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇺🇸</button>
-    <button class="lang-btn" id="btn-he" onclick="setLang('he')">🇮🇱</button>
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-he" onclick="setLang('he')">עברית</button>
   </div>
 </nav>
 
