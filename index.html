@@ -57,6 +57,18 @@
     }
     nav ul a:hover { color: var(--gold); text-decoration: none; }
 
+    /* ── LANG TOGGLE ── */
+    .lang-toggle { display: flex; gap: 6px; align-items: center; }
+    .lang-btn {
+      background: none; border: 1px solid #444;
+      border-radius: 6px; padding: 4px 8px;
+      font-size: 1.1rem; cursor: pointer;
+      transition: border-color 0.2s;
+      line-height: 1;
+    }
+    .lang-btn.active { border-color: var(--gold); }
+    .lang-btn:hover { border-color: var(--gold); }
+
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
@@ -131,6 +143,17 @@
       color: var(--muted); max-width: 560px; margin-bottom: 56px;
     }
 
+    /* ── STORY ── */
+    #story { background: var(--darker); padding: 80px 24px; border-top: 1px solid #1e1e1e; }
+    .story-inner {
+      max-width: 680px; margin: 0 auto;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.9; color: #ccc;
+    }
+    .story-inner p { margin-bottom: 20px; }
+    .story-inner strong { color: var(--text); }
+    .story-cta { margin-top: 40px; display: flex; justify-content: center; }
+
     /* ── FEATURES ── */
     #features { background: var(--dark); }
     .features-grid {
@@ -157,6 +180,7 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
     }
+    .screenshot-wrap { display: flex; flex-direction: column; }
     .screenshot-slot {
       aspect-ratio: 16/9;
       background: var(--card-bg);
@@ -170,8 +194,10 @@
       transition: transform 0.3s;
     }
     .screenshot-slot:hover img { transform: scale(1.04); }
-    .screenshot-placeholder {
-      color: #444; font-size: 0.8rem; text-align: center; padding: 16px;
+    .screenshot-caption {
+      text-align: center; font-size: 0.82rem;
+      color: var(--muted); padding: 10px 8px 2px;
+      font-style: italic; line-height: 1.4;
     }
 
     /* ── VIDEO ── */
@@ -253,29 +279,20 @@
     }
     .footer-logo-text span { color: var(--red); }
 
-    /* ── STORY ── */
-    #story { background: var(--darker); padding: 80px 24px; border-top: 1px solid #1e1e1e; }
-    .story-inner {
-      max-width: 680px; margin: 0 auto;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      line-height: 1.9; color: #ccc;
-    }
-    .story-inner p { margin-bottom: 20px; }
-    .story-inner strong { color: var(--text); }
-    .story-cta { margin-top: 40px; display: flex; justify-content: center; }
-
-    /* ── SCREENSHOT CAPTIONS ── */
-    .screenshot-wrap { display: flex; flex-direction: column; }
-    .screenshot-caption {
-      text-align: center; font-size: 0.82rem;
-      color: var(--muted); padding: 10px 8px 2px;
-      font-style: italic; line-height: 1.4;
-    }
+    /* ── RTL ADJUSTMENTS ── */
+    body[dir="rtl"] #hero { direction: rtl; }
+    body[dir="rtl"] .story-inner { text-align: right; }
+    body[dir="rtl"] .section-sub { text-align: right; }
+    body[dir="rtl"] .step { flex-direction: row-reverse; }
+    body[dir="rtl"] .support-box { text-align: right; }
+    body[dir="rtl"] .screenshot-caption { text-align: center; }
+    body[dir="rtl"] nav ul { flex-direction: row-reverse; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav ul { display: none; }
       .step { flex-direction: column; }
+      body[dir="rtl"] .step { flex-direction: column; }
     }
   </style>
 </head>
@@ -288,36 +305,40 @@
     <span class="nav-logo-text">HIT <span>HEAD</span></span>
   </div>
   <ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#screenshots">Screenshots</a></li>
-    <li><a href="#watch">Watch</a></li>
-    <li><a href="#support">Support</a></li>
-    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+    <li><a href="#screenshots" data-i18n="nav_screenshots">Screenshots</a></li>
+    <li><a href="#watch" data-i18n="nav_watch">Watch</a></li>
+    <li><a href="#support" data-i18n="nav_support">Support</a></li>
+    <li><a href="#privacy" data-i18n="nav_privacy">Privacy</a></li>
   </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇺🇸</button>
+    <button class="lang-btn" id="btn-he" onclick="setLang('he')">🇮🇱</button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <img class="hero-logo" src="images/icon.png" alt="Hit Head logo" />
-  <div class="hero-badge">Now on Android</div>
+  <div class="hero-badge" data-i18n="hero_badge">Now on Android</div>
   <h1>HIT <span>HEAD</span></h1>
-  <p class="subtitle">The card game that hits back. Bombs, jokers, and wild strategy twists. Free to play.</p>
+  <p class="subtitle" data-i18n="hero_subtitle">The card game that hits back. Bombs, jokers, and wild strategy twists. Free to play.</p>
   <div class="hero-buttons">
-    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" data-i18n="hero_btn_dl">
       &#9654; Get it on Google Play
     </a>
-    <a class="btn-secondary" href="#watch">Watch How to Play</a>
+    <a class="btn-secondary" href="#watch" data-i18n="hero_btn_watch">Watch How to Play</a>
   </div>
 </section>
 
 <!-- ORIGIN STORY -->
 <section id="story">
   <div class="story-inner">
-    <p>If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
-    <p>I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
-    <p><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
+    <p data-i18n="story_p1">If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
+    <p data-i18n="story_p2">I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
+    <p data-i18n="story_p3"><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
     <div class="story-cta">
-      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" data-i18n="story_btn">
         &#9654; Download Free on Google Play
       </a>
     </div>
@@ -327,34 +348,34 @@
 <!-- FEATURES -->
 <section id="features">
   <div class="section-inner">
-    <p class="section-tag">Features</p>
-    <h2 class="section-title">Everything you need. Nothing you don't.</h2>
-    <p class="section-sub">Fast rounds, smart bots, and special cards that flip the whole game in one move.</p>
+    <p class="section-tag" data-i18n="feat_tag">Features</p>
+    <h2 class="section-title" data-i18n="feat_title">Everything you need. Nothing you don't.</h2>
+    <p class="section-sub" data-i18n="feat_sub">Fast rounds, smart bots, and special cards that flip the whole game in one move.</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">&#127760;</div>
-        <h3>Multiplayer</h3>
-        <p>Battle smart AI opponents that feel like real players. Real-player multiplayer is coming in a future update.</p>
+        <h3 data-i18n="feat1_h">Multiplayer</h3>
+        <p data-i18n="feat1_p">Battle smart AI opponents that feel like real players. Real-player multiplayer is coming in a future update.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#129302;</div>
-        <h3>Single Player</h3>
-        <p>Play against smart opponents anytime, anywhere. No internet needed — perfect for sharpening your strategy on the go.</p>
+        <h3 data-i18n="feat2_h">Single Player</h3>
+        <p data-i18n="feat2_p">Play against smart opponents anytime, anywhere. No internet needed — perfect for sharpening your strategy on the go.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#127942;</div>
-        <h3>Tournament</h3>
-        <p>Enter a tournament, win three rounds, and claim the championship cup. Earn coins and glory with every victory.</p>
+        <h3 data-i18n="feat3_h">Tournament</h3>
+        <p data-i18n="feat3_p">Enter a tournament, win three rounds, and claim the championship cup. Earn coins and glory with every victory.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#128722;</div>
-        <h3>Game Store</h3>
-        <p>Unlock unique avatars, buy coin packs, double your winnings with XP boosts, and remove ads — all in one place.</p>
+        <h3 data-i18n="feat4_h">Game Store</h3>
+        <p data-i18n="feat4_p">Unlock unique avatars, buy coin packs, double your winnings with XP boosts, and remove ads — all in one place.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#127881;</div>
-        <h3>Personal Profile</h3>
-        <p>Track your rank, achievements, and coins earned. See exactly where you stand on the global leaderboard.</p>
+        <h3 data-i18n="feat5_h">Personal Profile</h3>
+        <p data-i18n="feat5_p">Track your rank, achievements, and coins earned. See exactly where you stand on the global leaderboard.</p>
       </div>
     </div>
   </div>
@@ -363,33 +384,33 @@
 <!-- SCREENSHOTS -->
 <section id="screenshots">
   <div class="section-inner">
-    <p class="section-tag">Screenshots</p>
-    <h2 class="section-title">See the game in action.</h2>
-    <p class="section-sub"><!-- Add 4–6 screenshots from the Samsung device --></p>
+    <p class="section-tag" data-i18n="sc_tag">Screenshots</p>
+    <h2 class="section-title" data-i18n="sc_title">See the game in action.</h2>
+    <p class="section-sub"></p>
     <div class="screenshots-grid">
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115622_HIT HEAD.jpg" alt="Main menu" /></div>
-        <p class="screenshot-caption">Your table is ready. Pick your rivals.</p>
+        <p class="screenshot-caption" data-i18n="cap1">Your table is ready. Pick your rivals.</p>
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115850_HIT HEAD.jpg" alt="Gameplay — green table" /></div>
-        <p class="screenshot-caption">Every card is a weapon. Play it, or pay for it.</p>
+        <p class="screenshot-caption" data-i18n="cap2">Every card is a weapon. Play it, or pay for it.</p>
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115829_HIT HEAD.jpg" alt="Gameplay — brown table" /></div>
-        <p class="screenshot-caption">Land four in a row — watch the pile explode.</p>
+        <p class="screenshot-caption" data-i18n="cap3">Land four in a row — watch the pile explode.</p>
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115818_HIT HEAD.jpg" alt="Tournament" /></div>
-        <p class="screenshot-caption">Climb the ranks. Own the table.</p>
+        <p class="screenshot-caption" data-i18n="cap4">Climb the ranks. Own the table.</p>
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115752_HIT HEAD.jpg" alt="Game Store" /></div>
-        <p class="screenshot-caption">Jokers. Bombs. Reversals. Pure chaos — and it's free.</p>
+        <p class="screenshot-caption" data-i18n="cap5">Jokers. Bombs. Reversals. Pure chaos — and it's free.</p>
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-slot"><img src="images/Screenshot_20260528_115639_HIT HEAD.jpg" alt="My Profile" /></div>
-        <p class="screenshot-caption">Track your rise. Chase the global TOP 20.</p>
+        <p class="screenshot-caption" data-i18n="cap6">Track your rise. Chase the global TOP 20.</p>
       </div>
     </div>
   </div>
@@ -398,9 +419,9 @@
 <!-- WATCH HOW TO PLAY -->
 <section id="watch">
   <div class="section-inner">
-    <p class="section-tag">How to Play</p>
-    <h2 class="section-title">Watch and learn in minutes.</h2>
-    <p class="section-sub" style="margin-bottom: 32px;">See every rule, special card, and strategy explained step by step.</p>
+    <p class="section-tag" data-i18n="watch_tag">How to Play</p>
+    <h2 class="section-title" data-i18n="watch_title">Watch and learn in minutes.</h2>
+    <p class="section-sub" style="margin-bottom: 32px;" data-i18n="watch_sub">See every rule, special card, and strategy explained step by step.</p>
     <div class="video-wrapper">
       <iframe
         src="https://www.youtube.com/embed/PUHHX1wD2Wg?start=40"
@@ -415,36 +436,36 @@
 <!-- HOW IT WORKS -->
 <section id="how-to-play">
   <div class="section-inner">
-    <p class="section-tag">Rules</p>
-    <h2 class="section-title">Simple to learn. Hard to master.</h2>
-    <p class="section-sub">The core rule is one sentence. Everything else is tactics.</p>
+    <p class="section-tag" data-i18n="rules_tag">Rules</p>
+    <h2 class="section-title" data-i18n="rules_title">Simple to learn. Hard to master.</h2>
+    <p class="section-sub" data-i18n="rules_sub">The core rule is one sentence. Everything else is tactics.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Play a card equal to or higher</h4>
-          <p>Each player plays a card that matches or beats the previous one. Stack identical cards for bonus effects.</p>
+          <h4 data-i18n="step1_h">Play a card equal to or higher</h4>
+          <p data-i18n="step1_p">Each player plays a card that matches or beats the previous one. Stack identical cards for bonus effects.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>Can't play? Take the pile</h4>
-          <p>No valid card? You take the entire discard pile into your hand. The next player starts fresh.</p>
+          <h4 data-i18n="step2_h">Can't play? Take the pile</h4>
+          <p data-i18n="step2_p">No valid card? You take the entire discard pile into your hand. The next player starts fresh.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h4>Use special cards wisely</h4>
-          <p>Bombs clear the pile. Jokers redirect it. Reset zeros everything. Timing is everything.</p>
+          <h4 data-i18n="step3_h">Use special cards wisely</h4>
+          <p data-i18n="step3_p">Bombs clear the pile. Jokers redirect it. Reset zeros everything. Timing is everything.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-content">
-          <h4>Empty your hand to win</h4>
-          <p>Clear your hand cards, then your revealed cards, then your hidden ones. Last player holding cards loses.</p>
+          <h4 data-i18n="step4_h">Empty your hand to win</h4>
+          <p data-i18n="step4_p">Clear your hand cards, then your revealed cards, then your hidden ones. Last player holding cards loses.</p>
         </div>
       </div>
     </div>
@@ -454,10 +475,10 @@
 <!-- SUPPORT -->
 <section id="support">
   <div class="section-inner">
-    <p class="section-tag">Support</p>
-    <h2 class="section-title">We're here to help.</h2>
+    <p class="section-tag" data-i18n="support_tag">Support</p>
+    <h2 class="section-title" data-i18n="support_title">We're here to help.</h2>
     <div class="support-box">
-      <p>Found a bug? Have a question? Want to suggest a feature? Reach out directly — we read every message.</p>
+      <p data-i18n="support_p">Found a bug? Have a question? Want to suggest a feature? Reach out directly — we read every message.</p>
       <a class="btn-primary" href="mailto:hithead.game@gmail.com">
         &#9993; hithead.game@gmail.com
       </a>
@@ -468,9 +489,9 @@
 <!-- PRIVACY POLICY -->
 <section id="privacy">
   <div class="section-inner">
-    <p class="section-tag">Legal</p>
-    <h2 class="section-title">Privacy Policy</h2>
-    <p class="section-sub">Last updated: May 28, 2026</p>
+    <p class="section-tag" data-i18n="privacy_tag">Legal</p>
+    <h2 class="section-title" data-i18n="privacy_title">Privacy Policy</h2>
+    <p class="section-sub" data-i18n="privacy_sub">Last updated: May 28, 2026</p>
     <div class="privacy-content">
 
       <h3>1. Overview</h3>
@@ -495,7 +516,7 @@
       <h3>5. In-App Purchases</h3>
       <p>The app offers optional purchases (virtual coins, ad removal). All transactions are processed exclusively through Google Play Store. We do not store financial information. All transactions are governed by <a href="https://play.google.com/about/play-terms/" target="_blank">Google Play Terms of Service</a>.</p>
 
-      <h3>6. Children's Privacy</h3>
+      <h3>6. Age Suitability</h3>
       <p>Our App is suitable for all ages. Users under 13 should play with parental guidance. We do not knowingly collect personal information from children without parental consent. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
 
       <h3>7. Data Retention &amp; Deletion</h3>
@@ -519,12 +540,151 @@
     <span class="footer-logo-text">HIT <span>HEAD</span></span>
   </div>
   <p>
-    <a href="#privacy">Privacy Policy</a>
-    <a href="#support">Support</a>
-    <a href="mailto:hithead.game@gmail.com">Contact</a>
+    <a href="#privacy" data-i18n="nav_privacy">Privacy Policy</a>
+    <a href="#support" data-i18n="nav_support">Support</a>
+    <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
   </p>
-  <p style="margin-top: 12px;">&copy; 2026 Matter Full Games. All rights reserved.</p>
+  <p style="margin-top: 12px;" data-i18n="footer_rights">&copy; 2026 Matter Full Games. All rights reserved.</p>
 </footer>
+
+<script>
+const TEXTS = {
+  en: {
+    nav_features: "Features",
+    nav_screenshots: "Screenshots",
+    nav_watch: "Watch",
+    nav_support: "Support",
+    nav_privacy: "Privacy",
+    hero_badge: "Now on Android",
+    hero_subtitle: "The card game that hits back. Bombs, jokers, and wild strategy twists. Free to play.",
+    hero_btn_dl: "&#9654; Get it on Google Play",
+    hero_btn_watch: "Watch How to Play",
+    story_p1: "If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.",
+    story_p2: "I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.",
+    story_p3: "<strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.",
+    story_btn: "&#9654; Download Free on Google Play",
+    feat_tag: "Features",
+    feat_title: "Everything you need. Nothing you don't.",
+    feat_sub: "Fast rounds, smart bots, and special cards that flip the whole game in one move.",
+    feat1_h: "Multiplayer",
+    feat1_p: "Battle smart AI opponents that feel like real players. Real-player multiplayer is coming in a future update.",
+    feat2_h: "Single Player",
+    feat2_p: "Play against smart opponents anytime, anywhere. No internet needed — perfect for sharpening your strategy on the go.",
+    feat3_h: "Tournament",
+    feat3_p: "Enter a tournament, win three rounds, and claim the championship cup. Earn coins and glory with every victory.",
+    feat4_h: "Game Store",
+    feat4_p: "Unlock unique avatars, buy coin packs, double your winnings with XP boosts, and remove ads — all in one place.",
+    feat5_h: "Personal Profile",
+    feat5_p: "Track your rank, achievements, and coins earned. See exactly where you stand on the global leaderboard.",
+    sc_tag: "Screenshots",
+    sc_title: "See the game in action.",
+    cap1: "Your table is ready. Pick your rivals.",
+    cap2: "Every card is a weapon. Play it, or pay for it.",
+    cap3: "Land four in a row — watch the pile explode.",
+    cap4: "Climb the ranks. Own the table.",
+    cap5: "Jokers. Bombs. Reversals. Pure chaos — and it's free.",
+    cap6: "Track your rise. Chase the global TOP 20.",
+    watch_tag: "How to Play",
+    watch_title: "Watch and learn in minutes.",
+    watch_sub: "See every rule, special card, and strategy explained step by step.",
+    rules_tag: "Rules",
+    rules_title: "Simple to learn. Hard to master.",
+    rules_sub: "The core rule is one sentence. Everything else is tactics.",
+    step1_h: "Play a card equal to or higher",
+    step1_p: "Each player plays a card that matches or beats the previous one. Stack identical cards for bonus effects.",
+    step2_h: "Can't play? Take the pile",
+    step2_p: "No valid card? You take the entire discard pile into your hand. The next player starts fresh.",
+    step3_h: "Use special cards wisely",
+    step3_p: "Bombs clear the pile. Jokers redirect it. Reset zeros everything. Timing is everything.",
+    step4_h: "Empty your hand to win",
+    step4_p: "Clear your hand cards, then your revealed cards, then your hidden ones. Last player holding cards loses.",
+    support_tag: "Support",
+    support_title: "We're here to help.",
+    support_p: "Found a bug? Have a question? Want to suggest a feature? Reach out directly — we read every message.",
+    privacy_tag: "Legal",
+    privacy_title: "Privacy Policy",
+    privacy_sub: "Last updated: May 28, 2026",
+    footer_rights: "© 2026 Matter Full Games. All rights reserved."
+  },
+  he: {
+    nav_features: "פיצ'רים",
+    nav_screenshots: "תמונות",
+    nav_watch: "צפו",
+    nav_support: "תמיכה",
+    nav_privacy: "פרטיות",
+    hero_badge: "עכשיו ב-Android",
+    hero_subtitle: "משחק הקלפים שמחזיר מכה. פצצות, ג'וקרים, וטוויסטים פראיים. חינמי לגמרי.",
+    hero_btn_dl: "&#9654; הורד עכשיו ב-Google Play",
+    hero_btn_watch: "צפה איך משחקים",
+    story_p1: "אם אי פעם יצאת לטיול גדול, אתה מכיר את המשחק הזה. אכסניות, חופים, שתיים בלילה, חפיסת קלפים על השולחן. כולם רבו על החוקים. כולם קראו לו בשמות שונים — <strong>שיט הד, פאלאס, קארמה, אידיוט</strong>. אותו משחק. אותה זיכרון משותף.",
+    story_p2: "אני יוצר סרטים תיעודיים, לא מתכנת. אבל געגתי לתחושה הזאת — אז בניתי אותו מאפס, לימדתי בינה מלאכותית לשחק כמו יריב אמיתי מהאכסניה. הלילה שזה סוף סוף קפץ, ושכחתי שאני משחק נגד בוט — כל הפרויקט שילם את עצמו.",
+    story_p3: "<strong>Hit Head חינמי.</strong> כל הכאוס שאתה זוכר: ג'וקרים, פצצות, היפוכים, סדרות. שחק לבד בשדה התעופה, או העבר את הטלפון מיד ליד.",
+    story_btn: "&#9654; הורד חינם ב-Google Play",
+    feat_tag: "פיצ'רים",
+    feat_title: "הכל שצריך. כלום שלא.",
+    feat_sub: "סיבובים מהירים, בוטים חכמים, וקלפים מיוחדים שהופכים את המשחק בצעד אחד.",
+    feat1_h: "מולטיפלייר",
+    feat1_p: "שחק נגד יריבי בינה מלאכותית שמרגישים כמו שחקנים אמיתיים. מולטיפלייר עם שחקנים אמיתיים יגיע בעדכון עתידי.",
+    feat2_h: "משחק יחיד",
+    feat2_p: "שחק נגד יריבים חכמים בכל זמן ובכל מקום. ללא אינטרנט — מושלם לחידוד האסטרטגיה שלך בדרכים.",
+    feat3_h: "טורניר",
+    feat3_p: "היכנס לטורניר, נצח שלושה סיבובים, וזכה בגביע האלוף. צבור מטבעות ותהילה בכל ניצחון.",
+    feat4_h: "חנות המשחק",
+    feat4_p: "פתח אווטרים ייחודיים, קנה חבילות מטבעות, כפל את הרווחים עם בונוסים, והסר פרסומות — הכל במקום אחד.",
+    feat5_h: "פרופיל אישי",
+    feat5_p: "עקוב אחרי הדירוג, ההישגים, והמטבעות שלך. ראה בדיוק היכן אתה עומד בלוח התוצאות העולמי.",
+    sc_tag: "תמונות מסך",
+    sc_title: "ראו את המשחק בפעולה.",
+    cap1: "השולחן שלך מוכן. בחר את היריבים.",
+    cap2: "כל קלף הוא נשק. שחק אותו — או שלם על זה.",
+    cap3: "ארבעה ברצף — תראה את הערימה מתפוצצת.",
+    cap4: "טפסו בדרגות. שלטו בשולחן.",
+    cap5: "ג'וקרים. פצצות. היפוכים. כאוס מוחלט — וחינם לגמרי.",
+    cap6: "עקבו אחרי העלייה שלכם. רדפו אחרי ה-TOP 20 העולמי.",
+    watch_tag: "איך משחקים",
+    watch_title: "צפו ולמדו בדקות.",
+    watch_sub: "כל חוק, קלף מיוחד, ואסטרטגיה — מוסברים צעד אחר צעד.",
+    rules_tag: "חוקים",
+    rules_title: "פשוט ללמוד. קשה לשלוט.",
+    rules_sub: "חוק הליבה הוא משפט אחד. כל השאר זה טקטיקה.",
+    step1_h: "שחק קלף שווה או גבוה יותר",
+    step1_p: "כל שחקן מניח קלף שמתאים לקלף הקודם או גבוה ממנו. הנח קלפים זהים לאפקטים מיוחדים.",
+    step2_h: "אין קלף מתאים? קח את הערימה",
+    step2_p: "אין קלף תקין? אתה לוקח את כל ערימת הזרוק ליד שלך. השחקן הבא מתחיל ערימה חדשה.",
+    step3_h: "השתמש בקלפים מיוחדים בחכמה",
+    step3_p: "פצצות מנקות את הערימה. ג'וקרים מפנים אותה ליריב. מאפס מאפס הכל. תזמון הוא הכל.",
+    step4_h: "רוקן את היד כדי לנצח",
+    step4_p: "נקה את קלפי היד, אחר כך את הגלויים, אחר כך את החסויים. השחקן האחרון עם קלפים מפסיד.",
+    support_tag: "תמיכה",
+    support_title: "אנחנו כאן לעזור.",
+    support_p: "מצאת באג? יש שאלה? רוצה להציע פיצ'ר? פנה אלינו ישירות — אנחנו קוראים כל הודעה.",
+    privacy_tag: "משפטי",
+    privacy_title: "מדיניות פרטיות",
+    privacy_sub: "עודכן לאחרונה: 28 במאי 2026",
+    footer_rights: "© 2026 Matter Full Games. כל הזכויות שמורות."
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (TEXTS[lang] && TEXTS[lang][key] !== undefined) {
+      el.innerHTML = TEXTS[lang][key];
+    }
+  });
+  document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-he').classList.toggle('active', lang === 'he');
+  try { localStorage.setItem('hithead_lang', lang); } catch(e) {}
+}
+
+(function() {
+  try {
+    var saved = localStorage.getItem('hithead_lang');
+    if (saved && saved !== 'en') setLang(saved);
+  } catch(e) {}
+})();
+</script>
 
 </body>
 </html>
