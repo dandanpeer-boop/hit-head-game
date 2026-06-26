@@ -154,6 +154,16 @@
     .story-inner p { margin-bottom: 20px; }
     .story-inner strong { color: var(--text); }
     .story-cta { margin-top: 40px; display: flex; justify-content: center; }
+    .testimonial {
+      margin: 36px auto 0; max-width: 540px;
+      border-left: 3px solid var(--gold); padding: 6px 22px;
+      text-align: left;
+    }
+    .testimonial p { font-style: italic; color: var(--text); margin-bottom: 8px; }
+    .testimonial cite { color: var(--gold); font-size: 0.9rem; font-style: normal; }
+    body[dir="rtl"] .testimonial {
+      border-left: none; border-right: 3px solid var(--gold); text-align: right;
+    }
 
     /* ── FEATURES ── */
     #features { background: var(--dark); }
@@ -354,6 +364,10 @@
     <p data-i18n="story_p1">If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
     <p data-i18n="story_p2">I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
     <p data-i18n="story_p3"><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
+    <blockquote class="testimonial">
+      <p data-i18n="quote_text">"A joy to play. It reminded me of my big trip through South America."</p>
+      <cite data-i18n="quote_author">— Beta tester</cite>
+    </blockquote>
     <div class="story-cta">
       <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" data-i18n="story_btn">
         &#9654; Download Free on Google Play
@@ -586,6 +600,8 @@ const TEXTS = {
     story_p3: "<strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.",
     story_btn: "&#9654; Download Free on Google Play",
     sticky_btn: "&#9654; Get it Free on Google Play",
+    quote_text: "\"A joy to play. It reminded me of my big trip through South America.\"",
+    quote_author: "— Beta tester",
     feat_tag: "Features",
     feat_title: "Everything you need. Nothing you don't.",
     feat_sub: "Fast rounds, smart bots, and special cards that flip the whole game in one move.",
@@ -644,6 +660,8 @@ const TEXTS = {
     story_p3: "<strong>Hit Head הוא בחינם.</strong> כל הבלאגן שאתה זוכר מהטיולים: ג'וקרים, פצצות, היפוכים ומהלכים שמשנים את כל התמונה. שחק לבד בטיסה, או תעביר את הטלפון למי שיושב לידך.",
     story_btn: "&#9654; הורד חינם ב-Google Play",
     sticky_btn: "&#9654; הורד עכשיו בחינם ב-Google Play",
+    quote_text: "\"תענוג לשחק. הזכיר לי את הטיול הגדול שלי בדרום אמריקה.\"",
+    quote_author: "— בטא-טסטר",
     feat_tag: "פיצ'רים",
     feat_title: "כל מה שצריך. בלי שום דבר מיותר.",
     feat_sub: "סיבובים מהירים, בוטים חכמים, וקלפים מיוחדים שהופכים את כל המשחק במהלך אחד.",
