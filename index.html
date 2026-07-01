@@ -341,6 +341,7 @@
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" id="btn-he" onclick="setLang('he')">עברית</button>
+    <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
   </div>
 </nav>
 
@@ -704,6 +705,66 @@ const TEXTS = {
     privacy_title: "מדיניות פרטיות",
     privacy_sub: "עודכן לאחרונה: 28 במאי 2026",
     footer_rights: "© 2026 Matter Full Games. כל הזכויות שמורות."
+  },
+  sv: {
+    nav_features: "Funktioner",
+    nav_screenshots: "Skärmdumpar",
+    nav_watch: "Titta",
+    nav_support: "Support",
+    nav_privacy: "Integritet",
+    hero_badge: "Nu på Android",
+    hero_subtitle: "Kortspelet som slår tillbaka. Bomber, jokrar och vilda strategitwister. Gratis att spela.",
+    hero_btn_dl: "&#9654; Hämta på Google Play",
+    hero_btn_watch: "Se hur man spelar",
+    story_p1: "Om du någonsin har ryggseglat vet du vilket spel det är. Vandrarhem, stränder, klockan 2 på natten, en kortlek på bordet. Alla bråkade om reglerna. Alla kallade det något annat — <strong>Shithead, Palace, Shed, Karma</strong>. Det var samma spel. Samma gemensamma minne.",
+    story_p2: "Jag är dokumentärfilmare, inte kodare. Men jag saknade den känslan — så jag lade det senaste året på att bygga det från grunden och lärde en AI att spela som en riktig vandrarhemsrival. Kvällen det äntligen klickade, när jag glömde att jag spelade mot en bot — det var hela projektet som lönade sig.",
+    story_p3: "<strong>Hit Head är gratis.</strong> Allt kaos du minns: jokrar, bomber, reversar, serier. Spela ensam på flygplatsen eller skicka runt telefonen runt bordet.",
+    story_btn: "&#9654; Ladda ner gratis på Google Play",
+    sticky_btn: "&#9654; Hämta gratis på Google Play",
+    quote_text: "\"En glädje att spela. Det påminde mig om min stora resa genom Sydamerika.\"",
+    quote_author: "— Betatestare",
+    feat_tag: "Funktioner",
+    feat_title: "Allt du behöver. Ingenting du inte behöver.",
+    feat_sub: "Snabba rundor, smarta botar och specialkort som vänder hela spelet på ett drag.",
+    feat1_h: "Multiplayer",
+    feat1_p: "Slåss mot smarta AI-motståndare som känns som riktiga spelare. Multiplayer med riktiga spelare kommer i en framtida uppdatering.",
+    feat2_h: "Enspelare",
+    feat2_p: "Spela mot smarta motståndare när som helst, var som helst. Inget internet behövs — perfekt för att skärpa din strategi på resande fot.",
+    feat3_h: "Turnering",
+    feat3_p: "Delta i en turnering, vinn tre rundor och ta mästerskapspokalen. Tjäna mynt och ära med varje seger.",
+    feat4_h: "Spelbutik",
+    feat4_p: "Lås upp unika avatarer, köp myntpaket, dubbla dina vinster med XP-boostar och ta bort annonser — allt på ett ställe.",
+    feat5_h: "Personlig profil",
+    feat5_p: "Spåra din rank, dina prestationer och intjänade mynt. Se exakt var du befinner dig på den globala rankinglistan.",
+    sc_tag: "Skärmdumpar",
+    sc_title: "Se spelet i aktion.",
+    cap1: "Det här är spelfoajén — välj var du vill hoppa in och börja äventyret.",
+    cap2: "Varje kort är ett vapen. Spela det smart, eller betala priset.",
+    cap3: "Har du Jokern (Hit Head-kortet)? Spela smart och var försiktig med Jokerns hämnd — ge det till någon som också har ett, och de kan skicka tillbaka hela högen.",
+    cap4: "Mästerskapsturneringens foajé — köp in dig, vinn tre bord på första plats och ta titeln.",
+    cap5: "Spelbutiken — köp avatarer, boostar eller ett reklamfritt spel.",
+    cap6: "Din personliga profil — alla dina prestationer, mynt, ranker och placeringar på ett ställe.",
+    watch_tag: "Hur man spelar",
+    watch_title: "Se och lär dig på minuter.",
+    watch_sub: "Se varje regel, specialkort och strategi förklarad steg för steg.",
+    rules_tag: "Regler",
+    rules_title: "Enkelt att lära sig. Svårt att bemästra.",
+    rules_sub: "Grundregeln är en mening. Allt annat är taktik.",
+    step1_h: "Spela ett kort lika högt eller högre",
+    step1_p: "Varje spelare spelar ett kort som matchar eller slår det föregående. Stapla identiska kort för bonuseffekter.",
+    step2_h: "Kan inte spela? Ta högen",
+    step2_p: "Inget giltigt kort? Du tar hela kasthögen i handen. Nästa spelare börjar om.",
+    step3_h: "Använd specialkort klokt",
+    step3_p: "Bomber rensar högen. Jokrar omdirigerar den. Reset nollställer allt. Timing är allt.",
+    step4_h: "Töm din hand för att vinna",
+    step4_p: "Rensa dina handkort, sedan dina synliga kort, sedan de dolda. Den siste spelaren med kort förlorar.",
+    support_tag: "Support",
+    support_title: "Vi finns här för att hjälpa.",
+    support_p: "Hittade du en bugg? Har du en fråga? Vill du föreslå en funktion? Kontakta oss direkt — vi läser varje meddelande.",
+    privacy_tag: "Juridiskt",
+    privacy_title: "Integritetspolicy",
+    privacy_sub: "Senast uppdaterad: 28 maj 2026",
+    footer_rights: "© 2026 Matter Full Games. Alla rättigheter förbehållna."
   }
 };
 
@@ -717,6 +778,7 @@ function setLang(lang) {
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-he').classList.toggle('active', lang === 'he');
+  document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
   try { localStorage.setItem('hithead_lang', lang); } catch(e) {}
 }
 
@@ -730,3 +792,4 @@ function setLang(lang) {
 
 </body>
 </html>
+
