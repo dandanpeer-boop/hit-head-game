@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIT HEAD — The Card Game That Hits Back</title>
   <meta name="description" content="HIT HEAD is a fast strategic card game with bombs, jokers, and wild twists. Play free on Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -165,6 +168,36 @@
       border-left: none; border-right: 3px solid var(--gold); text-align: right;
     }
 
+    /* ── REVIEWS ── */
+    #reviews { background: var(--darker); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 12px;
+    }
+    .review-card {
+      background: var(--card-bg);
+      border: 1px solid #2e2e2e;
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 24px 22px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .review-card p {
+      font-style: italic; color: var(--text);
+      font-size: 1.02rem; line-height: 1.7; margin: 0;
+    }
+    .review-stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; }
+    .review-card cite {
+      color: var(--muted); font-size: 0.85rem; font-style: normal;
+      margin-top: auto;
+    }
+    body[dir="rtl"] .review-card {
+      border-left: 1px solid #2e2e2e; border-right: 3px solid var(--gold);
+      text-align: right;
+    }
+
     /* ── FEATURES ── */
     #features { background: var(--dark); }
     .features-grid {
@@ -291,6 +324,9 @@
     .footer-logo-text span { color: var(--red); }
 
     /* ── RTL ADJUSTMENTS ── */
+    body[dir="rtl"], body[dir="rtl"] .nav-logo-text, body[dir="rtl"] .footer-logo-text {
+      font-family: 'Heebo', 'Segoe UI', system-ui, sans-serif;
+    }
     body[dir="rtl"] #hero { direction: rtl; }
     body[dir="rtl"] .story-inner { text-align: right; }
     body[dir="rtl"] .section-sub { text-align: right; }
@@ -366,14 +402,56 @@
     <p data-i18n="story_p1">If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
     <p data-i18n="story_p2">I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last year building it from scratch, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
     <p data-i18n="story_p3"><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
-    <blockquote class="testimonial">
-      <p data-i18n="quote_text">"A joy to play. It reminded me of my big trip through South America."</p>
-      <cite data-i18n="quote_author">— Beta tester</cite>
-    </blockquote>
     <div class="story-cta">
       <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" data-i18n="story_btn">
         &#9654; Download Free on Google Play
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <p class="section-tag" data-i18n="reviews_tag">Reviews</p>
+    <h2 class="section-title" data-i18n="reviews_title">Players can't put it down.</h2>
+    <p class="section-sub" data-i18n="reviews_sub">Straight from our beta testers.</p>
+    <div class="reviews-grid">
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q1">"I told myself just one round before bed. Three hours later I was still saying 'one more.'"</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q2">"The tournament is pure madness. I lost again and again — then finally lifted the cup, and instantly wanted more."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q3">"It took me straight back to long nights with a deck of cards in India. Same fun — now in my pocket."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q4">"Best part: you can't get lost — every card makes sense from its picture. Two minutes in, I was playing like a regular."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q5">"I'm hooked on tracking my ranks and stats. Every win feels like real progress."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q6">"Everything just flows. Smooth, fast, and never boring for a second."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p data-i18n="q7">"Playing against the opponents is amazing — it honestly feels like real players across the table."</p>
+        <cite data-i18n="quote_author">— Beta tester</cite>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -602,8 +680,17 @@ const TEXTS = {
     story_p3: "<strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.",
     story_btn: "&#9654; Download Free on Google Play",
     sticky_btn: "&#9654; Get it Free on Google Play",
-    quote_text: "\"A joy to play. It reminded me of my big trip through South America.\"",
     quote_author: "— Beta tester",
+    reviews_tag: "Reviews",
+    reviews_title: "Players can't put it down.",
+    reviews_sub: "Straight from our beta testers.",
+    q1: "\"I told myself just one round before bed. Three hours later I was still saying 'one more.'\"",
+    q2: "\"The tournament is pure madness. I lost again and again — then finally lifted the cup, and instantly wanted more.\"",
+    q3: "\"It took me straight back to long nights with a deck of cards in India. Same fun — now in my pocket.\"",
+    q4: "\"Best part: you can't get lost — every card makes sense from its picture. Two minutes in, I was playing like a regular.\"",
+    q5: "\"I'm hooked on tracking my ranks and stats. Every win feels like real progress.\"",
+    q6: "\"Everything just flows. Smooth, fast, and never boring for a second.\"",
+    q7: "\"Playing against the opponents is amazing — it honestly feels like real players across the table.\"",
     feat_tag: "Features",
     feat_title: "Everything you need. Nothing you don't.",
     feat_sub: "Fast rounds, smart bots, and special cards that flip the whole game in one move.",
@@ -662,8 +749,17 @@ const TEXTS = {
     story_p3: "<strong>Hit Head הוא בחינם.</strong> כל הבלאגן שאתה זוכר מהטיולים: ג'וקרים, פצצות, היפוכים ומהלכים שמשנים את כל התמונה. שחק לבד בטיסה, או תעביר את הטלפון למי שיושב לידך.",
     story_btn: "&#9654; הורד חינם ב-Google Play",
     sticky_btn: "&#9654; הורד עכשיו בחינם ב-Google Play",
-    quote_text: "\"תענוג לשחק. הזכיר לי את הטיול הגדול שלי בדרום אמריקה.\"",
     quote_author: "— בטא-טסטר",
+    reviews_tag: "ביקורות",
+    reviews_title: "השחקנים פשוט לא מצליחים להניח את זה.",
+    reviews_sub: "ישר מהבטא-טסטרים שלנו.",
+    q1: "\"התכוונתי לשחק סיבוב אחד לפני השינה. שלוש שעות אחר כך עדיין אמרתי 'עוד אחד'.\"",
+    q2: "\"הטורניר פשוט היסטרי. הפסדתי שוב ושוב עד שסוף סוף הרמתי את הגביע — ומיד רציתי עוד.\"",
+    q3: "\"זה החזיר אותי ישר ללילות הארוכים עם חפיסת קלפים בהודו. אותו כיף בדיוק — רק שעכשיו הוא בכיס.\"",
+    q4: "\"הכי אהבתי שאי אפשר להתבלבל — כל קלף מובן מהצורה שלו. אחרי שתי דקות כבר שיחקתי כמו ותיק.\"",
+    q5: "\"נהייתי מכור למעקב אחרי הדרגות והסטטיסטיקות. כל ניצחון מרגיש כמו התקדמות אמיתית.\"",
+    q6: "\"הכל פשוט זורם. חלק, מהיר, ולא משעמם לרגע.\"",
+    q7: "\"המשחק נגד היריבים פשוט מדהים — מרגיש כאילו יושבים מולך שחקנים אמיתיים.\"",
     feat_tag: "פיצ'רים",
     feat_title: "כל מה שצריך. בלי שום דבר מיותר.",
     feat_sub: "סיבובים מהירים, בוטים חכמים, וקלפים מיוחדים שהופכים את כל המשחק במהלך אחד.",
@@ -722,8 +818,17 @@ const TEXTS = {
     story_p3: "<strong>Hit Head är gratis.</strong> Allt kaos du minns: jokrar, bomber, reversar, serier. Spela ensam på flygplatsen eller skicka runt telefonen runt bordet.",
     story_btn: "&#9654; Ladda ner gratis på Google Play",
     sticky_btn: "&#9654; Hämta gratis på Google Play",
-    quote_text: "\"En glädje att spela. Det påminde mig om min stora resa genom Sydamerika.\"",
     quote_author: "— Betatestare",
+    reviews_tag: "Recensioner",
+    reviews_title: "Spelarna kan inte lägga ifrån sig det.",
+    reviews_sub: "Direkt från våra betatestare.",
+    q1: "\"Jag sa till mig själv: bara en runda före läggdags. Tre timmar senare sa jag fortfarande 'en till'.\"",
+    q2: "\"Turneringen är ren galenskap. Jag förlorade gång på gång — sen lyfte jag äntligen pokalen och ville genast ha mer.\"",
+    q3: "\"Det tog mig rakt tillbaka till långa nätter med en kortlek i Indien. Samma kul — nu i fickan.\"",
+    q4: "\"Det bästa: man kan inte gå vilse — varje kort förstår man på bilden. Efter två minuter spelade jag som en veteran.\"",
+    q5: "\"Jag är fast i att följa mina ranker och min statistik. Varje vinst känns som riktig framgång.\"",
+    q6: "\"Allt bara flyter. Smidigt, snabbt och aldrig tråkigt en sekund.\"",
+    q7: "\"Att spela mot motståndarna är fantastiskt — det känns faktiskt som riktiga spelare vid bordet.\"",
     feat_tag: "Funktioner",
     feat_title: "Allt du behöver. Ingenting du inte behöver.",
     feat_sub: "Snabba rundor, smarta botar och specialkort som vänder hela spelet på ett drag.",
@@ -782,8 +887,17 @@ const TEXTS = {
     story_p3: "<strong>Hit Head on ilmainen.</strong> Kaikki se kaaos, jonka muistat: jokerit, pommit, käänteet, putket. Pelaa yksin lentokentällä tai kierrätä puhelin pöydän ympäri.",
     story_btn: "&#9654; Lataa ilmaiseksi Google Playsta",
     sticky_btn: "&#9654; Lataa ilmaiseksi Google Playsta",
-    quote_text: "\"Ilo pelata. Se muistutti minua suuresta matkastani Etelä-Amerikkaan.\"",
-    quote_author: "— Betatest aaja",
+    quote_author: "— Betatestaaja",
+    reviews_tag: "Arvostelut",
+    reviews_title: "Pelaajat eivät malta laskea sitä käsistään.",
+    reviews_sub: "Suoraan beetatestaajiltamme.",
+    q1: "\"Sanoin itselleni: vain yksi kierros ennen nukkumaanmenoa. Kolme tuntia myöhemmin sanoin yhä 'vielä yksi'.\"",
+    q2: "\"Turnaus on puhdasta hulluutta. Hävisin kerta toisensa jälkeen — sitten vihdoin nostin pokaalin ja halusin heti lisää.\"",
+    q3: "\"Se vei minut suoraan takaisin pitkiin öihin korttipakan kanssa Intiassa. Sama hauskuus — nyt taskussa.\"",
+    q4: "\"Parasta: ei voi mennä sekaisin — jokaisen kortin ymmärtää kuvasta. Kahdessa minuutissa pelasin kuin konkari.\"",
+    q5: "\"Olen koukussa sijoitusteni ja tilastojeni seuraamiseen. Jokainen voitto tuntuu aidolta edistykseltä.\"",
+    q6: "\"Kaikki vain soljuu. Sujuvaa, nopeaa eikä hetkeäkään tylsää.\"",
+    q7: "\"Vastustajia vastaan pelaaminen on mahtavaa — tuntuu oikeasti kuin pöydän ääressä olisi todellisia pelaajia.\"",
     feat_tag: "Ominaisuudet",
     feat_title: "Kaikki mitä tarvitset. Ei mitään ylimääräistä.",
     feat_sub: "Nopeat kierrokset, älykkäät botit ja erikoiskortit, jotka kääntävät koko pelin yhdellä siirrolla.",
