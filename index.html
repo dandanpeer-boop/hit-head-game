@@ -43,7 +43,9 @@
     }
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
+      text-decoration: none; cursor: pointer;
     }
+    .nav-logo:hover { text-decoration: none; }
     .nav-logo img {
       width: 36px; height: 36px; border-radius: 8px;
     }
@@ -363,10 +365,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
+  <a href="#hero" class="nav-logo" aria-label="Hit Head — home">
     <img src="images/icon.png" alt="Hit Head icon" />
     <span class="nav-logo-text">HIT <span>HEAD</span></span>
-  </div>
+  </a>
   <ul>
     <li><a href="#features" data-i18n="nav_features">Features</a></li>
     <li><a href="#screenshots" data-i18n="nav_screenshots">Screenshots</a></li>
