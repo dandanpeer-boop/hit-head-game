@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIT HEAD — The Card Game That Hits Back</title>
-  <meta name="description" content="HIT HEAD is a fast strategic card game with bombs, jokers, and wild twists. Play free on Android." />
+  <title>HIT HEAD — Shithead / Palace Card Game That Hits Back</title>
+  <meta name="description" content="The card game you know as Shithead, Palace, Karma or Idiot — rebuilt for Android. Bombs, jokers, reverses. Play free against bots or against friends online." />
+  <link rel="canonical" href="https://dandanpeer-boop.github.io/hit-head-game/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:site_name" content="Hit Head" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dandanpeer-boop.github.io/hit-head-game/" />
+  <meta property="og:title" content="HIT HEAD — Shithead / Palace Card Game That Hits Back" />
+  <meta property="og:description" content="The card game you know as Shithead, Palace, Karma or Idiot — rebuilt for Android. Play free against bots or against friends online." />
+  <meta property="og:image" content="https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg" />
+  <meta property="og:image:width" content="2340" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:image:alt" content="Hit Head gameplay — cards on the green table" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="he_IL" />
+  <meta property="og:locale:alternate" content="sv_SE" />
+  <meta property="og:locale:alternate" content="fi_FI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HIT HEAD — Shithead / Palace Card Game That Hits Back" />
+  <meta name="twitter:description" content="The card game you know as Shithead, Palace, Karma or Idiot — rebuilt for Android. Play free." />
+  <meta name="twitter:image" content="https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg" />
+  <meta name="theme-color" content="#e03030" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
@@ -359,7 +380,114 @@
       }
       .sticky-cta a:hover { text-decoration: none; }
     }
+    .story-aka {
+      font-size: 0.92rem; opacity: 0.72; line-height: 1.7;
+      border-inline-start: 3px solid var(--gold); padding-inline-start: 14px;
+    }
+    .story-aka a { color: var(--gold); }
+    .rules-more { margin-top: 34px; text-align: center; font-weight: 700; }
   </style>
+
+<!-- Structured data: the app, and the card game it implements -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher",
+      "name": "Matter Full Games",
+      "url": "https://dandanpeer-boop.github.io/hit-head-game/",
+      "logo": "https://dandanpeer-boop.github.io/hit-head-game/images/icon.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dandanpeer-boop.github.io/hit-head-game/#website",
+      "name": "Hit Head",
+      "url": "https://dandanpeer-boop.github.io/hit-head-game/",
+      "inLanguage": ["en", "he", "sv", "fi"],
+      "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
+      "about": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#cardgame" }
+    },
+    {
+      "@type": "Game",
+      "@id": "https://dandanpeer-boop.github.io/hit-head-game/#cardgame",
+      "name": "Shithead",
+      "alternateName": [
+        "Palace",
+        "Karma",
+        "Idiot",
+        "Shed",
+        "Danish",
+        "Boot",
+        "Shit-Boot",
+        "Shit Pants",
+        "Ten-Two Slide",
+        "Turn Ten",
+        "OG",
+        "China Hand",
+        "Vändtia",
+        "Paskahousu",
+        "שיטהד",
+        "Bataille norvégienne",
+        "Hiina turakas"
+      ],
+      "description": "A shedding-type card game played with a standard deck: players race to empty their hand, then their three face-up cards, then their three face-down cards. The last player still holding cards loses.",
+      "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5 },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Shithead_(card_game)",
+        "https://www.wikidata.org/wiki/Q2890963",
+        "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93",
+        "https://sv.wikipedia.org/wiki/V%C3%A4ndtia",
+        "https://fi.wikipedia.org/wiki/China_Hand",
+        "https://no.wikipedia.org/wiki/Idiot_(kortspill)",
+        "https://fr.wikipedia.org/wiki/Bataille_norv%C3%A9gienne",
+        "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%83%E3%83%88%E3%83%98%E3%83%83%E3%83%89"
+      ]
+    },
+    {
+      "@type": ["VideoGame", "MobileApplication"],
+      "@id": "https://dandanpeer-boop.github.io/hit-head-game/#app",
+      "name": "Hit Head: Palace & Classic",
+      "alternateName": ["Hit Head", "HitHead"],
+      "url": "https://dandanpeer-boop.github.io/hit-head-game/",
+      "description": "Hit Head is a free Android version of the card game known as Shithead, Palace, Karma or Idiot. Play single-player against bots, pass-and-play on one device, or online against friends, with jokers, bombs, reverses and streaks.",
+      "image": "https://dandanpeer-boop.github.io/hit-head-game/images/icon.png",
+      "screenshot": [
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115622_HIT%20HEAD.jpg",
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg",
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115829_HIT%20HEAD.jpg",
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115818_HIT%20HEAD.jpg",
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115752_HIT%20HEAD.jpg",
+        "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115639_HIT%20HEAD.jpg"
+      ],
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Card Game",
+      "genre": ["Card Game", "Strategy", "Multiplayer"],
+      "operatingSystem": "Android 6.0+",
+      "gamePlatform": "Android",
+      "playMode": ["SinglePlayer", "MultiPlayer"],
+      "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 4 },
+      "inLanguage": ["en", "he"],
+      "softwareVersion": "1.0.6",
+      "isBasedOn": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#cardgame" },
+      "about": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#cardgame" },
+      "author": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
+      "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
+      "installUrl": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead",
+      "sameAs": ["https://play.google.com/store/apps/details?id=com.matterfullgames.hithead"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -402,6 +530,7 @@
 <section id="story">
   <div class="story-inner">
     <p data-i18n="story_p1">If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.</p>
+    <p class="story-aka" data-i18n="story_aka">Also known as <strong>Palace</strong>, <strong>Karma</strong>, <strong>Idiot</strong>, <strong>Shed</strong>, Boot, Ten-Two Slide, China Hand or <strong>Vändtia</strong> — the shedding card game <a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia lists as Shithead</a>. Hit Head is that game, free on Android.</p>
     <p data-i18n="story_p2">I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last 3 months rebuilding it from an old broken codebase, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.</p>
     <p data-i18n="story_p3"><strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.</p>
     <div class="story-cta">
@@ -582,6 +711,7 @@
         </div>
       </div>
     </div>
+    <p class="rules-more"><a href="how-to-play/" data-i18n="rules_full">Read the complete rules &rarr;</a></p>
   </div>
 </section>
 
@@ -678,6 +808,7 @@ const TEXTS = {
     hero_btn_dl: "&#9654; Get it on Google Play",
     hero_btn_watch: "Watch How to Play",
     story_p1: "If you've ever gone backpacking, you know this game. Hostels, beaches, 2am, a deck on the table. Everyone argued about the rules. Everyone called it something different — <strong>Shithead, Palace, Karma, Idiot</strong>. It was the same game. The same shared memory.",
+    story_aka: "Also known as <strong>Palace</strong>, <strong>Karma</strong>, <strong>Idiot</strong>, <strong>Shed</strong>, Boot, Ten-Two Slide, China Hand or <strong>Vändtia</strong> — the shedding card game <a href=\"https://en.wikipedia.org/wiki/Shithead_(card_game)\" target=\"_blank\" rel=\"noopener\">Wikipedia lists as Shithead</a>. Hit Head is that game, free on Android.",
     story_p2: "I'm a documentary filmmaker, not a coder. But I missed that feeling — so I spent the last 3 months rebuilding it from an old broken codebase, teaching an AI to play like a real hostel opponent. The night it finally clicked, and I forgot I was playing a bot — that was the whole project paying off.",
     story_p3: "<strong>Hit Head is free.</strong> All the chaos you remember: jokers, bombs, reverses, streaks. Play it alone at the airport, or pass the phone around the table.",
     story_btn: "&#9654; Download Free on Google Play",
@@ -720,6 +851,7 @@ const TEXTS = {
     rules_tag: "Rules",
     rules_title: "Simple to learn. Hard to master.",
     rules_sub: "The core rule is one sentence. Everything else is tactics.",
+    rules_full: "Read the complete rules &rarr;",
     step1_h: "Play a card equal to or higher",
     step1_p: "Each player plays a card that matches or beats the previous one. Stack identical cards for bonus effects.",
     step2_h: "Can't play? Take the pile",
@@ -747,6 +879,7 @@ const TEXTS = {
     hero_btn_dl: "&#9654; הורד עכשיו ב-Google Play",
     hero_btn_watch: "צפה איך משחקים",
     story_p1: "אם עשית פעם טיול תרמילאים, אתה מכיר את המשחק הזה. אכסניות, חופים, 2 בלילה, חפיסת קלפים על השולחן. כולם רבו על החוקים. כולם קראו לו בשם אחר – <strong>שיט-הד (Shithead), פאלאס, קארמה, אידיוט</strong>. זה אותו משחק. אותו זיכרון משותף.",
+    story_aka: "ידוע גם בשמות <strong>פאלאס</strong>, <strong>קארמה</strong>, <strong>אידיוט</strong>, שד, בוט או <strong>ונדטיה</strong> – אותו משחק הקלפים ש<a href=\"https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93\" target=\"_blank\" rel=\"noopener\">ויקיפדיה מכנה שיטהד</a>. Hit Head הוא המשחק הזה, חינם באנדרואיד.",
     story_p2: "אני במאי דוקו, לא מתכנת. אבל התגעגעתי לתחושה הזאת – אז בניתי את המשחק מאפס ולימדתי בינה מלאכותית לשחק כמו יריב אמיתי מההוסטל. הלילה שבו זה קרה, כשקלטתי שאני משחק נגד בוט ושכחתי מזה לגמרי – הבנתי שזה היה שווה את כל הפרויקט.",
     story_p3: "<strong>Hit Head הוא בחינם.</strong> כל הבלאגן שאתה זוכר מהטיולים: ג'וקרים, פצצות, היפוכים ומהלכים שמשנים את כל התמונה. שחק לבד בטיסה, או תעביר את הטלפון למי שיושב לידך.",
     story_btn: "&#9654; הורד חינם ב-Google Play",
@@ -789,6 +922,7 @@ const TEXTS = {
     rules_tag: "חוקים",
     rules_title: "קל להתחיל, קשה להפסיק",
     rules_sub: "הכי חשוב להיפטר מכל הקלפים, תמיד שמים את אותו הקלף או יותר גבוה (חוץ מלאחר 4 ומטה). כל השאר זה טקטיקה.",
+    rules_full: "לחוקים המלאים &rarr;",
     step1_h: "שחק קלף שווה או גבוה יותר",
     step1_p: "כל שחקן מניח קלף שמתאים לקלף הקודם או גבוה ממנו. הנח קלפים זהים לאפקטים מיוחדים.",
     step2_h: "אין קלף מתאים? קח את הערימה",
@@ -816,6 +950,7 @@ const TEXTS = {
     hero_btn_dl: "&#9654; Hämta på Google Play",
     hero_btn_watch: "Se hur man spelar",
     story_p1: "Om du någonsin har ryggseglat vet du vilket spel det är. Vandrarhem, stränder, klockan 2 på natten, en kortlek på bordet. Alla bråkade om reglerna. Alla kallade det något annat — <strong>Shithead, Palace, Vändtia, Karma</strong>. Det var samma spel. Samma gemensamma minne.",
+    story_aka: "Känt också som <strong>Palace</strong>, <strong>Karma</strong>, <strong>Idiot</strong>, Shed eller Shithead — kortspelet som <a href=\"https://sv.wikipedia.org/wiki/V%C3%A4ndtia\" target=\"_blank\" rel=\"noopener\">Wikipedia kallar Vändtia</a>. Hit Head är det spelet, gratis på Android.",
     story_p2: "Jag är dokumentärfilmare, inte kodare. Men jag saknade den känslan — så jag lade de senaste tre månaderna på att bygga om det från en gammal trasig kodbas och lärde en AI att spela som en riktig vandrarhemsrival. Kvällen det äntligen klickade, när jag glömde att jag spelade mot en bot — det var hela projektet som lönade sig.",
     story_p3: "<strong>Hit Head är gratis.</strong> Allt kaos du minns: jokrar, bomber, reversar, serier. Spela ensam på flygplatsen eller skicka runt telefonen runt bordet.",
     story_btn: "&#9654; Ladda ner gratis på Google Play",
@@ -858,6 +993,7 @@ const TEXTS = {
     rules_tag: "Regler",
     rules_title: "Enkelt att lära sig. Svårt att bemästra.",
     rules_sub: "Grundregeln är en mening. Allt annat är taktik.",
+    rules_full: "Läs de fullständiga reglerna &rarr;",
     step1_h: "Spela ett kort lika högt eller högre",
     step1_p: "Varje spelare spelar ett kort som matchar eller slår det föregående. Stapla identiska kort för bonuseffekter.",
     step2_h: "Kan inte spela? Ta högen",
@@ -885,6 +1021,7 @@ const TEXTS = {
     hero_btn_dl: "&#9654; Lataa Google Playsta",
     hero_btn_watch: "Katso kuinka pelata",
     story_p1: "Jos olet koskaan reissannut selkäreppu selässä, tiedät tämän pelin. Hostellit, rannat, kello 2 yöllä, korttipakka pöydällä. Kaikki riitelivät säännöistä. Kaikki kutsuivat sitä eri nimellä — <strong>Paskahousu, Palace, Shed, Karma</strong>. Se oli sama peli. Sama jaettu muisto.",
+    story_aka: "Tunnetaan myös nimillä <strong>Palace</strong>, <strong>Karma</strong>, <strong>Idiot</strong>, Shed tai Shithead — korttipeli, jota <a href=\"https://fi.wikipedia.org/wiki/China_Hand\" target=\"_blank\" rel=\"noopener\">Wikipedia kutsuu nimellä China Hand</a>. Hit Head on juuri se peli, ilmaiseksi Androidille.",
     story_p2: "Olen dokumenttielokuvantekijä, en koodari. Mutta ikävöin sitä tunnetta — joten käytin viimeiset kolme kuukautta rakentaakseni sen uudelleen vanhasta rikkinäisestä koodipohjasta ja opettaakseni tekoälyn pelaamaan kuin aito hostellivastustaja. Ilta, jolloin se vihdoin napsahti, ja unohdin pelaavani bottia vastaan — se oli koko projektin palkkio.",
     story_p3: "<strong>Hit Head on ilmainen.</strong> Kaikki se kaaos, jonka muistat: jokerit, pommit, käänteet, putket. Pelaa yksin lentokentällä tai kierrätä puhelin pöydän ympäri.",
     story_btn: "&#9654; Lataa ilmaiseksi Google Playsta",
@@ -927,6 +1064,7 @@ const TEXTS = {
     rules_tag: "Säännöt",
     rules_title: "Helppo oppia. Vaikea hallita.",
     rules_sub: "Perussääntö on yksi lause. Kaikki muu on taktiikkaa.",
+    rules_full: "Lue täydelliset säännöt &rarr;",
     step1_h: "Pelaa kortti yhtä korkea tai korkeampi",
     step1_p: "Jokainen pelaaja pelaa kortin, joka vastaa tai voittaa edellisen. Pinoa identtiset kortit bonustehosteille.",
     step2_h: "Et voi pelata? Ota pino",
