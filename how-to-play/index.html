@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Play Shithead (Palace) — Complete Rules | Hit Head</title>
+  <meta name="description" content="The complete rules of Shithead, also called Palace, Karma, Idiot or Shed: the deal, the turn, taking the pile, burning with four of a kind, and what the 4, 5, 6, Jack, Queen, King and Joker each do." />
+  <link rel="canonical" href="https://dandanpeer-boop.github.io/hit-head-game/how-to-play/" />
+
+  <meta property="og:site_name" content="Hit Head" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://dandanpeer-boop.github.io/hit-head-game/how-to-play/" />
+  <meta property="og:title" content="How to Play Shithead (Palace) — Complete Rules" />
+  <meta property="og:description" content="The deal, the turn, taking the pile, burning with four of a kind, and what every special card does." />
+  <meta property="og:image" content="https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#e03030" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #e03030; --dark: #1a1a1a; --darker: #111111;
+      --gold: #d4a017; --text: #f0f0f0; --muted: #999; --card-bg: #222;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--darker); color: var(--text); line-height: 1.75;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 14px 32px; display: flex; align-items: center;
+      justify-content: space-between; z-index: 100; border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo:hover { text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-logo-text { font-size: 1.4rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; }
+    .nav-logo-text span { color: var(--red); }
+    .lang-toggle { display: flex; gap: 6px; }
+    .lang-btn {
+      background: transparent; border: 1px solid #444; color: var(--muted);
+      padding: 5px 11px; border-radius: 6px; cursor: pointer;
+      font-size: 0.82rem; font-family: inherit;
+    }
+    .lang-btn.active, .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    main { max-width: 780px; margin: 0 auto; padding: 120px 24px 90px; }
+    h1 { font-size: 2.3rem; font-weight: 900; line-height: 1.25; margin-bottom: 10px; }
+    h1 span { color: var(--red); }
+    .lede { color: var(--muted); font-size: 1.05rem; margin-bottom: 12px; }
+    h2 {
+      font-size: 1.45rem; font-weight: 900; color: var(--gold);
+      margin: 46px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #2a2a2a;
+    }
+    h3 { font-size: 1.08rem; margin: 26px 0 8px; }
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 0 0 16px; padding-inline-start: 24px; }
+    li { margin-bottom: 8px; }
+    strong { color: #fff; }
+
+    .table-wrap { overflow-x: auto; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; min-width: 520px; }
+    th, td { padding: 11px 13px; border-bottom: 1px solid #2a2a2a; text-align: start; vertical-align: top; }
+    th { color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    td:first-child { font-weight: 900; color: var(--red); white-space: nowrap; }
+    tbody tr:hover { background: #191919; }
+
+    .callout {
+      background: var(--card-bg); border-inline-start: 3px solid var(--gold);
+      padding: 16px 18px; border-radius: 6px; margin: 22px 0;
+    }
+    .cta { text-align: center; margin: 50px 0 10px; }
+    .btn-primary {
+      display: inline-block; background: var(--red); color: #fff;
+      padding: 15px 34px; border-radius: 8px; font-weight: 700; font-size: 1.05rem;
+    }
+    .btn-primary:hover { text-decoration: none; opacity: 0.92; }
+    .backlink { display: block; margin-top: 34px; color: var(--muted); font-size: 0.9rem; }
+    footer { border-top: 1px solid #2a2a2a; padding: 26px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+    [dir="rtl"] { text-align: right; }
+    #content-he { display: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 16px; }
+      nav .nav-logo-text { font-size: 1.15rem; }
+      main { padding: 100px 18px 70px; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/#article",
+        "headline": "How to Play Shithead (Palace) — the Complete Rules",
+        "description": "The complete rules of the shedding card game known as Shithead, Palace, Karma, Idiot or Shed, as played in Hit Head.",
+        "inLanguage": ["en", "he"],
+        "image": "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg",
+        "author": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
+        "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
+        "about": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#cardgame" },
+        "mainEntityOfPage": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Hit Head the same game as Shithead or Palace?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It is the same shedding card game that travellers have played in hostels for decades, known by different names in different countries — Palace, Karma, Idiot and Shed in English, Vändtia in Sweden, China Hand in Finland. Hit Head is that game on Android."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many people can play Shithead?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Two to four players, against the app's bots, passing one phone around, or online against friends."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if you cannot play a card in Shithead?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You pick up the whole discard pile into your hand, and the next player starts on an empty pile. You do not lose your turn beyond that, but you are now carrying every card that was in the pile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between the Queen and the Joker in Hit Head?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Queen destroys the pile — nobody takes it. The Joker gives the pile to a player of your choice. The Queen is defence, the Joker is an attack."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you burn the pile in Shithead?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Four cards of the same value in a row burn the pile, whether one player laid all four or several players each added one. Playing a Queen also burns the pile. In both cases the pile leaves the game and the same player starts again on an empty pile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Hit Head free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. There are optional purchases for coins and avatars, but the game itself is free on Google Play."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo" aria-label="Hit Head — home">
+    <img src="../images/icon.png" alt="Hit Head icon" />
+    <span class="nav-logo-text">HIT <span>HEAD</span></span>
+  </a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-he" onclick="setLang('he')">עברית</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ ENGLISH ============ -->
+<article id="content-en">
+  <h1>How to Play <span>Shithead</span> — the Complete Rules</h1>
+  <p class="lede">Also known as Palace, Karma, Idiot, Shed, Boot, Ten-Two Slide, China Hand or Vändtia. One game, a dozen names, and everyone swears their hostel played it right. These are the rules as Hit Head plays them.</p>
+
+  <h2>What you need</h2>
+  <ul>
+    <li><strong>54 cards</strong> — a standard deck plus both jokers.</li>
+    <li><strong>2 to 4 players.</strong></li>
+  </ul>
+
+  <h2>The deal</h2>
+  <p>Every player gets nine cards, in three groups of three:</p>
+  <ul>
+    <li><strong>3 hidden</strong> — face down on the table. Nobody looks at these, including you.</li>
+    <li><strong>3 revealed</strong> — face up, resting on the hidden ones. Everybody can see them.</li>
+    <li><strong>3 in hand</strong> — only you can see them.</li>
+  </ul>
+  <p>Whatever is left becomes the draw pile.</p>
+
+  <h2>The goal</h2>
+  <p>Get rid of all nine of your cards. The last player still holding cards loses — that player is the Hit Head.</p>
+
+  <h2>A turn</h2>
+  <p>Play a card <strong>equal to or higher</strong> than the card on top of the pile. Then draw back up to three cards in hand, for as long as the draw pile lasts.</p>
+  <p><strong>Can't play? You take the entire pile into your hand</strong>, and the next player starts fresh on an empty pile. This is the whole tension of the game: every card you play makes the pile bigger for whoever gets stuck with it.</p>
+
+  <h3>The order you play from</h3>
+  <p>Your hand first. Only once your hand is empty <em>and</em> the draw pile is exhausted do you start playing your three face-up cards. Those go second-to-last, and your three hidden cards go last.</p>
+  <div class="callout">
+    <strong>Hidden cards are a blind gamble.</strong> You flip one without knowing what it is. If it turns out to be illegal on the current pile, you take the pile — with that card in it. Nobody escapes cleanly at the end.
+  </div>
+
+  <h2>Stacking and burning</h2>
+  <p>Holding more than one card of the same value? Play them all in the same turn. That is how you dump a hand fast, and it is also how you set up a burn.</p>
+  <p><strong>Four cards of the same value in a row burns the pile.</strong> It does not matter whether one player laid all four or four players each added one. The pile is removed from the game entirely, and the player who completed the four starts again on an empty pile.</p>
+
+  <h2>The special cards</h2>
+  <p>Every other card ranks by its number, low to high. These are the ones that change the rules:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Card</th><th>Name</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>The turn-around</td><td>After a 4, the next card must be a <strong>4 or lower</strong> — or one of the four special cards above 10. The one card that inverts the whole game.</td></tr>
+        <tr><td>5</td><td>Stop</td><td>Skips the next player. In a two-player game that means you go again.</td></tr>
+        <tr><td>6</td><td>Reverse</td><td>Flips the direction of play.</td></tr>
+        <tr><td>J</td><td>Reset</td><td>Playable on anything, and drops the pile back to zero — the next player can play whatever they like. It does <em>not</em> burn the pile.</td></tr>
+        <tr><td>Q</td><td>Bomb</td><td>Burns the pile out of the game, and you play again on an empty pile. The strongest card in the deck.</td></tr>
+        <tr><td>K</td><td>Transparent</td><td>Playable on anything, but it does not change the value to beat. The next player still has to beat whatever was <em>underneath</em> the King.</td></tr>
+        <tr><td>Joker</td><td>Hit Head</td><td>You choose a player, and <strong>they</strong> take the whole pile. The only card that hands the damage to a specific person.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Four things that win games</h2>
+  <ol>
+    <li><strong>Never spend a Queen on a small pile.</strong> A bomb removes whatever is sitting there. On three cards it is a waste; on twenty it decides the round.</li>
+    <li><strong>A King is an escape, not a weapon.</strong> It gets you out of a turn you could not otherwise survive, but it leaves the same high value sitting there for the next player. It buys you a turn, not a position.</li>
+    <li><strong>Watch the fours.</strong> After a 4 the whole ranking inverts, and a hand full of high cards suddenly cannot play. If you are holding low cards, a 4 is the moment to strike.</li>
+    <li><strong>Break up your pairs last.</strong> Two of a kind is a way out of a bad spot and half of a burn. Splitting them early to save one turn usually costs you the round.</li>
+  </ol>
+
+  <h2>Common questions</h2>
+  <h3>Is Hit Head the same game as Shithead or Palace?</h3>
+  <p>Yes. It is the same shedding card game that travellers have played in hostels for decades, known by different names in different countries — Palace, Karma, Idiot and Shed in English, Vändtia in Sweden, China Hand in Finland. Hit Head is that game on Android.</p>
+  <h3>How many people can play?</h3>
+  <p>Two to four, against the app's bots, passing one phone around, or online against friends.</p>
+  <h3>Is it free?</h3>
+  <p>Yes. There are optional purchases for coins and avatars, but the game itself is free.</p>
+  <h3>What is the difference between the Queen and the Joker?</h3>
+  <p>The Queen destroys the pile — nobody takes it. The Joker gives the pile to a player of your choice. The Queen is defence, the Joker is an attack.</p>
+  <h3>What happens if I cannot play a card?</h3>
+  <p>You pick up the whole discard pile into your hand and the next player starts on an empty pile. You do not lose your turn beyond that — but you are now carrying every card that was in there.</p>
+
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Play Hit Head free on Google Play</a>
+  </div>
+  <a class="backlink" href="../">&larr; Back to Hit Head</a>
+</article>
+
+<!-- ============ HEBREW ============ -->
+<article id="content-he" dir="rtl">
+  <h1>איך משחקים <span>שיטהד</span> — החוקים המלאים</h1>
+  <p class="lede">ידוע גם בשמות פאלאס, קארמה, אידיוט, שד, בוט, וונדטיה או China Hand. משחק אחד, תריסר שמות, וכל אחד בטוח שבאכסניה שלו שיחקו נכון. אלה החוקים כפי שהיט הד משחק אותם.</p>
+
+  <h2>מה צריך</h2>
+  <ul>
+    <li><strong>54 קלפים</strong> — חפיסה רגילה ושני ג'וקרים.</li>
+    <li><strong>2 עד 4 שחקנים.</strong></li>
+  </ul>
+
+  <h2>החלוקה</h2>
+  <p>כל שחקן מקבל תשעה קלפים, בשלוש קבוצות של שלושה:</p>
+  <ul>
+    <li><strong>3 מוסתרים</strong> — הפוכים על השולחן. אף אחד לא מציץ בהם, גם לא אתה.</li>
+    <li><strong>3 גלויים</strong> — פתוחים, מונחים על המוסתרים. כולם רואים אותם.</li>
+    <li><strong>3 ביד</strong> — רק אתה רואה אותם.</li>
+  </ul>
+  <p>מה שנשאר הופך לקופת המשיכה.</p>
+
+  <h2>המטרה</h2>
+  <p>להיפטר מכל תשעת הקלפים. השחקן האחרון שנשאר עם קלפים ביד מפסיד — הוא ה"היט הד".</p>
+
+  <h2>תור</h2>
+  <p>מניחים קלף <strong>שווה או גבוה</strong> מהקלף שנמצא בראש הערימה. אחר כך משלימים את היד בחזרה לשלושה קלפים, כל עוד יש בקופה.</p>
+  <p><strong>אין לך מה לשים? אתה לוקח את כל הערימה ליד</strong>, והשחקן הבא מתחיל מערימה ריקה. זה כל המתח שבמשחק: כל קלף שאתה מניח מגדיל את הערימה עבור מי שייתקע איתה.</p>
+
+  <h3>הסדר שממנו משחקים</h3>
+  <p>קודם היד. רק אחרי שהיד התרוקנה <em>וגם</em> קופת המשיכה נגמרה מתחילים לשחק את שלושת הקלפים הגלויים. אחריהם, אחרונים, שלושת המוסתרים.</p>
+  <div class="callout">
+    <strong>הקלפים המוסתרים הם הימור עיוור.</strong> הופכים קלף בלי לדעת מה הוא. אם הוא לא חוקי על הערימה הנוכחית — לוקחים את כל הערימה, יחד איתו. אף אחד לא מסיים בקלות.
+  </div>
+
+  <h2>ערימות ושריפות</h2>
+  <p>יש לך יותר מקלף אחד באותו ערך? אפשר להניח את כולם באותו תור. ככה נפטרים מהיד מהר, וככה גם מכינים שריפה.</p>
+  <p><strong>ארבעה קלפים באותו ערך ברצף שורפים את הערימה.</strong> לא משנה אם שחקן אחד הניח את כל הארבעה או שארבעה שחקנים תרמו קלף כל אחד. הערימה יוצאת מהמשחק לגמרי, ומי שהשלים את הרביעייה מתחיל שוב מערימה ריקה.</p>
+
+  <h2>הקלפים המיוחדים</h2>
+  <p>כל שאר הקלפים מדורגים לפי המספר שלהם, מהנמוך לגבוה. אלה הקלפים שמשנים את החוקים:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>קלף</th><th>שם</th><th>מה הוא עושה</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>ההיפוך</td><td>אחרי 4, הקלף הבא חייב להיות <strong>4 ומטה</strong> — או אחד מארבעת הקלפים המיוחדים שמעל 10. הקלף היחיד שהופך את כל המשחק.</td></tr>
+        <tr><td>5</td><td>עצור</td><td>מדלג על השחקן הבא. במשחק של שניים זה אומר שאתה משחק שוב.</td></tr>
+        <tr><td>6</td><td>היפוך כיוון</td><td>מחליף את כיוון המשחק.</td></tr>
+        <tr><td>J</td><td>איפוס</td><td>אפשר להניח על כל דבר, והוא מוריד את הערימה חזרה לאפס — השחקן הבא יכול לשים מה שהוא רוצה. הוא <em>לא</em> שורף את הערימה.</td></tr>
+        <tr><td>Q</td><td>פצצה</td><td>שורפת את הערימה מחוץ למשחק, ואתה משחק שוב מערימה ריקה. הקלף החזק בחפיסה.</td></tr>
+        <tr><td>K</td><td>שקוף</td><td>אפשר להניח על כל דבר, אבל הוא לא משנה את הערך שצריך לנצח. השחקן הבא עדיין חייב לגבור על מה שהיה <em>מתחת</em> למלך.</td></tr>
+        <tr><td>ג'וקר</td><td>היט הד</td><td>אתה בוחר שחקן, <strong>והוא</strong> לוקח את כל הערימה. הקלף היחיד שמעביר את הנזק לאדם מסוים.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>ארבעה דברים שמנצחים משחקים</h2>
+  <ol>
+    <li><strong>לעולם אל תבזבז מלכה על ערימה קטנה.</strong> פצצה מוחקת את מה שיש שם. על שלושה קלפים זה בזבוז; על עשרים זה מכריע את הסיבוב.</li>
+    <li><strong>מלך הוא מילוט, לא נשק.</strong> הוא מוציא אותך מתור שלא היית שורד אחרת, אבל משאיר את אותו ערך גבוה לשחקן הבא. הוא קונה לך תור, לא עמדה.</li>
+    <li><strong>שים לב לארבעות.</strong> אחרי 4 כל הדירוג מתהפך, ויד מלאה בקלפים גבוהים פתאום לא יכולה לשחק. אם אתה מחזיק קלפים נמוכים — זה הרגע לתקוף.</li>
+    <li><strong>אל תפרק זוגות מוקדם.</strong> שני קלפים באותו ערך הם דרך מילוט ממצב רע, וגם חצי שריפה. פיצול שלהם כדי לחסוך תור אחד בדרך כלל עולה בסיבוב.</li>
+  </ol>
+
+  <h2>שאלות נפוצות</h2>
+  <h3>האם היט הד זה אותו משחק כמו שיטהד או פאלאס?</h3>
+  <p>כן. זה אותו משחק הקלפים שתרמילאים משחקים באכסניות כבר עשרות שנים, שנקרא בשמות שונים במדינות שונות — פאלאס, קארמה, אידיוט ושד באנגלית, וונדטיה בשוודיה, China Hand בפינלנד. היט הד הוא המשחק הזה באנדרואיד.</p>
+  <h3>כמה אנשים יכולים לשחק?</h3>
+  <p>שניים עד ארבעה — מול הבוטים של האפליקציה, בהעברת טלפון אחד בין השחקנים, או אונליין מול חברים.</p>
+  <h3>האם זה בחינם?</h3>
+  <p>כן. יש רכישות אופציונליות של מטבעות ודמויות, אבל המשחק עצמו חינמי.</p>
+  <h3>מה ההבדל בין המלכה לג'וקר?</h3>
+  <p>המלכה משמידה את הערימה — אף אחד לא לוקח אותה. הג'וקר נותן את הערימה לשחקן שאתה בוחר. המלכה היא הגנה, הג'וקר הוא התקפה.</p>
+  <h3>מה קורה אם אין לי קלף לשים?</h3>
+  <p>אתה אוסף את כל ערימת ההשלכה ליד, והשחקן הבא מתחיל מערימה ריקה. לא הפסדת את התור מעבר לזה — אבל אתה נושא עכשיו את כל מה שהיה שם.</p>
+
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; שחקו בהיט הד בחינם בגוגל פליי</a>
+  </div>
+  <a class="backlink" href="../">&rarr; חזרה להיט הד</a>
+</article>
+
+</main>
+
+<footer>&copy; 2026 Matter Full Games</footer>
+
+<script>
+function setLang(lang) {
+  var he = lang === 'he';
+  document.getElementById('content-en').style.display = he ? 'none' : 'block';
+  document.getElementById('content-he').style.display = he ? 'block' : 'none';
+  document.documentElement.lang = he ? 'he' : 'en';
+  document.body.dir = he ? 'rtl' : 'ltr';
+  document.getElementById('btn-en').classList.toggle('active', !he);
+  document.getElementById('btn-he').classList.toggle('active', he);
+  try { localStorage.setItem('hithead_lang', lang); } catch (e) {}
+}
+(function () {
+  try {
+    var saved = localStorage.getItem('hithead_lang');
+    if (saved === 'he') setLang('he');
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
