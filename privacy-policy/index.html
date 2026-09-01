@@ -26,7 +26,10 @@
     .contact-box { background: #f0f0f0; border-radius: 6px; padding: 16px 20px; margin-top: 32px; }
     .lang-toggle { text-align: left; margin-bottom: 20px; }
     .lang-toggle a { font-size: 0.9em; color: #888; text-decoration: none; border: 1px solid #ddd; padding: 4px 10px; border-radius: 4px; }
+    .backlink { display: block; margin-top: 28px; font-size: 0.9em; color: #888; text-decoration: none; }
     #en { display: none; direction: ltr; text-align: left; }
+    #en h2 { border-right: none; border-left: 4px solid #c0392b; padding-right: 0; padding-left: 12px; }
+    #en ul { padding-right: 0; padding-left: 24px; }
     hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
   </style>
 </head>
@@ -40,17 +43,18 @@
   <!-- ═══ HEBREW ═══ -->
   <div id="he">
     <h1>🔨 מדיניות פרטיות — Hit Head</h1>
-    <p class="subtitle">עודכן לאחרונה: אפריל 2026</p>
+    <p class="subtitle">עודכן לאחרונה: 1 בספטמבר 2026</p>
 
-    <p>אפליקציית Hit Head ("האפליקציה", "אנחנו") מכבדת את פרטיות המשתמשים שלה. מדיניות זו מסבירה אילו מידע אנו אוספים, כיצד אנו משתמשים בו, ואיזו שליטה יש לך עליו.</p>
+    <p>אפליקציית Hit Head ("האפליקציה", "אנחנו") מפותחת על ידי Dan Peer ומכבדת את פרטיות המשתמשים שלה. מדיניות זו מסבירה אילו מידע אנו אוספים, כיצד אנו משתמשים בו, ואיזו שליטה יש לך עליו.</p>
 
     <h2>1. המידע שאנו אוספים</h2>
     <p>האפליקציה עשויה לאסוף את סוגי המידע הבאים:</p>
     <ul>
       <li><strong>מידע חשבון גוגל:</strong> שם משתמש ותמונת פרופיל — לצורך כניסה לאפליקציה בלבד</li>
+      <li><strong>נתוני משחק:</strong> התקדמות, נקודות ניסיון, מטבעות והיסטוריית רכישות — נשמרים ב-Firebase</li>
+      <li><strong>נתוני מכשיר:</strong> סוג מכשיר, גרסת מערכת הפעלה ומזהה פרסום (Advertising ID)</li>
       <li><strong>נתוני שימוש:</strong> אירועי משחק אנונימיים (התחלת משחק, ניצחון, שימוש בתכונות) — דרך Firebase Analytics</li>
       <li><strong>נתוני קריסות:</strong> דוחות שגיאה אנונימיים לשיפור יציבות האפליקציה — דרך Firebase Crashlytics</li>
-      <li><strong>נתוני פרסום:</strong> מזהה מכשיר אנונימי לצורך הצגת פרסומות מותאמות — דרך Google AdMob</li>
     </ul>
     <p>אנחנו <strong>לא</strong> אוספים: מספרי טלפון, כתובות מייל, מיקום, תוכן הודעות, או מידע פיננסי.</p>
 
@@ -65,49 +69,58 @@
     <h2>3. שירותי צד שלישי</h2>
     <p>האפליקציה משתמשת בשירותים הבאים:</p>
     <ul>
-      <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank">מדיניות פרטיות של גוגל</a></li>
-      <li><strong>Firebase (Google)</strong> — Analytics, Realtime Database, Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank">מדיניות פרטיות של Firebase</a></li>
-      <li><strong>Google AdMob</strong> — פרסומות — <a href="https://support.google.com/admob/answer/6128543" target="_blank">מדיניות AdMob</a></li>
+      <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">מדיניות פרטיות של גוגל</a></li>
+      <li><strong>Firebase (Google)</strong> — Analytics, Realtime Database, Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">מדיניות פרטיות של Firebase</a></li>
+      <li><strong>Google AdMob</strong> — פרסומות — <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">מדיניות AdMob</a></li>
     </ul>
     <p>שירותים אלה עשויים לאסוף מידע בהתאם למדיניות הפרטיות שלהם.</p>
 
     <h2>4. פרסומות ו-GDPR</h2>
-    <p>האפליקציה מציגה פרסומות דרך Google AdMob. משתמשים באיחוד האירופי ובאזורים נוספים יתבקשו לתת הסכמה לפרסומות מותאמות אישית בהתאם לתקנות GDPR. ניתן לשלוט בהעדפות הפרסום דרך הגדרות המכשיר.</p>
+    <p>האפליקציה מציגה פרסומות דרך Google AdMob, שעשוי להשתמש במזהה הפרסום שלך (GAID) כדי להציג פרסומות מותאמות אישית. משתמשים באיחוד האירופי ובאזורים נוספים יתבקשו לתת הסכמה לפרסומות מותאמות בהתאם לתקנות GDPR. ניתן לבטל פרסום מותאם אישית בהגדרות המכשיר, תחת <strong>Google ← מודעות ← ביטול התאמה אישית של מודעות</strong>.</p>
 
     <h2>5. רכישות בתוך האפליקציה</h2>
-    <p>האפליקציה מציעה רכישות אופציונליות (מטבעות וירטואליים, הסרת פרסומות). עסקאות אלה מתבצעות דרך Google Play Store בלבד. אנחנו לא שומרים מידע פיננסי.</p>
+    <p>האפליקציה מציעה רכישות אופציונליות (מטבעות וירטואליים, הסרת פרסומות). כל העסקאות מתבצעות דרך Google Play Store בלבד וכפופות ל<a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">תנאי השימוש של Google Play</a>. אנחנו לא שומרים מידע פיננסי.</p>
 
-    <h2>6. ילדים מתחת לגיל 13</h2>
-    <p>האפליקציה אינה מיועדת לילדים מתחת לגיל 13. אנחנו לא אוספים ביודעין מידע אישי מילדים. אם גילית שילד מסר מידע אישי, אנא צור קשר ונמחק אותו.</p>
+    <h2>6. התאמה לגילאים</h2>
+    <p>האפליקציה מתאימה לכל הגילאים. מומלץ שמשתמשים מתחת לגיל 13 ישחקו בליווי הורים. אנחנו לא אוספים ביודעין מידע אישי מילדים ללא הסכמת הורים. אם גילית שילד מסר מידע אישי, אנא צור קשר ונמחק אותו.</p>
 
-    <h2>7. אבטחת מידע</h2>
+    <h2>7. שמירת נתונים ומחיקתם</h2>
+    <p>נתוני המשחק שלך נשמרים ב-Firebase ומקושרים לחשבון הגוגל שלך. כדי לבקש מחיקה של הנתונים שלך, שלח מייל ל-<a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a> ונמחק אותם בתוך 30 יום.</p>
+
+    <h2>8. הזכויות שלך</h2>
+    <p>באפשרותך לבקש גישה למידע האישי שלך, תיקון שלו או מחיקתו בכל עת, על ידי פנייה אלינו ישירות.</p>
+
+    <h2>9. אבטחת מידע</h2>
     <p>אנו נוקטים באמצעים סבירים להגנה על המידע שלך. עם זאת, אין שיטת שידור דרך האינטרנט שהיא מאובטחת לחלוטין.</p>
 
-    <h2>8. שינויים במדיניות</h2>
+    <h2>10. שינויים במדיניות</h2>
     <p>אנו עשויים לעדכן מדיניות זו מעת לעת. שינויים מהותיים יפורסמו בדף זה עם עדכון תאריך. המשך השימוש באפליקציה לאחר שינויים מהווה הסכמה למדיניות המעודכנת.</p>
 
     <div class="contact-box">
       <h2 style="margin-top:0; border:none; padding:0; color:#222;">📬 צור קשר</h2>
       <p>שאלות לגבי מדיניות הפרטיות? נשמח לעזור:</p>
-      <p><strong>📧 hithead.game@gmail.com</strong></p>
+      <p><strong>Dan Peer</strong><br>
+      <strong>📧 <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a></strong></p>
     </div>
-  </div>
 
-  <hr>
+    <a class="backlink" href="../">← חזרה ל-Hit Head</a>
+  </div>
 
   <!-- ═══ ENGLISH ═══ -->
   <div id="en">
     <h1>🔨 Privacy Policy — Hit Head</h1>
-    <p class="subtitle">Last updated: April 2026</p>
+    <p class="subtitle">Last updated: September 1, 2026</p>
 
-    <p>Hit Head ("the App", "we", "us") respects the privacy of its users. This policy explains what information we collect, how we use it, and what control you have over it.</p>
+    <p>Hit Head ("the App", "we", "us") is developed by Dan Peer and respects the privacy of its users. This policy explains what information we collect, how we use it, and what control you have over it.</p>
 
     <h2>1. Information We Collect</h2>
+    <p>The App may collect the following types of information:</p>
     <ul>
       <li><strong>Google Account Info:</strong> Display name and profile picture — for login only</li>
+      <li><strong>Game Data:</strong> Progress, XP, coins and purchase history — stored via Firebase</li>
+      <li><strong>Device Data:</strong> Device type, OS version and advertising ID</li>
       <li><strong>Usage Data:</strong> Anonymous game events (game start, win, feature usage) — via Firebase Analytics</li>
       <li><strong>Crash Data:</strong> Anonymous error reports to improve app stability — via Firebase Crashlytics</li>
-      <li><strong>Advertising Data:</strong> Anonymous device identifier for personalized ads — via Google AdMob</li>
     </ul>
     <p>We do <strong>NOT</strong> collect: phone numbers, email addresses, location, message content, or financial information.</p>
 
@@ -120,31 +133,43 @@
     </ul>
 
     <h2>3. Third-Party Services</h2>
+    <p>The App uses the following services:</p>
     <ul>
-      <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-      <li><strong>Firebase (Google)</strong> — Analytics, Realtime Database, Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></li>
-      <li><strong>Google AdMob</strong> — Advertising — <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob Policy</a></li>
+      <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Firebase (Google)</strong> — Analytics, Realtime Database, Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a></li>
+      <li><strong>Google AdMob</strong> — Advertising — <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Policy</a></li>
     </ul>
+    <p>These services may collect information in accordance with their own privacy policies.</p>
 
-    <h2>4. Advertising & GDPR</h2>
-    <p>The app displays ads via Google AdMob. Users in the EU and other regions will be asked for consent for personalized advertising in accordance with GDPR. You can control ad preferences through your device settings.</p>
+    <h2>4. Advertising &amp; GDPR</h2>
+    <p>The App displays ads via Google AdMob, which may use your Advertising ID (GAID) to show personalized ads. Users in the EU and other regions will be asked for consent for personalized advertising in accordance with GDPR. You can opt out of personalized advertising in your device settings under <strong>Google &rarr; Ads &rarr; Opt out of Ads Personalization</strong>.</p>
 
     <h2>5. In-App Purchases</h2>
-    <p>The app offers optional purchases (virtual coins, ad removal). All transactions are processed exclusively through Google Play Store and Apple App Store. We do not store financial information.</p>
+    <p>The App offers optional purchases (virtual coins, ad removal). All transactions are processed exclusively through the Google Play Store and are governed by the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms of Service</a>. We do not store financial information.</p>
 
     <h2>6. Age Suitability</h2>
-    <p>Our App is suitable for all ages. Users under 13 should play with parental guidance. We do not knowingly collect personal information from children without parental consent. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
+    <p>The App is suitable for all ages. Users under 13 should play with parental guidance. We do not knowingly collect personal information from children without parental consent. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
 
-    <h2>7. Data Security</h2>
+    <h2>7. Data Retention &amp; Deletion</h2>
+    <p>Your game data is stored in Firebase and linked to your Google account. To request deletion of your data, email us at <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a> and we will remove your data within 30 days.</p>
+
+    <h2>8. Your Rights</h2>
+    <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us directly.</p>
+
+    <h2>9. Data Security</h2>
     <p>We take reasonable measures to protect your information. However, no method of transmission over the Internet is completely secure.</p>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this policy from time to time. Material changes will be posted on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Material changes will be posted on this page with an updated date. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
     <div class="contact-box">
       <h2 style="margin-top:0; border:none; padding:0; color:#222;">📬 Contact Us</h2>
-      <p><strong>📧 hithead.game@gmail.com</strong></p>
+      <p>Questions about this privacy policy? We're happy to help:</p>
+      <p><strong>Dan Peer</strong><br>
+      <strong>📧 <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a></strong></p>
     </div>
+
+    <a class="backlink" href="../">&larr; Back to Hit Head</a>
   </div>
 
 </div>
@@ -153,16 +178,14 @@
   function toggleLang() {
     var he = document.getElementById('he');
     var en = document.getElementById('en');
-    var btn = document.querySelector('.lang-toggle a');
-    if (en.style.display === 'none' || en.style.display === '') {
-      en.style.display = 'block';
-      he.style.display = 'none';
-      btn.textContent = 'עברית';
-    } else {
-      he.style.display = 'block';
-      en.style.display = 'none';
-      btn.textContent = 'English';
-    }
+    var link = document.querySelector('.lang-toggle a');
+    var showEn = he.style.display !== 'none';
+    he.style.display = showEn ? 'none' : 'block';
+    en.style.display = showEn ? 'block' : 'none';
+    document.documentElement.lang = showEn ? 'en' : 'he';
+    document.documentElement.dir = showEn ? 'ltr' : 'rtl';
+    document.body.style.direction = showEn ? 'ltr' : 'rtl';
+    link.textContent = showEn ? 'עברית' : 'English';
   }
 </script>
 </body>
