@@ -87,7 +87,7 @@
     footer { border-top: 1px solid #2a2a2a; padding: 26px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
     [dir="rtl"] { text-align: right; }
-    #content-he, #content-sv, #content-fi, #content-no, #content-da { display: none; }
+    #content-he, #content-sv, #content-fi, #content-no, #content-da, #content-de, #content-nl { display: none; }
 
     @media (max-width: 640px) {
       nav { padding: 12px 16px; }
@@ -123,7 +123,7 @@
         "@id": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/#article",
         "headline": "How to Play Shithead (Palace) — the Complete Rules",
         "description": "The complete rules of the shedding card game known as Shithead, Palace, Karma, Idiot or Shed, as played in Hit Head.",
-        "inLanguage": ["en", "he", "sv", "fi", "no", "da"],
+        "inLanguage": ["en", "he", "sv", "fi", "no", "da", "de", "nl"],
         "image": "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg",
         "author": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
         "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
@@ -202,6 +202,8 @@
     <button class="lang-btn" id="btn-fi" onclick="setLang('fi')">FI</button>
     <button class="lang-btn" id="btn-no" onclick="setLang('no')">NO</button>
     <button class="lang-btn" id="btn-da" onclick="setLang('da')">DA</button>
+    <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
   </div>
 </nav>
 
@@ -741,13 +743,191 @@
   <a class="backlink" href="../">&larr; Tilbage til Hit Head</a>
 </article>
 
+<!-- ============ DEUTSCH ============ -->
+<article id="content-de">
+  <h1>Wie man <span>Palast</span> spielt — die vollständigen Regeln</h1>
+  <p class="lede">Auch bekannt als Shithead, Karma, Idiot, Shed, Boot, Vändtia oder Paskahousu. Ein Spiel, ein Dutzend Namen, und jeder schwört, dass in seiner Jugendherberge richtig gespielt wurde. Das sind die Regeln, wie Hit Head sie spielt.</p>
+
+  <h2>Was du brauchst</h2>
+  <ul>
+    <li><strong>54 Karten</strong>, darunter vier Sonderkarten: die Nullkarte, das Transparente, die Bombe und Hit Head.</li>
+    <li><strong>2 bis 4 Spieler.</strong></li>
+  </ul>
+
+  <h2>Die Verteilung</h2>
+  <p>Jeder Spieler bekommt neun Karten, in drei Gruppen zu drei:</p>
+  <ul>
+    <li><strong>3 verdeckte</strong> — mit der Bildseite nach unten auf dem Tisch. Niemand schaut sich diese an, auch du nicht.</li>
+    <li><strong>3 offene</strong> — mit der Bildseite nach oben, auf den verdeckten liegend. Alle können sie sehen.</li>
+    <li><strong>3 auf der Hand</strong> — nur du kannst sie sehen.</li>
+  </ul>
+  <p>Was übrig bleibt, wird zum Nachziehstapel.</p>
+
+  <h2>Das Ziel</h2>
+  <p>Werde alle neun deiner Karten los. Der letzte Spieler, der noch Karten hat, verliert.</p>
+
+  <h2>Ein Zug</h2>
+  <p>Spiele eine Karte, die <strong>gleich hoch oder höher</strong> ist als die oberste Karte des Stapels. Ziehe danach wieder bis zu drei Karten auf die Hand nach, solange der Nachziehstapel reicht.</p>
+  <p><strong>Kannst du nicht spielen? Du nimmst den ganzen Stapel auf die Hand</strong>, und der nächste Spieler beginnt frisch mit einem leeren Stapel. Das ist die ganze Spannung des Spiels: jede Karte, die du spielst, macht den Stapel größer für den, der darauf sitzen bleibt.</p>
+
+  <h3>Die Reihenfolge, aus der du spielst</h3>
+  <p>Zuerst deine Hand. Erst wenn deine Hand leer ist <em>und</em> der Nachziehstapel aufgebraucht ist, beginnst du, deine drei offenen Karten zu spielen. Die kommen als Zweitletztes, und deine drei verdeckten Karten kommen zuletzt.</p>
+  <div class="callout">
+    <strong>Verdeckte Karten sind ein blindes Glücksspiel.</strong> Du drehst eine um, ohne zu wissen, was sie ist. Stellt sie sich als ungültig auf dem aktuellen Stapel heraus, nimmst du den Stapel — mit dieser Karte darin. Niemand kommt am Ende sauber davon.
+  </div>
+
+  <h2>Stapeln und Verbrennen</h2>
+  <p>Hast du mehr als eine Karte mit demselben Wert? Spiele sie alle im selben Zug. So wirst du deine Hand schnell los, und so bereitest du auch ein Verbrennen vor.</p>
+  <p><strong>Vier Karten mit demselben Wert in Folge verbrennen den Stapel.</strong> Es spielt keine Rolle, ob ein Spieler alle vier gelegt hat oder vier Spieler je eine beigetragen haben. Der Stapel wird komplett aus dem Spiel entfernt, und der Spieler, der die Vier vervollständigt hat, beginnt erneut mit einem leeren Stapel.</p>
+
+  <h2>Die Sonderkarten</h2>
+  <p>Alle anderen Karten werden nach ihrer Zahl geordnet, von niedrig zu hoch. Das sind die, die die Regeln ändern:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Karte</th><th>Name</th><th>Was sie bewirkt</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>Die Umkehrung</td><td>Nach einer 4 muss die nächste Karte <strong>eine 4 oder niedriger</strong> sein — oder eine der unten stehenden Sonderkarten. Die einzige Karte, die das ganze Spiel umdreht.</td></tr>
+        <tr><td>5</td><td>Stopp</td><td>Überspringt den nächsten Spieler. Bei zwei Spielern heißt das, du bist noch einmal dran.</td></tr>
+        <tr><td>6</td><td>Richtungswechsel</td><td>Kehrt die Spielrichtung um.</td></tr>
+        <tr><td>11</td><td>Die Nullkarte</td><td>Kann auf alles gelegt werden und setzt den Stapel zurück auf null — der nächste Spieler kann legen, was er will. Sie verbrennt den Stapel <em>nicht</em>.</td></tr>
+        <tr><td>12</td><td>Die Bombe</td><td>Verbrennt den Stapel sofort aus dem Spiel, und du bist erneut dran mit einem leeren Stapel. Die stärkste Karte im Deck.</td></tr>
+        <tr><td>13</td><td>Das Transparente</td><td>Kann auf alles gelegt werden, ändert aber nicht den zu schlagenden Wert. Der nächste Spieler muss immer noch das schlagen, was <em>darunter</em> lag.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Du wählst einen Spieler, und <strong>er</strong> nimmt den ganzen Stapel — es sei denn, er hat selbst eine Hit-Head-Karte, um sie direkt an dich zurückzuwerfen. Die einzige Karte, die den Schaden an eine bestimmte Person weitergibt.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Ist Hit Head dasselbe Spiel wie Shithead oder Palast?</h3>
+  <p>Ja. Es ist dasselbe Kartenspiel, das Reisende seit Jahrzehnten in Jugendherbergen spielen, unter verschiedenen Namen in verschiedenen Ländern bekannt — Palast in Deutschland, Shithead und Palace im Englischen, Vändtia in Schweden, Paskahousu in Finnland. Hit Head ist dieses Spiel auf Android.</p>
+  <h3>Wie viele können spielen?</h3>
+  <p>Aktuell bietet Hit Head nur 4-Spieler-Partien — du und drei andere, gegen die Bots der App, per Weiterreichen eines Telefons, oder online. Es gibt derzeit keine Option für 2 oder 3 Spieler.</p>
+  <h3>Ist es kostenlos?</h3>
+  <p>Ja. Es gibt optionale Käufe für Münzen und Avatare, aber das Spiel selbst ist kostenlos.</p>
+  <h3>Wenn ich eine Karte habe, die ich legal spielen könnte, muss ich sie dann spielen?</h3>
+  <p>Nein — du kannst dich stattdessen entscheiden, den Stapel zu nehmen, indem du auf die Karte tippst, die auf dem Tisch liegt.</p>
+  <h3>Was ist der Unterschied zwischen der Bombe und der Hit-Head-Karte?</h3>
+  <p>Die Bombe verbrennt den Stapel aus dem Spiel — niemand nimmt ihn. Die Hit-Head-Karte gibt stattdessen den ganzen Stapel an einen Spieler deiner Wahl. Die Bombe ist Verteidigung, die Hit-Head-Karte ist Angriff.</p>
+  <h2>Mehr über das Originalspiel</h2>
+  <p>Hit Head basiert auf einem Volks-Kartenspiel, das in vielen Ländern auf der ganzen Welt gespielt wird, von Reisenden und Spielern überall. Das Besondere an Hit Head ist, dass es all diese Regeln genommen und zu etwas Einfachem vereint hat, das leicht zu merken und zu spielen ist. Wenn dich die größere Geschichte interessiert, lohnt sich Folgendes:</p>
+  <h3>Quellen</h3>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (Englisch)</li>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a> (Schwedisch)</li>
+    <li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93" target="_blank" rel="noopener">ויקיפדיה — שיטהד</a> (Hebräisch)</li>
+  </ul>
+  <h3>Regeln und Anleitungen anderswo</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Guide to games: how to play Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — How to play the Palace card game</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead rules</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, the traveller's card game</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — How to play the best card game in the world</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Best strategy for Vändtia</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">The rules of Shithead (blog, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Hit Head kostenlos bei Google Play spielen</a>
+  </div>
+  <a class="backlink" href="../">&larr; Zurück zu Hit Head</a>
+</article>
+
+<!-- ============ NEDERLANDS ============ -->
+<article id="content-nl">
+  <h1>Zo speel je <span>Shithead</span> — de volledige regels</h1>
+  <p class="lede">Ook bekend als Palace, Karma, Idiot, Shed, Boot, Vändtia of Paskahousu. Eén spel, een dozijn namen, en iedereen zweert dat het in hun hostel goed werd gespeeld. Dit zijn de regels zoals Hit Head ze speelt.</p>
+
+  <h2>Wat je nodig hebt</h2>
+  <ul>
+    <li><strong>54 kaarten</strong>, inclusief vier speciale kaarten: de Nulkaart, de Transparante kaart, de Bom en Hit Head.</li>
+    <li><strong>2 tot 4 spelers.</strong></li>
+  </ul>
+
+  <h2>De deling</h2>
+  <p>Elke speler krijgt negen kaarten, in drie groepen van drie:</p>
+  <ul>
+    <li><strong>3 verborgen</strong> — met de afbeelding naar beneden op tafel. Niemand kijkt hiernaar, ook jij niet.</li>
+    <li><strong>3 zichtbaar</strong> — met de afbeelding naar boven, rustend op de verborgen kaarten. Iedereen kan ze zien.</li>
+    <li><strong>3 op de hand</strong> — alleen jij kunt ze zien.</li>
+  </ul>
+  <p>Wat overblijft, wordt de trekstapel.</p>
+
+  <h2>Het doel</h2>
+  <p>Kom van al je negen kaarten af. De laatste speler die nog kaarten heeft, verliest.</p>
+
+  <h2>Een beurt</h2>
+  <p>Speel een kaart die <strong>gelijk aan of hoger</strong> is dan de bovenste kaart van de stapel. Trek daarna weer tot drie kaarten op je hand bij, zolang de trekstapel meegaat.</p>
+  <p><strong>Kun je niet spelen? Je neemt de hele stapel op je hand</strong>, en de volgende speler begint fris met een lege stapel. Dat is de hele spanning van het spel: elke kaart die je speelt maakt de stapel groter voor wie ermee blijft zitten.</p>
+
+  <h3>De volgorde waarin je speelt</h3>
+  <p>Eerst je hand. Pas als je hand leeg is <em>en</em> de trekstapel op is, begin je je drie zichtbare kaarten te spelen. Die komen op de een-na-laatste plek, en je drie verborgen kaarten komen als laatste.</p>
+  <div class="callout">
+    <strong>Verborgen kaarten zijn een blinde gok.</strong> Je draait er een om zonder te weten wat het is. Blijkt hij ongeldig op de huidige stapel, dan neem je de stapel — met die kaart erin. Niemand komt er aan het eind schoon vanaf.
+  </div>
+
+  <h2>Stapelen en verbranden</h2>
+  <p>Heb je meer dan één kaart met dezelfde waarde? Speel ze allemaal in dezelfde beurt. Zo kom je snel van je hand af, en zo bereid je ook een verbranding voor.</p>
+  <p><strong>Vier kaarten met dezelfde waarde op rij verbranden de stapel.</strong> Het maakt niet uit of één speler alle vier neerlegde of vier spelers er elk één bijdroegen. De stapel gaat volledig uit het spel, en de speler die de vier voltooide begint opnieuw met een lege stapel.</p>
+
+  <h2>De speciale kaarten</h2>
+  <p>Alle andere kaarten worden gerangschikt op hun getal, van laag naar hoog. Dit zijn degene die de regels veranderen:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kaart</th><th>Naam</th><th>Wat hij doet</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>De omkeer</td><td>Na een 4 moet de volgende kaart <strong>een 4 of lager</strong> zijn — of een van de speciale kaarten hieronder. De enige kaart die het hele spel omdraait.</td></tr>
+        <tr><td>5</td><td>Stop</td><td>Slaat de volgende speler over. Bij twee spelers betekent dat dat jij opnieuw aan de beurt bent.</td></tr>
+        <tr><td>6</td><td>Omkering</td><td>Draait de speelrichting om.</td></tr>
+        <tr><td>11</td><td>De Nulkaart</td><td>Kan op alles gelegd worden en zet de stapel terug op nul — de volgende speler mag spelen wat hij wil. Hij verbrandt de stapel <em>niet</em>.</td></tr>
+        <tr><td>12</td><td>De Bom</td><td>Verbrandt de stapel meteen uit het spel, en jij bent opnieuw aan de beurt met een lege stapel. De sterkste kaart in het spel.</td></tr>
+        <tr><td>13</td><td>De Transparante kaart</td><td>Kan op alles gelegd worden, maar verandert de te verslaan waarde niet. De volgende speler moet nog steeds verslaan wat <em>eronder</em> lag.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Je kiest een speler, en <strong>die</strong> neemt de hele stapel — tenzij hij zelf een Hit Head-kaart heeft om hem direct naar jou terug te gooien. De enige kaart die de schade naar een specifieke persoon stuurt.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Veelgestelde vragen</h2>
+  <h3>Is Hit Head hetzelfde spel als Shithead of Palace?</h3>
+  <p>Ja. Het is hetzelfde kaartspel dat reizigers al decennia in hostels spelen, bekend onder verschillende namen in verschillende landen — Shithead en Palace in het Nederlands en Engels, Vändtia in Zweden, Paskahousu in Finland. Hit Head is dat spel op Android.</p>
+  <h3>Hoeveel mensen kunnen er spelen?</h3>
+  <p>Op dit moment biedt Hit Head alleen 4-spelerspartijen — jij en drie anderen, tegen de bots van de app, door een telefoon door te geven, of online. Er is momenteel geen optie voor 2 of 3 spelers.</p>
+  <h3>Is het gratis?</h3>
+  <p>Ja. Er zijn optionele aankopen voor munten en avatars, maar het spel zelf is gratis.</p>
+  <h3>Als ik een kaart heb die ik legaal kan spelen, moet ik hem dan spelen?</h3>
+  <p>Nee — je kunt er ook voor kiezen om de stapel te pakken, door op de kaart te tikken die op tafel ligt.</p>
+  <h3>Wat is het verschil tussen de Bom en de Hit Head-kaart?</h3>
+  <p>De Bom verbrandt de stapel uit het spel — niemand neemt hem. De Hit Head-kaart geeft in plaats daarvan de hele stapel aan een speler van jouw keuze. De Bom is verdediging, de Hit Head-kaart is aanval.</p>
+  <h2>Meer over het originele spel</h2>
+  <p>Hit Head is gebaseerd op een volks-kaartspel dat in veel landen over de hele wereld wordt gespeeld, door reizigers en spelers overal. Wat Hit Head doet, is al deze regels nemen en samenbrengen tot iets eenvoudigs, makkelijk te onthouden en te spelen. Als je in het bredere verhaal geïnteresseerd bent, zijn deze de moeite waard:</p>
+  <h3>Bronnen</h3>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (Engels)</li>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a> (Zweeds)</li>
+    <li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93" target="_blank" rel="noopener">ויקיפדיה — שיטהד</a> (Hebreeuws)</li>
+  </ul>
+  <h3>Regels en gidsen elders</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Guide to games: how to play Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — How to play the Palace card game</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead rules</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, the traveller's card game</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — How to play the best card game in the world</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Best strategy for Vändtia</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">The rules of Shithead (blog, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Speel Hit Head gratis op Google Play</a>
+  </div>
+  <a class="backlink" href="../">&larr; Terug naar Hit Head</a>
+</article>
+
 </main>
 
 <footer><a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Hit Head on Facebook</a> &nbsp;&middot;&nbsp; &copy; 2026 Dan Peer</footer>
 
 <script>
 function setLang(lang) {
-  ['en', 'he', 'sv', 'fi', 'no', 'da'].forEach(function (l) {
+  ['en', 'he', 'sv', 'fi', 'no', 'da', 'de', 'nl'].forEach(function (l) {
     document.getElementById('content-' + l).style.display = (l === lang) ? 'block' : 'none';
     document.getElementById('btn-' + l).classList.toggle('active', l === lang);
   });
