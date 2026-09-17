@@ -87,7 +87,7 @@
     footer { border-top: 1px solid #2a2a2a; padding: 26px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
     [dir="rtl"] { text-align: right; }
-    #content-he, #content-sv, #content-fi { display: none; }
+    #content-he, #content-sv, #content-fi, #content-no, #content-da { display: none; }
 
     @media (max-width: 640px) {
       nav { padding: 12px 16px; }
@@ -123,7 +123,7 @@
         "@id": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/#article",
         "headline": "How to Play Shithead (Palace) — the Complete Rules",
         "description": "The complete rules of the shedding card game known as Shithead, Palace, Karma, Idiot or Shed, as played in Hit Head.",
-        "inLanguage": ["en", "he", "sv", "fi"],
+        "inLanguage": ["en", "he", "sv", "fi", "no", "da"],
         "image": "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg",
         "author": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
         "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
@@ -200,6 +200,8 @@
     <button class="lang-btn" id="btn-he" onclick="setLang('he')">עברית</button>
     <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
     <button class="lang-btn" id="btn-fi" onclick="setLang('fi')">FI</button>
+    <button class="lang-btn" id="btn-no" onclick="setLang('no')">NO</button>
+    <button class="lang-btn" id="btn-da" onclick="setLang('da')">DA</button>
   </div>
 </nav>
 
@@ -561,13 +563,191 @@
   <a class="backlink" href="../">&larr; Takaisin Hit Headiin</a>
 </article>
 
+<!-- ============ NORSK ============ -->
+<article id="content-no">
+  <h1>Hvordan spille <span>Idiot</span> — de fullstendige reglene</h1>
+  <p class="lede">Også kjent som Shithead, Palace, Karma, Shed, China Hand, Vändtia eller Paskahousu. Ett spill, et dusin navn, og alle sverger på at deres vandrerhjem spilte det riktig. Dette er reglene slik Hit Head spiller dem.</p>
+
+  <h2>Hva du trenger</h2>
+  <ul>
+    <li><strong>54 kort</strong>, inkludert fire spesialkort: Nullkortet, det gjennomsiktige, Bomben og Hit Head.</li>
+    <li><strong>2 til 4 spillere.</strong></li>
+  </ul>
+
+  <h2>Delingen</h2>
+  <p>Hver spiller får ni kort, i tre grupper på tre:</p>
+  <ul>
+    <li><strong>3 skjulte</strong> — vendt nedover på bordet. Ingen ser på disse, ikke engang deg.</li>
+    <li><strong>3 synlige</strong> — vendt oppover, hvilende på de skjulte. Alle kan se dem.</li>
+    <li><strong>3 på hånden</strong> — bare du kan se dem.</li>
+  </ul>
+  <p>Det som er igjen blir trekkbunken.</p>
+
+  <h2>Målet</h2>
+  <p>Bli kvitt alle dine ni kort. Den siste spilleren som fortsatt har kort, taper.</p>
+
+  <h2>En runde</h2>
+  <p>Spill et kort som er <strong>likt eller høyere</strong> enn kortet øverst i bunken. Trekk deretter opp til tre kort på hånden igjen, så lenge trekkbunken varer.</p>
+  <p><strong>Kan du ikke spille? Du tar hele bunken i hånden</strong>, og neste spiller starter friskt på en tom bunke. Dette er hele spenningen i spillet: hvert kort du spiller gjør bunken større for den som blir sittende med den.</p>
+
+  <h3>Rekkefølgen du spiller fra</h3>
+  <p>Hånden din først. Først når hånden din er tom <em>og</em> trekkbunken er brukt opp, begynner du å spille dine tre synlige kort. De kommer nest sist, og dine tre skjulte kort kommer sist.</p>
+  <div class="callout">
+    <strong>Skjulte kort er en blind gambling.</strong> Du snur ett uten å vite hva det er. Hvis det viser seg å være ulovlig på gjeldende bunke, tar du bunken — med det kortet i den. Ingen slipper unna rent til slutt.
+  </div>
+
+  <h2>Stabling og brenning</h2>
+  <p>Har du mer enn ett kort med samme verdi? Spill dem alle i samme runde. Slik kvitter du deg med hånden raskt, og slik forbereder du også en brenning.</p>
+  <p><strong>Fire kort med samme verdi på rad brenner bunken.</strong> Det spiller ingen rolle om én spiller la ned alle fire, eller om fire spillere la til ett hver. Bunken fjernes helt fra spillet, og spilleren som fullførte firmenningen starter på nytt på en tom bunke.</p>
+
+  <h2>Spesialkortene</h2>
+  <p>Alle andre kort rangeres etter sitt tall, lavt til høyt. Dette er de som endrer reglene:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Navn</th><th>Hva det gjør</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>Vendingen</td><td>Etter en 4 må neste kort være <strong>4 eller lavere</strong> — eller et av spesialkortene under. Det eneste kortet som snur hele spillet på hodet.</td></tr>
+        <tr><td>5</td><td>Stopp</td><td>Hopper over neste spiller. I et spill med to spillere betyr det at du går igjen.</td></tr>
+        <tr><td>6</td><td>Reverser</td><td>Snur spillretningen.</td></tr>
+        <tr><td>11</td><td>Nullkortet</td><td>Kan legges på hva som helst, og trekker bunken tilbake til null — neste spiller kan legge hva de vil. Det brenner <em>ikke</em> bunken.</td></tr>
+        <tr><td>12</td><td>Bomben</td><td>Brenner bunken ut av spillet umiddelbart, og du spiller igjen på en tom bunke. Det sterkeste kortet i stokken.</td></tr>
+        <tr><td>13</td><td>Det gjennomsiktige</td><td>Kan legges på hva som helst, men endrer ikke verdien som skal slås. Neste spiller må fortsatt slå det som lå <em>under</em>.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Du velger en spiller, og <strong>de</strong> tar hele bunken — med mindre de har et eget Hit Head-kort å kaste rett tilbake til deg. Det eneste kortet som sender skaden til en bestemt person.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Vanlige spørsmål</h2>
+  <h3>Er Hit Head det samme spillet som Idiot eller Shithead?</h3>
+  <p>Ja. Det er det samme kortspillet som reisende har spilt på vandrerhjem i tiår, kjent under forskjellige navn i forskjellige land — Idiot i Norge, Shithead og Palace på engelsk, Vändtia i Sverige, Paskahousu i Finland. Hit Head er det spillet på Android.</p>
+  <h3>Hvor mange kan spille?</h3>
+  <p>Akkurat nå tilbyr Hit Head bare 4-spillerkamper — du og tre andre, mot appens boter, ved å sende telefonen rundt, eller online. Det finnes for øyeblikket ikke noe alternativ for 2 eller 3 spillere.</p>
+  <h3>Er det gratis?</h3>
+  <p>Ja. Det finnes valgfrie kjøp av mynter og avatarer, men selve spillet er gratis.</p>
+  <h3>Hvis jeg har et kort jeg lovlig kunne spille, må jeg spille det?</h3>
+  <p>Nei — du kan velge å ta bunken i stedet, ved å trykke på kortet som ligger på bordet.</p>
+  <h3>Hva er forskjellen mellom Bomben og Hit Head-kortet?</h3>
+  <p>Bomben brenner bunken ut av spillet — ingen tar den. Hit Head-kortet gir i stedet hele bunken til en spiller du velger. Bomben er forsvar, Hit Head-kortet er angrep.</p>
+  <h2>Mer om det opprinnelige spillet</h2>
+  <p>Hit Head er basert på et folkelig kortspill som spilles i mange land rundt om i verden, av reisende og spillere overalt. Det Hit Head gjør er å ta alle disse reglene og forene dem til noe enkelt, lett å huske og lett å spille. Hvis du vil ha den bredere historien, er disse verdt å lese:</p>
+  <h3>Kilder</h3>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (engelsk)</li>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a> (svensk)</li>
+    <li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93" target="_blank" rel="noopener">ויקיפדיה — שיטהד</a> (hebraisk)</li>
+  </ul>
+  <h3>Regler og guider andre steder</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Guide til spill: hvordan spille Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — Hvordan spille Palace-kortspillet</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead-regler</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, den reisendes kortspill</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — Hvordan spille verdens beste kortspill</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Beste strategi for Vändtia</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">Reglene for Shithead (blogg, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Spill Hit Head gratis på Google Play</a>
+  </div>
+  <a class="backlink" href="../">&larr; Tilbake til Hit Head</a>
+</article>
+
+<!-- ============ DANSK ============ -->
+<article id="content-da">
+  <h1>Sådan spiller du <span>Idiot</span> — de fulde regler</h1>
+  <p class="lede">Også kendt som Shithead, Palace, Karma, Shed, China Hand, Vändtia eller Paskahousu. Ét spil, et dusin navne, og alle sværger på, at deres vandrerhjem spillede det rigtigt. Det er reglerne, som Hit Head spiller dem.</p>
+
+  <h2>Hvad du skal bruge</h2>
+  <ul>
+    <li><strong>54 kort</strong>, inklusive fire specialkort: Nulkortet, det gennemsigtige, Bomben og Hit Head.</li>
+    <li><strong>2 til 4 spillere.</strong></li>
+  </ul>
+
+  <h2>Uddelingen</h2>
+  <p>Hver spiller får ni kort, i tre grupper af tre:</p>
+  <ul>
+    <li><strong>3 skjulte</strong> — vendt nedad på bordet. Ingen kigger på disse, ikke engang dig.</li>
+    <li><strong>3 synlige</strong> — vendt opad, hvilende på de skjulte. Alle kan se dem.</li>
+    <li><strong>3 på hånden</strong> — kun du kan se dem.</li>
+  </ul>
+  <p>Det, der er tilbage, bliver til trækbunken.</p>
+
+  <h2>Målet</h2>
+  <p>Slip af med alle dine ni kort. Den sidste spiller, der stadig har kort, taber.</p>
+
+  <h2>En tur</h2>
+  <p>Spil et kort, der er <strong>lige så højt eller højere</strong> end kortet øverst i bunken. Træk derefter op til tre kort på hånden igen, så længe trækbunken rækker.</p>
+  <p><strong>Kan du ikke spille? Du tager hele bunken i hånden</strong>, og næste spiller starter friskt på en tom bunke. Det er hele spændingen i spillet: hvert kort du spiller gør bunken større for den, der sidder tilbage med den.</p>
+
+  <h3>Rækkefølgen du spiller fra</h3>
+  <p>Din hånd først. Først når din hånd er tom <em>og</em> trækbunken er brugt op, begynder du at spille dine tre synlige kort. De kommer næstsidst, og dine tre skjulte kort kommer sidst.</p>
+  <div class="callout">
+    <strong>Skjulte kort er et blindt væddemål.</strong> Du vender et uden at vide hvad det er. Hvis det viser sig at være ulovligt på den aktuelle bunke, tager du bunken — med det kort i den. Ingen slipper rent fra det til sidst.
+  </div>
+
+  <h2>Stabling og afbrænding</h2>
+  <p>Har du mere end ét kort med samme værdi? Spil dem alle i samme tur. Sådan slipper du hurtigt af med hånden, og sådan forbereder du også en afbrænding.</p>
+  <p><strong>Fire kort med samme værdi i træk brænder bunken.</strong> Det er lige meget, om én spiller lagde alle fire, eller om fire spillere hver tilføjede ét. Bunken fjernes helt fra spillet, og spilleren, der fuldførte firkortet, starter forfra på en tom bunke.</p>
+
+  <h2>Specialkortene</h2>
+  <p>Alle andre kort rangeres efter deres tal, lavt til højt. Det er dem, der ændrer reglerne:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Navn</th><th>Hvad det gør</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>Vendingen</td><td>Efter en 4 skal næste kort være <strong>4 eller lavere</strong> — eller et af specialkortene nedenfor. Det eneste kort, der vender hele spillet på hovedet.</td></tr>
+        <tr><td>5</td><td>Stop</td><td>Springer næste spiller over. I et spil med to spillere betyder det, at du går igen.</td></tr>
+        <tr><td>6</td><td>Vend om</td><td>Vender spilretningen.</td></tr>
+        <tr><td>11</td><td>Nulkortet</td><td>Kan lægges på hvad som helst, og trækker bunken tilbage til nul — næste spiller kan lægge, hvad de vil. Det brænder <em>ikke</em> bunken.</td></tr>
+        <tr><td>12</td><td>Bomben</td><td>Brænder bunken ud af spillet med det samme, og du spiller igen på en tom bunke. Det stærkeste kort i spillet.</td></tr>
+        <tr><td>13</td><td>Det gennemsigtige</td><td>Kan lægges på hvad som helst, men ændrer ikke værdien, der skal slås. Næste spiller skal stadig slå det, der lå <em>under</em>.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Du vælger en spiller, og <strong>de</strong> tager hele bunken — medmindre de har deres eget Hit Head-kort at kaste lige tilbage til dig. Det eneste kort, der sender skaden til en bestemt person.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Almindelige spørgsmål</h2>
+  <h3>Er Hit Head det samme spil som Idiot eller Shithead?</h3>
+  <p>Ja. Det er det samme kortspil, som rejsende har spillet på vandrerhjem i årtier, kendt under forskellige navne i forskellige lande — Idiot i Danmark, Shithead og Palace på engelsk, Vändtia i Sverige, Paskahousu i Finland. Hit Head er det spil på Android.</p>
+  <h3>Hvor mange kan spille?</h3>
+  <p>Lige nu tilbyder Hit Head kun kampe med 4 spillere — dig og tre andre, mod appens bots, ved at sende telefonen rundt, eller online. Der er i øjeblikket ingen mulighed for 2 eller 3 spillere.</p>
+  <h3>Er det gratis?</h3>
+  <p>Ja. Der er valgfrie køb af mønter og avatarer, men selve spillet er gratis.</p>
+  <h3>Hvis jeg har et kort, jeg lovligt kunne spille, skal jeg så spille det?</h3>
+  <p>Nej — du kan vælge at tage bunken i stedet, ved at trykke på kortet, der ligger på bordet.</p>
+  <h3>Hvad er forskellen på Bomben og Hit Head-kortet?</h3>
+  <p>Bomben brænder bunken ud af spillet — ingen tager den. Hit Head-kortet giver i stedet hele bunken til en spiller, du vælger. Bomben er forsvar, Hit Head-kortet er angreb.</p>
+  <h2>Mere om det oprindelige spil</h2>
+  <p>Hit Head er baseret på et folkeligt kortspil, der spilles i mange lande rundt om i verden, af rejsende og spillere overalt. Det, Hit Head gør, er at tage alle disse regler og forene dem til noget enkelt, let at huske og let at spille. Hvis du vil have den bredere historie, er disse værd at læse:</p>
+  <h3>Kilder</h3>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (engelsk)</li>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a> (svensk)</li>
+    <li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93" target="_blank" rel="noopener">ויקיפדיה — שיטהד</a> (hebraisk)</li>
+  </ul>
+  <h3>Regler og guides andre steder</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Guide til spil: sådan spiller du Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — Sådan spiller du Palace-kortspillet</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead-regler</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, den rejsendes kortspil</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — Sådan spiller du verdens bedste kortspil</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Bedste strategi for Vändtia</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">Reglerne for Shithead (blog, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Spil Hit Head gratis på Google Play</a>
+  </div>
+  <a class="backlink" href="../">&larr; Tilbage til Hit Head</a>
+</article>
+
 </main>
 
 <footer><a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Hit Head on Facebook</a> &nbsp;&middot;&nbsp; &copy; 2026 Dan Peer</footer>
 
 <script>
 function setLang(lang) {
-  ['en', 'he', 'sv', 'fi'].forEach(function (l) {
+  ['en', 'he', 'sv', 'fi', 'no', 'da'].forEach(function (l) {
     document.getElementById('content-' + l).style.display = (l === lang) ? 'block' : 'none';
     document.getElementById('btn-' + l).classList.toggle('active', l === lang);
   });
