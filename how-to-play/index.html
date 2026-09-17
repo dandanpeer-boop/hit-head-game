@@ -87,7 +87,7 @@
     footer { border-top: 1px solid #2a2a2a; padding: 26px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
     [dir="rtl"] { text-align: right; }
-    #content-he { display: none; }
+    #content-he, #content-sv, #content-fi { display: none; }
 
     @media (max-width: 640px) {
       nav { padding: 12px 16px; }
@@ -123,7 +123,7 @@
         "@id": "https://dandanpeer-boop.github.io/hit-head-game/how-to-play/#article",
         "headline": "How to Play Shithead (Palace) — the Complete Rules",
         "description": "The complete rules of the shedding card game known as Shithead, Palace, Karma, Idiot or Shed, as played in Hit Head.",
-        "inLanguage": ["en", "he"],
+        "inLanguage": ["en", "he", "sv", "fi"],
         "image": "https://dandanpeer-boop.github.io/hit-head-game/images/Screenshot_20260528_115850_HIT%20HEAD.jpg",
         "author": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
         "publisher": { "@id": "https://dandanpeer-boop.github.io/hit-head-game/#publisher" },
@@ -198,6 +198,8 @@
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" id="btn-he" onclick="setLang('he')">עברית</button>
+    <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
+    <button class="lang-btn" id="btn-fi" onclick="setLang('fi')">FI</button>
   </div>
 </nav>
 
@@ -259,7 +261,7 @@
 
   <h2>Common questions</h2>
   <h3>Is Hit Head the same game as Shithead or Palace?</h3>
-  <p>Yes. It is the same shedding card game that travellers have played in hostels for decades, known by different names in different countries — Palace, Karma, Idiot and Shed in English, Vändtia in Sweden, China Hand in Finland. Hit Head is that game on Android.</p>
+  <p>Yes. It is the same shedding card game that travellers have played in hostels for decades, known by different names in different countries — Palace, Karma, Idiot and Shed in English, Vändtia in Sweden, Paskahousu in Finland. Hit Head is that game on Android.</p>
   <h3>How many people can play?</h3>
   <p>Right now, only 4-player matches — you and three others, against the app's bots, passing one phone around, or online. There is no 2 or 3-player option yet.</p>
   <h3>Is it free?</h3>
@@ -381,25 +383,202 @@
   <a class="backlink" href="../">&rarr; חזרה להיט הד</a>
 </article>
 
+<!-- ============ SVENSKA ============ -->
+<article id="content-sv">
+  <h1>Hur man spelar <span>Vändtia</span> — de fullständiga reglerna</h1>
+  <p class="lede">Även känt som Palace, Karma, Idiot, Shed, Boot, Ten-Two Slide, China Hand eller Paskahousu. Ett spel, ett dussin namn, och alla svär att deras vandrarhem spelade det rätt. Det här är reglerna så som Hit Head spelar dem.</p>
+
+  <h2>Vad du behöver</h2>
+  <ul>
+    <li><strong>54 kort</strong>, inklusive fyra specialkort: Nollan, Det genomskinliga, Bomben och Hit Head.</li>
+    <li><strong>2 till 4 spelare.</strong></li>
+  </ul>
+
+  <h2>Utdelningen</h2>
+  <p>Varje spelare får nio kort, i tre grupper om tre:</p>
+  <ul>
+    <li><strong>3 dolda</strong> — vända nedåt på bordet. Ingen tittar på dessa, inte ens du.</li>
+    <li><strong>3 synliga</strong> — vända uppåt, vilande på de dolda. Alla kan se dem.</li>
+    <li><strong>3 i hand</strong> — bara du kan se dem.</li>
+  </ul>
+  <p>Det som blir över blir draghögen.</p>
+
+  <h2>Målet</h2>
+  <p>Bli av med alla dina nio kort. Den sista spelaren som fortfarande har kort förlorar.</p>
+
+  <h2>En omgång</h2>
+  <p>Lägg ett kort som är <strong>lika högt eller högre</strong> än kortet överst i högen. Dra sedan upp till tre kort i handen igen, så länge draghögen räcker.</p>
+  <p><strong>Kan du inte spela? Du tar hela högen i din hand</strong>, och nästa spelare börjar fräscht på en tom hög. Det är hela spänningen i spelet: varje kort du lägger gör högen större för den som fastnar med den.</p>
+
+  <h3>Ordningen du spelar från</h3>
+  <p>Din hand först. Först när din hand är tom <em>och</em> draghögen är slut börjar du spela dina tre synliga kort. De kommer näst sist, och dina tre dolda kort kommer sist.</p>
+  <div class="callout">
+    <strong>Dolda kort är ett blint vågspel.</strong> Du vänder ett utan att veta vad det är. Om det visar sig vara ogiltigt på den aktuella högen tar du högen — med det kortet i den. Ingen kommer undan rent på slutet.
+  </div>
+
+  <h2>Stapling och bränning</h2>
+  <p>Har du fler än ett kort med samma värde? Lägg dem alla i samma tur. Så gör du dig av med handen snabbt, och så förbereder du också en bränning.</p>
+  <p><strong>Fyra kort med samma värde i rad bränner högen.</strong> Det spelar ingen roll om en spelare lade alla fyra eller om fyra spelare lade ett var. Högen tas bort ur spelet helt, och spelaren som fullbordade fyrtalet börjar om på en tom hög.</p>
+
+  <h2>Specialkorten</h2>
+  <p>Alla andra kort rankas efter sitt nummer, lågt till högt. Det här är de som ändrar reglerna:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Namn</th><th>Vad det gör</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>Vändningen</td><td>Efter en 4 måste nästa kort vara <strong>4 eller lägre</strong> — eller ett av specialkorten nedan. Det enda kortet som vänder upp och ner på hela spelet.</td></tr>
+        <tr><td>5</td><td>Stopp</td><td>Hoppar över nästa spelare. I ett spel med två spelare betyder det att du går igen.</td></tr>
+        <tr><td>6</td><td>Omvänd</td><td>Vänder spelriktningen.</td></tr>
+        <tr><td>11</td><td>Nollan</td><td>Kan läggas på vad som helst, och drar ner högen till noll igen — nästa spelare kan lägga vad de vill. Den bränner <em>inte</em> högen.</td></tr>
+        <tr><td>12</td><td>Bomben</td><td>Bränner högen ur spelet direkt, och du spelar igen på en tom hög. Det starkaste kortet i leken.</td></tr>
+        <tr><td>13</td><td>Det genomskinliga</td><td>Kan läggas på vad som helst, men ändrar inte värdet som ska slås. Nästa spelare måste fortfarande slå det som låg <em>underst</em>.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Du väljer en spelare, och <strong>de</strong> tar hela högen — om de inte har ett eget Hit Head-kort att kasta rakt tillbaka på dig. Det enda kortet som skickar skadan till en specifik person.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Vanliga frågor</h2>
+  <h3>Är Hit Head samma spel som Vändtia eller Shithead?</h3>
+  <p>Ja. Det är samma avläggningsspel som resenärer har spelat på vandrarhem i decennier, känt under olika namn i olika länder — Palace, Karma, Idiot och Shed på engelska, Vändtia i Sverige, Paskahousu i Finland. Hit Head är det spelet på Android.</p>
+  <h3>Hur många kan spela?</h3>
+  <p>Just nu erbjuder Hit Head bara matcher med 4 spelare — du och tre andra, mot appens botar, genom att skicka runt telefonen, eller online. Det finns för närvarande inget alternativ för 2 eller 3 spelare.</p>
+  <h3>Är det gratis?</h3>
+  <p>Ja. Det finns valfria köp av mynt och avatarer, men själva spelet är gratis.</p>
+  <h3>Om jag har ett kort jag kunde lägga lagligt, måste jag lägga det?</h3>
+  <p>Nej — du kan välja att ta högen istället, genom att trycka på kortet som ligger på bordet.</p>
+  <h3>Vad är skillnaden mellan Bomben och Hit Head-kortet?</h3>
+  <p>Bomben bränner högen ur spelet — ingen tar den. Hit Head-kortet ger istället hela högen till en spelare du väljer. Bomben är försvar, Hit Head-kortet är anfall.</p>
+  <h2>Mer om det ursprungliga spelet</h2>
+  <p>Hit Head är baserat på ett folkligt kortspel som spelas i många länder runt om i världen, av resenärer och spelare överallt. Det Hit Head gör är att ta alla dessa regler och förena dem till något enkelt, lätt att komma ihåg och lätt att spela. Om du vill ha den bredare historien är dessa värda att läsa:</p>
+  <h3>Källor</h3>
+  <ul>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (engelska)</li>
+    <li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%98%D7%94%D7%93" target="_blank" rel="noopener">ויקיפדיה — שיטהד</a> (hebreiska)</li>
+  </ul>
+  <h3>Regler och guider på andra ställen</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Guide till spel: hur man spelar Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — Hur man spelar Palace</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead-regler</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, resenärens kortspel</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — Hur man spelar världens bästa kortspel</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Bästa strategin för Vändtia</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">Reglerna för Shithead (blogg, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Spela Hit Head gratis på Google Play</a>
+  </div>
+  <a class="backlink" href="../">&larr; Tillbaka till Hit Head</a>
+</article>
+
+<!-- ============ SUOMI ============ -->
+<article id="content-fi">
+  <h1>Näin pelataan <span>Paskahousu</span> — täydelliset säännöt</h1>
+  <p class="lede">Tunnetaan myös nimillä Palace, Karma, Idiot, Shed, Boot, Ten-Two Slide, China Hand tai Vändtia. Yksi peli, tusina nimeä, ja jokainen vannoo että heidän hostellissaan pelattiin oikein. Nämä ovat säännöt sellaisina kuin Hit Head ne pelaa.</p>
+
+  <h2>Mitä tarvitset</h2>
+  <ul>
+    <li><strong>54 korttia</strong>, mukaan lukien neljä erikoiskorttia: Nolla, Läpinäkyvä, Pommi ja Hit Head.</li>
+    <li><strong>2–4 pelaajaa.</strong></li>
+  </ul>
+
+  <h2>Jako</h2>
+  <p>Jokainen pelaaja saa yhdeksän korttia, kolmessa kolmen ryhmässä:</p>
+  <ul>
+    <li><strong>3 piilossa</strong> — pöydällä kuvapuoli alaspäin. Kukaan ei katso näitä, ei edes sinä.</li>
+    <li><strong>3 näkyvissä</strong> — kuvapuoli ylöspäin, piilossa olevien päällä. Kaikki näkevät ne.</li>
+    <li><strong>3 kädessä</strong> — vain sinä näet ne.</li>
+  </ul>
+  <p>Loput muodostavat nostopakan.</p>
+
+  <h2>Tavoite</h2>
+  <p>Pääse eroon kaikista yhdeksästä kortistasi. Viimeinen pelaaja, jolla on vielä kortteja, häviää.</p>
+
+  <h2>Vuoro</h2>
+  <p>Pelaa kortti, joka on <strong>yhtä suuri tai suurempi</strong> kuin pinon päällimmäinen kortti. Nosta sitten kädessäsi kolmeen korttiin, niin kauan kuin nostopakkaa riittää.</p>
+  <p><strong>Et voi pelata? Otat koko pinon käteesi</strong>, ja seuraava pelaaja aloittaa tyhjältä pöydältä. Tämä on koko pelin jännite: jokainen pelaamasi kortti kasvattaa pinoa sille, joka jää siihen kiinni.</p>
+
+  <h3>Pelijärjestys</h3>
+  <p>Ensin kätesi. Vasta kun kätesi on tyhjä <em>ja</em> nostopakka on loppu, alat pelata kolmea näkyvää korttiasi. Ne tulevat toiseksi viimeisenä, ja kolme piilossa olevaa korttiasi viimeisenä.</p>
+  <div class="callout">
+    <strong>Piilossa olevat kortit ovat sokko-uhkapeliä.</strong> Käännät yhden tietämättä mikä se on. Jos se osoittautuu laittomaksi nykyisellä pinolla, otat pinon — kortti mukanaan. Kukaan ei pääse puhtaasti pois lopussa.
+  </div>
+
+  <h2>Pinoaminen ja polttaminen</h2>
+  <p>Onko sinulla useampi kortti samalla arvolla? Pelaa ne kaikki samalla vuorolla. Näin pääset eroon kädestä nopeasti, ja näin myös valmistelet polton.</p>
+  <p><strong>Neljä samanarvoista korttia peräkkäin polttaa pinon.</strong> Sillä ei ole väliä, laittoiko yksi pelaaja kaikki neljä vai lisäsikö neljä pelaajaa kukin yhden. Pino poistuu pelistä kokonaan, ja nelikon täydentänyt pelaaja aloittaa uudelleen tyhjältä pöydältä.</p>
+
+  <h2>Erikoiskortit</h2>
+  <p>Kaikki muut kortit järjestyvät numeronsa mukaan, matalasta korkeaan. Nämä ovat ne, jotka muuttavat sääntöjä:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kortti</th><th>Nimi</th><th>Mitä se tekee</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>Kääntäjä</td><td>Nelosen jälkeen seuraavan kortin täytyy olla <strong>4 tai pienempi</strong> — tai jokin alla olevista erikoiskorteista. Ainoa kortti, joka kääntää koko pelin ylösalaisin.</td></tr>
+        <tr><td>5</td><td>Pysäytys</td><td>Ohittaa seuraavan pelaajan. Kahden pelaajan pelissä tämä tarkoittaa, että pelaat uudelleen.</td></tr>
+        <tr><td>6</td><td>Käänteinen</td><td>Kääntää pelisuunnan.</td></tr>
+        <tr><td>11</td><td>Nolla</td><td>Voidaan pelata minkä tahansa päälle, ja pudottaa pinon takaisin nollaan — seuraava pelaaja voi pelata mitä haluaa. Se <em>ei</em> polta pinoa.</td></tr>
+        <tr><td>12</td><td>Pommi</td><td>Polttaa pinon pelistä välittömästi, ja pelaat uudelleen tyhjältä pöydältä. Pakan vahvin kortti.</td></tr>
+        <tr><td>13</td><td>Läpinäkyvä</td><td>Voidaan pelata minkä tahansa päälle, mutta ei muuta voitettavaa arvoa. Seuraavan pelaajan täytyy silti voittaa se, mikä oli sen <em>alla</em>.</td></tr>
+        <tr><td>14</td><td>Hit Head</td><td>Valitset pelaajan, ja <strong>hän</strong> ottaa koko pinon — ellei hänellä ole omaa Hit Head -korttia heittää suoraan takaisin sinulle. Ainoa kortti, joka siirtää vahingon tietylle henkilölle.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Usein kysytyt kysymykset</h2>
+  <h3>Onko Hit Head sama peli kuin Paskahousu tai Shithead?</h3>
+  <p>Kyllä. Se on sama korttipeli, jota matkailijat ovat pelanneet hostelleissa vuosikymmeniä, tunnettu eri nimillä eri maissa — Palace, Karma, Idiot ja Shed englanniksi, Vändtia Ruotsissa, Paskahousu Suomessa. Hit Head on se peli Androidilla.</p>
+  <h3>Kuinka monta ihmistä voi pelata?</h3>
+  <p>Juuri nyt Hit Head tarjoaa vain 4 pelaajan otteluita — sinä ja kolme muuta, sovelluksen botteja vastaan, puhelinta kierrättämällä, tai verkossa. Tällä hetkellä ei ole 2 tai 3 pelaajan vaihtoehtoa.</p>
+  <h3>Onko se ilmainen?</h3>
+  <p>Kyllä. Kolikoita ja hahmoja voi ostaa valinnaisesti, mutta itse peli on ilmainen.</p>
+  <h3>Jos minulla on kortti, jonka voisin laillisesti pelata, täytyykö minun pelata se?</h3>
+  <p>Ei — voit halutessasi ottaa pinon sen sijaan, koskettamalla pöydällä olevaa korttia.</p>
+  <h3>Mitä eroa on Pommilla ja Hit Head -kortilla?</h3>
+  <p>Pommi polttaa pinon pelistä — kukaan ei ota sitä. Hit Head -kortti sen sijaan antaa koko pinon valitsemallesi pelaajalle. Pommi on puolustusta, Hit Head -kortti on hyökkäystä.</p>
+  <h2>Lisää alkuperäisestä pelistä</h2>
+  <p>Hit Head perustuu kansanomaiseen korttipeliin, jota pelataan monissa maissa ympäri maailmaa, matkailijoiden ja pelaajien keskuudessa kaikkialla. Hit Head ottaa kaikki nämä säännöt ja yhdistää ne yksinkertaiseksi, helposti muistettavaksi ja helposti pelattavaksi kokonaisuudeksi. Jos laajempi tarina kiinnostaa, näitä kannattaa lukea:</p>
+  <h3>Lähteet</h3>
+  <ul>
+    <li><a href="https://fi.wikipedia.org/wiki/China_Hand" target="_blank" rel="noopener">Wikipedia — China Hand</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Shithead_(card_game)" target="_blank" rel="noopener">Wikipedia — Shithead (card game)</a> (englanniksi)</li>
+    <li><a href="https://sv.wikipedia.org/wiki/V%C3%A4ndtia" target="_blank" rel="noopener">Wikipedia — Vändtia</a> (ruotsiksi)</li>
+  </ul>
+  <h3>Säännöt ja oppaat muualla</h3>
+  <ul>
+    <li><a href="https://www.theguardian.com/lifeandstyle/2008/nov/22/rules-card-games-shithead" target="_blank" rel="noopener">The Guardian — Opas peleihin: kuinka pelata Shithead</a></li>
+    <li><a href="https://www.wikihow.com/Play-the-Palace-Card-Game" target="_blank" rel="noopener">wikiHow — Kuinka pelata Palace-korttipeliä</a></li>
+    <li><a href="https://gamerules.org/rules/shithead-card-game/" target="_blank" rel="noopener">gamerules.org — Shithead-säännöt</a></li>
+    <li><a href="https://adventuretravelwriter.com/china-hand-travelers-card-game-beat-card-games/" target="_blank" rel="noopener">Adventure Travel Writer — China Hand, matkailijoiden korttipeli</a></li>
+    <li><a href="https://medium.com/@brian_pritchett/how-to-play-the-best-card-game-in-the-world-f824a3df5af6" target="_blank" rel="noopener">Medium — Kuinka pelata maailman parasta korttipeliä</a></li>
+    <li><a href="https://www.quora.com/What-is-the-best-strategy-to-the-Swedish-card-game-v%C3%A4ndtia-or-shit-head-in-English" target="_blank" rel="noopener">Quora — Paras strategia Vändtialle</a></li>
+    <li><a href="https://tomhares.wordpress.com/2007/10/25/the-rules-of-shithead/" target="_blank" rel="noopener">Shithead-säännöt (blogi, 2007)</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; Pelaa Hit Head ilmaiseksi Google Playssa</a>
+  </div>
+  <a class="backlink" href="../">&larr; Takaisin Hit Headiin</a>
+</article>
+
 </main>
 
 <footer><a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Hit Head on Facebook</a> &nbsp;&middot;&nbsp; &copy; 2026 Dan Peer</footer>
 
 <script>
 function setLang(lang) {
-  var he = lang === 'he';
-  document.getElementById('content-en').style.display = he ? 'none' : 'block';
-  document.getElementById('content-he').style.display = he ? 'block' : 'none';
-  document.documentElement.lang = he ? 'he' : 'en';
-  document.body.dir = he ? 'rtl' : 'ltr';
-  document.getElementById('btn-en').classList.toggle('active', !he);
-  document.getElementById('btn-he').classList.toggle('active', he);
+  ['en', 'he', 'sv', 'fi'].forEach(function (l) {
+    document.getElementById('content-' + l).style.display = (l === lang) ? 'block' : 'none';
+    document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+  });
+  document.documentElement.lang = lang;
+  document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
   try { localStorage.setItem('hithead_lang', lang); } catch (e) {}
 }
 (function () {
   try {
     var saved = localStorage.getItem('hithead_lang');
-    if (saved === 'he') setLang('he');
+    if (saved && saved !== 'en') setLang(saved);
   } catch (e) {}
 })();
 </script>
