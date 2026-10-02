@@ -754,8 +754,8 @@
   </div>
 </section>
 
-<!-- NO SHIT: Hebrew-only content, shown under every language on purpose -->
-<section id="noshit" dir="rtl" lang="he">
+<!-- NO SHIT: Hebrew-only content - shown only when the Hebrew language is selected (setLang) -->
+<section id="noshit" dir="rtl" lang="he" hidden>
   <div class="section-inner noshit-box">
     <img src="images/noshit-box.jpg" alt="אריזת משחק הקלפים נו שיט" />
     <div class="noshit-text">
@@ -775,7 +775,7 @@
   <p>
     <a href="#privacy" data-i18n="nav_privacy">Privacy Policy</a>
     <a href="#support" data-i18n="nav_support">Support</a>
-    <a id="noshit-link" href="noshit/">נו שיט &mdash; משחק הקלפים</a>
+    <a id="noshit-link" href="noshit/" hidden>נו שיט &mdash; משחק הקלפים</a>
     <a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Facebook</a>
     <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
   </p>
@@ -1367,6 +1367,11 @@ function setLang(lang) {
     }
   });
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+  // Hebrew-only: the No Shit section and its footer link show for Hebrew and nothing else
+  ['noshit', 'noshit-link'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.hidden = lang !== 'he';
+  });
   ['en', 'he', 'sv', 'fi', 'no', 'da', 'de', 'nl'].forEach(function(l) {
     var btn = document.getElementById('btn-' + l);
     if (btn) btn.classList.toggle('active', lang === l);
