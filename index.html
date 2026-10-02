@@ -155,6 +155,15 @@
     }
 
     /* ── SECTIONS ── */
+    .noshit-box { display: flex; gap: 36px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .noshit-box img {
+      width: 220px; max-width: 100%; height: auto; border-radius: 12px;
+      border: 2px solid #2a2a2a; box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    }
+    .noshit-text { flex: 1 1 280px; max-width: 520px; }
+    .noshit-text .section-title { margin-bottom: 12px; }
+    .noshit-text .section-title span { color: var(--gold); }
+    .noshit-text p { margin-bottom: 20px; color: var(--text); }
     section { padding: 96px 24px; }
     .section-inner { max-width: 960px; margin: 0 auto; }
     .section-tag {
@@ -745,6 +754,18 @@
   </div>
 </section>
 
+<!-- NO SHIT: Hebrew-only content, shown under every language on purpose -->
+<section id="noshit" dir="rtl" lang="he">
+  <div class="section-inner noshit-box">
+    <img src="images/noshit-box.jpg" alt="אריזת משחק הקלפים נו שיט" />
+    <div class="noshit-text">
+      <h2 class="section-title">נו <span>שיט</span> &mdash; חפיסת הקלפים</h2>
+      <p>חבילת קלפים מקוריים של נושיט, המבוסס על שיטהד. קלפים למבוגרים בלבד.</p>
+      <a class="btn-primary" href="noshit/">לפרטים ולרכישה</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
@@ -754,7 +775,7 @@
   <p>
     <a href="#privacy" data-i18n="nav_privacy">Privacy Policy</a>
     <a href="#support" data-i18n="nav_support">Support</a>
-    <a id="noshit-link" href="noshit/" hidden>נו שיט &mdash; משחק הקלפים</a>
+    <a id="noshit-link" href="noshit/">נו שיט &mdash; משחק הקלפים</a>
     <a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Facebook</a>
     <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
   </p>
@@ -1346,8 +1367,6 @@ function setLang(lang) {
     }
   });
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
-  var nsLink = document.getElementById('noshit-link');
-  if (nsLink) nsLink.hidden = lang !== 'he';   // Hebrew-only page, so the link shows for Hebrew only
   ['en', 'he', 'sv', 'fi', 'no', 'da', 'de', 'nl'].forEach(function(l) {
     var btn = document.getElementById('btn-' + l);
     if (btn) btn.classList.toggle('active', lang === l);
