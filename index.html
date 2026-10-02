@@ -754,6 +754,7 @@
   <p>
     <a href="#privacy" data-i18n="nav_privacy">Privacy Policy</a>
     <a href="#support" data-i18n="nav_support">Support</a>
+    <a id="noshit-link" href="noshit/" hidden>נו שיט &mdash; משחק הקלפים</a>
     <a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Facebook</a>
     <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
   </p>
@@ -1345,6 +1346,8 @@ function setLang(lang) {
     }
   });
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+  var nsLink = document.getElementById('noshit-link');
+  if (nsLink) nsLink.hidden = lang !== 'he';   // Hebrew-only page, so the link shows for Hebrew only
   ['en', 'he', 'sv', 'fi', 'no', 'da', 'de', 'nl'].forEach(function(l) {
     var btn = document.getElementById('btn-' + l);
     if (btn) btn.classList.toggle('active', lang === l);

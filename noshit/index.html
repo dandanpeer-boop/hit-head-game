@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>נו שיט — משחק קלפים | Hit Head</title>
+  <meta name="description" content="נו שיט (No Shit) — משחק קלפים לשניים עד חמישה שחקנים, מגיל 15. מידע על רכישת החפיסה." />
+  <link rel="canonical" href="https://dandanpeer-boop.github.io/hit-head-game/noshit/" />
+
+  <meta property="og:site_name" content="Hit Head" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dandanpeer-boop.github.io/hit-head-game/noshit/" />
+  <meta property="og:title" content="נו שיט — משחק קלפים" />
+  <meta property="og:description" content="משחק קלפים לשניים עד חמישה שחקנים, מגיל 15." />
+  <meta property="og:image" content="https://dandanpeer-boop.github.io/hit-head-game/images/noshit-box.jpg" />
+  <meta name="theme-color" content="#e03030" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #e03030; --dark: #1a1a1a; --darker: #111111;
+      --gold: #d4a017; --text: #f0f0f0; --muted: #999; --card-bg: #222;
+    }
+    body {
+      font-family: 'Heebo', 'Segoe UI', system-ui, sans-serif;
+      background: var(--darker); color: var(--text); line-height: 1.75;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 14px 32px; display: flex; align-items: center;
+      justify-content: space-between; z-index: 100; border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; direction: ltr; }
+    .nav-logo:hover { text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-logo-text { font-size: 1.4rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; }
+    .nav-logo-text span { color: var(--red); }
+    .nav-back { font-size: 0.95rem; color: var(--muted); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 120px 24px 90px; }
+    .product {
+      display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .product img {
+      width: 300px; max-width: 100%; height: auto; border-radius: 14px;
+      border: 2px solid #2a2a2a; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .info { flex: 1 1 320px; min-width: 260px; }
+    h1 { font-size: 2.6rem; font-weight: 900; line-height: 1.2; margin-bottom: 6px; }
+    h1 span { color: var(--gold); }
+    .lede { color: var(--muted); font-size: 1.1rem; margin-bottom: 22px; }
+    .facts { list-style: none; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+    .facts li {
+      background: var(--card-bg); border: 1px solid #333; border-radius: 999px;
+      padding: 6px 16px; font-size: 0.98rem;
+    }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 26px; border-radius: 10px;
+      font-weight: 700; font-size: 1.05rem; border: 2px solid transparent;
+    }
+    .btn:hover { text-decoration: none; }
+    .btn-buy { background: var(--red); color: #fff; }
+    .btn-buy[aria-disabled="true"] {
+      background: #3a3a3a; color: #aaa; cursor: not-allowed; pointer-events: none;
+    }
+    .btn-fb { border-color: var(--gold); color: var(--gold); }
+    .btn-fb:hover { background: rgba(212,160,23,0.12); }
+    .note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
+
+    .hithead {
+      margin-top: 70px; padding: 24px; border: 1px solid #2a2a2a; border-radius: 14px;
+      background: var(--card-bg); text-align: center;
+    }
+    .hithead p { color: var(--muted); }
+    .hithead a { font-weight: 700; }
+
+    footer {
+      text-align: center; padding: 30px 20px; border-top: 1px solid #2a2a2a;
+      color: var(--muted); font-size: 0.9rem;
+    }
+    footer a { margin: 0 10px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 18px; }
+      main { padding-top: 100px; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo" aria-label="Hit Head — דף הבית">
+    <img src="../images/icon.png" alt="Hit Head" />
+    <span class="nav-logo-text">HIT <span>HEAD</span></span>
+  </a>
+  <a class="nav-back" href="../">חזרה לאתר</a>
+</nav>
+
+<main>
+  <section class="product">
+    <img src="../images/noshit-box.jpg" alt="אריזת משחק הקלפים נו שיט" />
+    <div class="info">
+      <h1>נו <span>שיט</span></h1>
+      <p class="lede">משחק קלפים (No Shit &mdash; super card game)</p>
+      <ul class="facts">
+        <li>2&ndash;5 שחקנים</li>
+        <li>גיל 15 ומעלה</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-buy" href="mailto:hithead.game@gmail.com?subject=%D7%94%D7%96%D7%9E%D7%A0%D7%AA%20%D7%97%D7%A4%D7%99%D7%A1%D7%AA%20%D7%A0%D7%95%20%D7%A9%D7%99%D7%98">לרכישה &mdash; שלחו לנו מייל</a>
+        <a class="btn btn-fb" href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a>
+      </div>
+      <p class="note">לרכישה כתבו לנו ל-<bdi>hithead.game@gmail.com</bdi> ונחזור אליכם.</p>
+      <p class="note">האתר <bdi>noshit.co.il</bdi> כבר לא רלוונטי.</p>
+    </div>
+  </section>
+
+  <section class="hithead">
+    <p>מכירים את <bdi>Hit Head</bdi>? משחק הקלפים שלנו לאנדרואיד, חינם ב-<bdi>Google Play</bdi>.</p>
+    <p style="margin-top:8px;"><a href="../">לעמוד של המשחק</a></p>
+  </section>
+</main>
+
+<footer>
+  <a href="../privacy-policy/">מדיניות פרטיות</a>
+  <a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">פייסבוק</a>
+  <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
+</footer>
+
+</body>
+</html>
