@@ -1388,10 +1388,22 @@ function setLang(lang) {
 }
 
 (function() {
-  try {
-    var saved = localStorage.getItem('hithead_lang');
-    if (saved && saved !== 'en') setLang(saved);
-  } catch(e) {}
+  var saved = null;
+  try { saved = localStorage.getItem('hithead_lang'); } catch(e) {}
+  // A language the visitor picked earlier always wins (including an explicit EN)
+  if (saved) { if (saved !== 'en') setLang(saved); return; }
+  // First visit: follow the browser/phone language, Hebrew included (legacy code 'iw')
+  var map = { he: 'he', iw: 'he', sv: 'sv', fi: 'fi', no: 'no', nb: 'no', nn: 'no', da: 'da', de: 'de', nl: 'nl' };
+  var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+  for (var i = 0; i < prefs.length; i++) {
+    var l = map[String(prefs[i]).toLowerCase().split('-')[0]];
+    if (l) {
+      setLang(l);
+      // an automatic choice is not remembered as the visitor's own pick
+      try { localStorage.removeItem('hithead_lang'); } catch(e) {}
+      return;
+    }
+  }
 })();
 </script>
 
