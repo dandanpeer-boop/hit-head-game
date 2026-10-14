@@ -107,6 +107,8 @@
     /* special-card pictures in the card table (replace the placeholder numbers 11-14) */
     td.card-cell { width: 70px; }
     td.card-cell img { display: block; width: 46px; height: auto; }
+    /* small card-corner numbers used inside a sentence */
+    img.num-icon { display: inline; height: 1.5em; width: auto; vertical-align: -0.4em; margin: 0 2px; }
     /* plain number cards row (1,2,3,7-10) */
     .plain-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 28px; }
     .plain-cards figure { margin: 0; width: 64px; text-align: center; }
@@ -348,7 +350,7 @@
   <p>להיפטר מכל תשעת הקלפים שלכם. השחקן האחרון שנשאר עם קלפים ביד מפסיד.</p>
 
   <h2>תחילת משחק</h2>
-  <p>מי שיש לו את הקלף הנמוך ביותר מתחיל במשחק. הקלף 1 הוא הכי נמוך והקלף עשר הוא הכי גבוה.</p>
+  <p>מי שיש לו את הקלף הנמוך ביותר מתחיל במשחק. הקלף <img class="num-icon" src="cards/num-1.webp" width="31" height="55" alt="1" /> הוא הכי נמוך והקלף <img class="num-icon" src="cards/num-10.webp" width="49" height="54" alt="10" /> הוא הכי גבוה.</p>
 
   <h2>הכלל המרכזי במשחק</h2>
   <p>בתורכם, מניחים קלף שווה או גבוה מהקלף שנמצא בראש הערימה. כל עוד יש קופה, היא תשלים לכם אוטומטית את מספר הקלפים ביד לשלושה.</p>
