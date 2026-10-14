@@ -104,6 +104,9 @@
       h1 { font-size: 1.7rem; }
     }
   
+    /* special-card pictures in the card table (replace the placeholder numbers 11-14) */
+    td.card-cell { width: 70px; }
+    td.card-cell img { display: block; width: 46px; height: auto; }
     /* [visual guide] 27 step pictures from the app (Settings, Instructions) */
     #visual-guide { max-width: 980px; margin: 0 auto; padding: 8px 24px 48px; }
     #visual-guide h2 { margin-bottom: 6px; }
@@ -273,10 +276,10 @@
         <tr><td>4</td><td>The turn-around</td><td>After a 4, the next card must be a <strong>4 or lower</strong> — or one of the special cards below. The one card that inverts the whole game.</td></tr>
         <tr><td>5</td><td>Stop</td><td>Skips the next player. In a two-player game that means you go again.</td></tr>
         <tr><td>6</td><td>Reverse</td><td>Flips the direction of play.</td></tr>
-        <tr><td>11</td><td>Zero</td><td>Playable on anything, and drops the pile back to zero — the next player can play whatever they like. It does <em>not</em> burn the pile.</td></tr>
-        <tr><td>12</td><td>Bomb</td><td>Burns the pile out of the game instantly, and you play again on an empty pile. The strongest card in the deck.</td></tr>
-        <tr><td>13</td><td>Transparent</td><td>Playable on anything, but it does not change the value to beat. The next player still has to beat whatever was <em>underneath</em> it.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>You choose a player, and <strong>they</strong> take the whole pile — unless they hold a Hit Head card of their own to throw straight back at you. The only card that hands the damage to a specific person.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Zero" loading="lazy" /></td><td>Zero</td><td>Playable on anything, and drops the pile back to zero — the next player can play whatever they like. It does <em>not</em> burn the pile.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomb" loading="lazy" /></td><td>Bomb</td><td>Burns the pile out of the game instantly, and you play again on an empty pile. The strongest card in the deck.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Transparent" loading="lazy" /></td><td>Transparent</td><td>Playable on anything, but it does not change the value to beat. The next player still has to beat whatever was <em>underneath</em> it.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>You choose a player, and <strong>they</strong> take the whole pile — unless they hold a Hit Head card of their own to throw straight back at you. The only card that hands the damage to a specific person.</td></tr>
       </tbody>
     </table>
   </div>
@@ -362,10 +365,10 @@
         <tr><td>4</td><td>ההיפוך</td><td>אחרי 4, הקלף הבא חייב להיות <strong>4 ומטה</strong> — או אחד מהקלפים המיוחדים שמופיעים למטה. הקלף היחיד שהופך את כל המשחק.</td></tr>
         <tr><td>5</td><td>עצור</td><td>מדלג על השחקן הבא. במשחק של שניים זה אומר שאתה משחק שוב.</td></tr>
         <tr><td>6</td><td>היפוך כיוון</td><td>מחליף את כיוון המשחק.</td></tr>
-        <tr><td>11</td><td>מאפס</td><td>אפשר להניח על כל דבר, והוא מוריד את הערימה חזרה לאפס — השחקן הבא יכול לשים מה שהוא רוצה. הוא <em>לא</em> שורף את הערימה.</td></tr>
-        <tr><td>12</td><td>פצצה</td><td>שורפת את הערימה מחוץ למשחק מיד, ואתה משחק שוב מערימה ריקה. הקלף החזק בחפיסה.</td></tr>
-        <tr><td>13</td><td>שקוף</td><td>אפשר להניח על כל דבר, אבל הוא לא משנה את הערך שצריך לנצח. השחקן הבא עדיין חייב לגבור על מה שהיה <em>מתחת</em> אליו.</td></tr>
-        <tr><td>14</td><td>היט הד</td><td>אתה בוחר שחקן, <strong>והוא</strong> לוקח את כל הערימה — אלא אם יש לו קלף היט הד משלו כדי להחזיר לך אותה ישר. הקלף היחיד שמעביר את הנזק לאדם מסוים.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="מאפס" loading="lazy" /></td><td>מאפס</td><td>אפשר להניח על כל דבר, והוא מוריד את הערימה חזרה לאפס — השחקן הבא יכול לשים מה שהוא רוצה. הוא <em>לא</em> שורף את הערימה.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="פצצה" loading="lazy" /></td><td>פצצה</td><td>שורפת את הערימה מחוץ למשחק מיד, ואתה משחק שוב מערימה ריקה. הקלף החזק בחפיסה.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="שקוף" loading="lazy" /></td><td>שקוף</td><td>אפשר להניח על כל דבר, אבל הוא לא משנה את הערך שצריך לנצח. השחקן הבא עדיין חייב לגבור על מה שהיה <em>מתחת</em> אליו.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="היט הד" loading="lazy" /></td><td>היט הד</td><td>אתה בוחר שחקן, <strong>והוא</strong> לוקח את כל הערימה — אלא אם יש לו קלף היט הד משלו כדי להחזיר לך אותה ישר. הקלף היחיד שמעביר את הנזק לאדם מסוים.</td></tr>
       </tbody>
     </table>
   </div>
@@ -451,10 +454,10 @@
         <tr><td>4</td><td>Vändningen</td><td>Efter en 4 måste nästa kort vara <strong>4 eller lägre</strong> — eller ett av specialkorten nedan. Det enda kortet som vänder upp och ner på hela spelet.</td></tr>
         <tr><td>5</td><td>Stopp</td><td>Hoppar över nästa spelare. I ett spel med två spelare betyder det att du går igen.</td></tr>
         <tr><td>6</td><td>Omvänd</td><td>Vänder spelriktningen.</td></tr>
-        <tr><td>11</td><td>Nollan</td><td>Kan läggas på vad som helst, och drar ner högen till noll igen — nästa spelare kan lägga vad de vill. Den bränner <em>inte</em> högen.</td></tr>
-        <tr><td>12</td><td>Bomben</td><td>Bränner högen ur spelet direkt, och du spelar igen på en tom hög. Det starkaste kortet i leken.</td></tr>
-        <tr><td>13</td><td>Det genomskinliga</td><td>Kan läggas på vad som helst, men ändrar inte värdet som ska slås. Nästa spelare måste fortfarande slå det som låg <em>underst</em>.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Du väljer en spelare, och <strong>de</strong> tar hela högen — om de inte har ett eget Hit Head-kort att kasta rakt tillbaka på dig. Det enda kortet som skickar skadan till en specifik person.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nollan" loading="lazy" /></td><td>Nollan</td><td>Kan läggas på vad som helst, och drar ner högen till noll igen — nästa spelare kan lägga vad de vill. Den bränner <em>inte</em> högen.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Bränner högen ur spelet direkt, och du spelar igen på en tom hög. Det starkaste kortet i leken.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det genomskinliga" loading="lazy" /></td><td>Det genomskinliga</td><td>Kan läggas på vad som helst, men ändrar inte värdet som ska slås. Nästa spelare måste fortfarande slå det som låg <em>underst</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Du väljer en spelare, och <strong>de</strong> tar hela högen — om de inte har ett eget Hit Head-kort att kasta rakt tillbaka på dig. Det enda kortet som skickar skadan till en specifik person.</td></tr>
       </tbody>
     </table>
   </div>
@@ -540,10 +543,10 @@
         <tr><td>4</td><td>Kääntäjä</td><td>Nelosen jälkeen seuraavan kortin täytyy olla <strong>4 tai pienempi</strong> — tai jokin alla olevista erikoiskorteista. Ainoa kortti, joka kääntää koko pelin ylösalaisin.</td></tr>
         <tr><td>5</td><td>Pysäytys</td><td>Ohittaa seuraavan pelaajan. Kahden pelaajan pelissä tämä tarkoittaa, että pelaat uudelleen.</td></tr>
         <tr><td>6</td><td>Käänteinen</td><td>Kääntää pelisuunnan.</td></tr>
-        <tr><td>11</td><td>Nollakortti</td><td>Voidaan pelata minkä tahansa päälle, ja pudottaa pinon takaisin nollaan — seuraava pelaaja voi pelata mitä haluaa. Se <em>ei</em> polta pinoa.</td></tr>
-        <tr><td>12</td><td>Pommi</td><td>Polttaa pinon pelistä välittömästi, ja pelaat uudelleen tyhjältä pöydältä. Pakan vahvin kortti.</td></tr>
-        <tr><td>13</td><td>Läpinäkyvä</td><td>Voidaan pelata minkä tahansa päälle, mutta ei muuta voitettavaa arvoa. Seuraavan pelaajan täytyy silti voittaa se, mikä oli sen <em>alla</em>.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Valitset pelaajan, ja <strong>hän</strong> ottaa koko pinon — ellei hänellä ole omaa Hit Head -korttia heittää suoraan takaisin sinulle. Ainoa kortti, joka siirtää vahingon tietylle henkilölle.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nollakortti" loading="lazy" /></td><td>Nollakortti</td><td>Voidaan pelata minkä tahansa päälle, ja pudottaa pinon takaisin nollaan — seuraava pelaaja voi pelata mitä haluaa. Se <em>ei</em> polta pinoa.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Pommi" loading="lazy" /></td><td>Pommi</td><td>Polttaa pinon pelistä välittömästi, ja pelaat uudelleen tyhjältä pöydältä. Pakan vahvin kortti.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Läpinäkyvä" loading="lazy" /></td><td>Läpinäkyvä</td><td>Voidaan pelata minkä tahansa päälle, mutta ei muuta voitettavaa arvoa. Seuraavan pelaajan täytyy silti voittaa se, mikä oli sen <em>alla</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Valitset pelaajan, ja <strong>hän</strong> ottaa koko pinon — ellei hänellä ole omaa Hit Head -korttia heittää suoraan takaisin sinulle. Ainoa kortti, joka siirtää vahingon tietylle henkilölle.</td></tr>
       </tbody>
     </table>
   </div>
@@ -629,10 +632,10 @@
         <tr><td>4</td><td>Vendingen</td><td>Etter en 4 må neste kort være <strong>4 eller lavere</strong> — eller et av spesialkortene under. Det eneste kortet som snur hele spillet på hodet.</td></tr>
         <tr><td>5</td><td>Stopp</td><td>Hopper over neste spiller. I et spill med to spillere betyr det at du går igjen.</td></tr>
         <tr><td>6</td><td>Reverser</td><td>Snur spillretningen.</td></tr>
-        <tr><td>11</td><td>Nullkortet</td><td>Kan legges på hva som helst, og trekker bunken tilbake til null — neste spiller kan legge hva de vil. Det brenner <em>ikke</em> bunken.</td></tr>
-        <tr><td>12</td><td>Bomben</td><td>Brenner bunken ut av spillet umiddelbart, og du spiller igjen på en tom bunke. Det sterkeste kortet i stokken.</td></tr>
-        <tr><td>13</td><td>Det gjennomsiktige</td><td>Kan legges på hva som helst, men endrer ikke verdien som skal slås. Neste spiller må fortsatt slå det som lå <em>under</em>.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Du velger en spiller, og <strong>de</strong> tar hele bunken — med mindre de har et eget Hit Head-kort å kaste rett tilbake til deg. Det eneste kortet som sender skaden til en bestemt person.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nullkortet" loading="lazy" /></td><td>Nullkortet</td><td>Kan legges på hva som helst, og trekker bunken tilbake til null — neste spiller kan legge hva de vil. Det brenner <em>ikke</em> bunken.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Brenner bunken ut av spillet umiddelbart, og du spiller igjen på en tom bunke. Det sterkeste kortet i stokken.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det gjennomsiktige" loading="lazy" /></td><td>Det gjennomsiktige</td><td>Kan legges på hva som helst, men endrer ikke verdien som skal slås. Neste spiller må fortsatt slå det som lå <em>under</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Du velger en spiller, og <strong>de</strong> tar hele bunken — med mindre de har et eget Hit Head-kort å kaste rett tilbake til deg. Det eneste kortet som sender skaden til en bestemt person.</td></tr>
       </tbody>
     </table>
   </div>
@@ -718,10 +721,10 @@
         <tr><td>4</td><td>Vendingen</td><td>Efter en 4 skal næste kort være <strong>4 eller lavere</strong> — eller et af specialkortene nedenfor. Det eneste kort, der vender hele spillet på hovedet.</td></tr>
         <tr><td>5</td><td>Stop</td><td>Springer næste spiller over. I et spil med to spillere betyder det, at du går igen.</td></tr>
         <tr><td>6</td><td>Vend om</td><td>Vender spilretningen.</td></tr>
-        <tr><td>11</td><td>Nulkortet</td><td>Kan lægges på hvad som helst, og trækker bunken tilbage til nul — næste spiller kan lægge, hvad de vil. Det brænder <em>ikke</em> bunken.</td></tr>
-        <tr><td>12</td><td>Bomben</td><td>Brænder bunken ud af spillet med det samme, og du spiller igen på en tom bunke. Det stærkeste kort i spillet.</td></tr>
-        <tr><td>13</td><td>Det gennemsigtige</td><td>Kan lægges på hvad som helst, men ændrer ikke værdien, der skal slås. Næste spiller skal stadig slå det, der lå <em>under</em>.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Du vælger en spiller, og <strong>de</strong> tager hele bunken — medmindre de har deres eget Hit Head-kort at kaste lige tilbage til dig. Det eneste kort, der sender skaden til en bestemt person.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nulkortet" loading="lazy" /></td><td>Nulkortet</td><td>Kan lægges på hvad som helst, og trækker bunken tilbage til nul — næste spiller kan lægge, hvad de vil. Det brænder <em>ikke</em> bunken.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Brænder bunken ud af spillet med det samme, og du spiller igen på en tom bunke. Det stærkeste kort i spillet.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det gennemsigtige" loading="lazy" /></td><td>Det gennemsigtige</td><td>Kan lægges på hvad som helst, men ændrer ikke værdien, der skal slås. Næste spiller skal stadig slå det, der lå <em>under</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Du vælger en spiller, og <strong>de</strong> tager hele bunken — medmindre de har deres eget Hit Head-kort at kaste lige tilbage til dig. Det eneste kort, der sender skaden til en bestemt person.</td></tr>
       </tbody>
     </table>
   </div>
@@ -807,10 +810,10 @@
         <tr><td>4</td><td>Die Umkehrung</td><td>Nach einer 4 muss die nächste Karte <strong>eine 4 oder niedriger</strong> sein — oder eine der unten stehenden Sonderkarten. Die einzige Karte, die das ganze Spiel umdreht.</td></tr>
         <tr><td>5</td><td>Stopp</td><td>Überspringt den nächsten Spieler. Bei zwei Spielern heißt das, du bist noch einmal dran.</td></tr>
         <tr><td>6</td><td>Richtungswechsel</td><td>Kehrt die Spielrichtung um.</td></tr>
-        <tr><td>11</td><td>Die Nullkarte</td><td>Kann auf alles gelegt werden und setzt den Stapel zurück auf null — der nächste Spieler kann legen, was er will. Sie verbrennt den Stapel <em>nicht</em>.</td></tr>
-        <tr><td>12</td><td>Die Bombe</td><td>Verbrennt den Stapel sofort aus dem Spiel, und du bist erneut dran mit einem leeren Stapel. Die stärkste Karte im Deck.</td></tr>
-        <tr><td>13</td><td>Das Transparente</td><td>Kann auf alles gelegt werden, ändert aber nicht den zu schlagenden Wert. Der nächste Spieler muss immer noch das schlagen, was <em>darunter</em> lag.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Du wählst einen Spieler, und <strong>er</strong> nimmt den ganzen Stapel — es sei denn, er hat selbst eine Hit-Head-Karte, um sie direkt an dich zurückzuwerfen. Die einzige Karte, die den Schaden an eine bestimmte Person weitergibt.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Die Nullkarte" loading="lazy" /></td><td>Die Nullkarte</td><td>Kann auf alles gelegt werden und setzt den Stapel zurück auf null — der nächste Spieler kann legen, was er will. Sie verbrennt den Stapel <em>nicht</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Die Bombe" loading="lazy" /></td><td>Die Bombe</td><td>Verbrennt den Stapel sofort aus dem Spiel, und du bist erneut dran mit einem leeren Stapel. Die stärkste Karte im Deck.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Das Transparente" loading="lazy" /></td><td>Das Transparente</td><td>Kann auf alles gelegt werden, ändert aber nicht den zu schlagenden Wert. Der nächste Spieler muss immer noch das schlagen, was <em>darunter</em> lag.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Du wählst einen Spieler, und <strong>er</strong> nimmt den ganzen Stapel — es sei denn, er hat selbst eine Hit-Head-Karte, um sie direkt an dich zurückzuwerfen. Die einzige Karte, die den Schaden an eine bestimmte Person weitergibt.</td></tr>
       </tbody>
     </table>
   </div>
@@ -896,10 +899,10 @@
         <tr><td>4</td><td>De omkeer</td><td>Na een 4 moet de volgende kaart <strong>een 4 of lager</strong> zijn — of een van de speciale kaarten hieronder. De enige kaart die het hele spel omdraait.</td></tr>
         <tr><td>5</td><td>Stop</td><td>Slaat de volgende speler over. Bij twee spelers betekent dat dat jij opnieuw aan de beurt bent.</td></tr>
         <tr><td>6</td><td>Omkering</td><td>Draait de speelrichting om.</td></tr>
-        <tr><td>11</td><td>De Nulkaart</td><td>Kan op alles gelegd worden en zet de stapel terug op nul — de volgende speler mag spelen wat hij wil. Hij verbrandt de stapel <em>niet</em>.</td></tr>
-        <tr><td>12</td><td>De Bom</td><td>Verbrandt de stapel meteen uit het spel, en jij bent opnieuw aan de beurt met een lege stapel. De sterkste kaart in het spel.</td></tr>
-        <tr><td>13</td><td>De Transparante kaart</td><td>Kan op alles gelegd worden, maar verandert de te verslaan waarde niet. De volgende speler moet nog steeds verslaan wat <em>eronder</em> lag.</td></tr>
-        <tr><td>14</td><td>Hit Head</td><td>Je kiest een speler, en <strong>die</strong> neemt de hele stapel — tenzij hij zelf een Hit Head-kaart heeft om hem direct naar jou terug te gooien. De enige kaart die de schade naar een specifieke persoon stuurt.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="De Nulkaart" loading="lazy" /></td><td>De Nulkaart</td><td>Kan op alles gelegd worden en zet de stapel terug op nul — de volgende speler mag spelen wat hij wil. Hij verbrandt de stapel <em>niet</em>.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="De Bom" loading="lazy" /></td><td>De Bom</td><td>Verbrandt de stapel meteen uit het spel, en jij bent opnieuw aan de beurt met een lege stapel. De sterkste kaart in het spel.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="De Transparante kaart" loading="lazy" /></td><td>De Transparante kaart</td><td>Kan op alles gelegd worden, maar verandert de te verslaan waarde niet. De volgende speler moet nog steeds verslaan wat <em>eronder</em> lag.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Je kiest een speler, en <strong>die</strong> neemt de hele stapel — tenzij hij zelf een Hit Head-kaart heeft om hem direct naar jou terug te gooien. De enige kaart die de schade naar een specifieke persoon stuurt.</td></tr>
       </tbody>
     </table>
   </div>
