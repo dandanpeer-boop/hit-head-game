@@ -107,6 +107,11 @@
     /* special-card pictures in the card table (replace the placeholder numbers 11-14) */
     td.card-cell { width: 70px; }
     td.card-cell img { display: block; width: 46px; height: auto; }
+    /* plain number cards row (1,2,3,7-10) */
+    .plain-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 28px; }
+    .plain-cards figure { margin: 0; width: 64px; text-align: center; }
+    .plain-cards img { display: block; width: 100%; height: auto; }
+    .plain-cards figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
     /* [visual guide] 27 step pictures from the app (Settings, Instructions) */
     #visual-guide { max-width: 980px; margin: 0 auto; padding: 8px 24px 48px; }
     #visual-guide h2 { margin-bottom: 6px; }
@@ -259,8 +264,9 @@
   <p>Holding more than one card of the same value? Play them all in the same turn. That is how you dump a hand fast, and it is also how you set up a burn.</p>
   <p><strong>Four cards of the same value in a row burn the pile.</strong> It does not matter whether one player played all four or four players each contributed one. The pile is removed from the game entirely, and the player who completed the four gets an extra turn.</p>
 
-  <h2>The special cards</h2>
-  <p>These are special cards with an additional function:</p>
+  <h2>The game cards</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Number cards with an extra function:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Card</th><th>Name</th><th>What it does</th></tr></thead>
@@ -268,9 +274,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - The turn-around" loading="lazy" /></td><td>The turn-around</td><td>Played this card? The player after you can only play cards with a value of <strong>4 or lower</strong> (4, 3, 2, 1) or one of the special cards (Transparent, Zero, Bomb or Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stop" loading="lazy" /></td><td>Stop</td><td>Skips the next player. If you play more than one, players are skipped accordingly.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Reverse" loading="lazy" /></td><td>Reverse</td><td>Flips the direction of play.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>The strongest cards in the game — they can be played on any card:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Card</th><th>Name</th><th>What it does</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Zero" loading="lazy" /></td><td>Zero</td><td>Can be played on any card, and drops the pile back to zero — the next player can play whatever they like.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomb" loading="lazy" /></td><td>Bomb</td><td>Blows up the pile and removes it from the game. Whoever played it gets an extra turn and can play any card they like.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Transparent" loading="lazy" /></td><td>Transparent</td><td>Can be played on any card. As its name suggests, it keeps the value of the card it was placed on. The next player goes by the card underneath the Transparent.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomb" loading="lazy" /></td><td>Bomb</td><td>Blows up the pile and removes it from the game. Whoever played it gets an extra turn and can play any card they like.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>The strongest card in the game. There are only two of them. Whoever plays it can give the pile that has built up on the table to one of the opponents, preferably the one who is about to win. But beware: if the opponent you gave the cards to also holds a Hit Head card, they can take revenge and hand the cards right back to you. After using the joker you get an extra turn.</td></tr>
       </tbody>
     </table>
@@ -347,8 +361,9 @@
   <p>יש לך יותר מקלף אחד באותו ערך? אפשר להניח את כולם באותו תור. ככה נפטרים מהיד מהר, וככה גם מכינים שריפה.</p>
   <p><strong>ארבעה קלפים באותו ערך ברצף שורפים את הערימה.</strong> לא משנה אם שחקן אחד הניח את כל הארבעה או שארבעה שחקנים תרמו קלף כל אחד. הערימה יוצאת מהמשחק לגמרי, ומי שהשלים את הרביעייה מקבל תור נוסף.</p>
 
-  <h2>הקלפים המיוחדים</h2>
-  <p>אלה הם קלפים מיוחדים שיש להם תפקיד נוסף:</p>
+  <h2>קלפי המשחק</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>קלפי מספר בעלי תפקיד נוסף:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>קלף</th><th>שם</th><th>מה הוא עושה</th></tr></thead>
@@ -356,9 +371,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - ההיפוך" loading="lazy" /></td><td>ההיפוך</td><td>הנחתם את הקלף הזה? השחקן שאחריכם יכול לשים רק קלפים שהערך שלהם הוא <strong>4 ומטה</strong> (4, 3, 2, 1) או את אחד מהקלפים המיוחדים (שקוף, מאפס, פצצה או היט הד).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - עצור" loading="lazy" /></td><td>עצור</td><td>מדלג על השחקן הבא. שמתם יותר מאחד, אז הדילוג הוא בהתאם.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - היפוך כיוון" loading="lazy" /></td><td>היפוך כיוון</td><td>מחליף את כיוון המשחק.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>הקלפים החזקים במשחק, אותם ניתן לשים על כל קלף:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>קלף</th><th>שם</th><th>מה הוא עושה</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="מאפס" loading="lazy" /></td><td>מאפס</td><td>אפשר להניח על כל קלף, והוא מוריד את הערימה חזרה לאפס — השחקן הבא יכול לשים מה שהוא רוצה.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="פצצה" loading="lazy" /></td><td>פצצה</td><td>מפוצץ את הערימה ומוציא אותה מחוץ למשחק, מי שהניח מקבל תור נוסף ויכול לשים איזה קלף שירצה.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="שקוף" loading="lazy" /></td><td>שקוף</td><td>אפשר להניח על כל קלף, וכשמו כן הוא, הוא שומר על הערך של הקלף שעליו הונח. השחקן הבא מתייחס לקלף שמתחת לשקוף.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="פצצה" loading="lazy" /></td><td>פצצה</td><td>מפוצץ את הערימה ומוציא אותה מחוץ למשחק, מי שהניח מקבל תור נוסף ויכול לשים איזה קלף שירצה.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="היט הד" loading="lazy" /></td><td>היט הד</td><td>הקלף הכי חזק במשחק. יש רק שניים כאלה. מי שהניח אותו יכול להעניק לאחד מהיריבים, עדיף לזה שהולך לנצח, את הערימה שהצטברה על השולחן. אבל זהירות: אם ליריב שנתתם לו את הקלפים יש גם קלף היט הד, הוא יכול לנקום בכם ולהחזיר לכם את הקלפים שהענקתם לו. לאחר השימוש בג'וקר מקבלים תור נוסף.</td></tr>
       </tbody>
     </table>
@@ -434,8 +457,9 @@
   <p>Har du fler än ett kort med samma värde? Lägg dem alla i samma tur. Så gör du dig av med handen snabbt, och så förbereder du också en bränning.</p>
   <p><strong>Fyra kort med samma värde i rad bränner högen.</strong> Det spelar ingen roll om en spelare lade alla fyra eller om fyra spelare lade ett var. Högen tas bort ur spelet helt, och spelaren som fullbordade fyrtalet får en extra tur.</p>
 
-  <h2>Specialkorten</h2>
-  <p>Det här är specialkort med en extra funktion:</p>
+  <h2>Spelets kort</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Sifferkort med en extra funktion:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kort</th><th>Namn</th><th>Vad det gör</th></tr></thead>
@@ -443,9 +467,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - Vändningen" loading="lazy" /></td><td>Vändningen</td><td>Har du lagt det här kortet? Spelaren efter dig kan bara lägga kort med värdet <strong>4 eller lägre</strong> (4, 3, 2, 1) eller något av specialkorten (Det genomskinliga kortet, Nollan, Bomben eller Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stopp" loading="lazy" /></td><td>Stopp</td><td>Hoppar över nästa spelare. Har du lagt fler än ett hoppas motsvarande antal spelare över.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Omvänd" loading="lazy" /></td><td>Omvänd</td><td>Vänder spelriktningen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Spelets starkaste kort — de kan läggas på vilket kort som helst:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Namn</th><th>Vad det gör</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nollan" loading="lazy" /></td><td>Nollan</td><td>Kan läggas på vilket kort som helst, och återställer högen till noll — nästa spelare kan lägga vad som helst.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Spränger högen och tar bort den ur spelet. Den som lade kortet får en extra tur och kan lägga vilket kort som helst.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det genomskinliga kortet" loading="lazy" /></td><td>Det genomskinliga kortet</td><td>Kan läggas på vilket kort som helst, och som namnet antyder behåller det värdet på kortet det lades på. Nästa spelare utgår från kortet under det genomskinliga kortet.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Spränger högen och tar bort den ur spelet. Den som lade kortet får en extra tur och kan lägga vilket kort som helst.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Spelets starkaste kort. Det finns bara två. Den som lägger det kan ge högen som samlats på bordet till en av motståndarna, helst den som är på väg att vinna. Men se upp: om motståndaren du gav korten till också har ett Hit Head-kort kan motståndaren hämnas genom att ge tillbaka dem till dig. Efter att du lagt jokern får du en extra tur.</td></tr>
       </tbody>
     </table>
@@ -522,8 +554,9 @@
   <p>Onko sinulla useampi kortti samalla arvolla? Pelaa ne kaikki samalla vuorolla. Näin pääset eroon kädestä nopeasti, ja näin myös valmistelet polton.</p>
   <p><strong>Neljä samanarvoista korttia peräkkäin polttaa pinon.</strong> Sillä ei ole väliä, pelasiko yksi pelaaja kaikki neljä vai lisäsivätkö neljä pelaajaa kukin yhden. Pino poistuu pelistä kokonaan, ja nelikon täydentänyt pelaaja saa uuden vuoron.</p>
 
-  <h2>Erikoiskortit</h2>
-  <p>Nämä ovat erikoiskortteja, joilla on lisätoiminto:</p>
+  <h2>Pelin kortit</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Numerokortit, joilla on lisätoiminto:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kortti</th><th>Nimi</th><th>Mitä se tekee</th></tr></thead>
@@ -531,9 +564,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - Kääntäjä" loading="lazy" /></td><td>Kääntäjä</td><td>Pelasitko tämän kortin? Seuraava pelaaja voi pelata vain kortteja, joiden arvo on <strong>4 tai pienempi</strong> (4, 3, 2, 1), tai jonkin erikoiskorteista (Läpinäkyvä, Nolla, Pommi tai Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Pysäytys" loading="lazy" /></td><td>Pysäytys</td><td>Ohittaa seuraavan pelaajan. Jos pelasit useamman kuin yhden, ohitetaan vastaava määrä pelaajia.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Käänteinen" loading="lazy" /></td><td>Käänteinen</td><td>Kääntää pelisuunnan.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Pelin vahvimmat kortit — ne voi pelata minkä tahansa kortin päälle:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kortti</th><th>Nimi</th><th>Mitä se tekee</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nolla" loading="lazy" /></td><td>Nolla</td><td>Voidaan pelata minkä tahansa kortin päälle, ja se nollaa pinon — seuraava pelaaja voi pelata mitä haluaa.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Pommi" loading="lazy" /></td><td>Pommi</td><td>Räjäyttää pinon ja poistaa sen pelistä. Se, joka pelasi kortin, saa uuden vuoron ja voi pelata minkä kortin tahansa.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Läpinäkyvä" loading="lazy" /></td><td>Läpinäkyvä</td><td>Voidaan pelata minkä tahansa kortin päälle, ja nimensä mukaisesti se säilyttää sen kortin arvon, jonka päälle se pelattiin. Seuraava pelaaja katsoo läpinäkyvän alla olevaa korttia.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Pommi" loading="lazy" /></td><td>Pommi</td><td>Räjäyttää pinon ja poistaa sen pelistä. Se, joka pelasi kortin, saa uuden vuoron ja voi pelata minkä kortin tahansa.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Pelin vahvin kortti. Niitä on vain kaksi. Kortin pelannut voi antaa pöydälle kertyneen pinon yhdelle vastustajista, mieluiten sille, joka on voittamassa. Mutta varo: jos vastustajalla, jolle annoit kortit, on myös Hit Head -kortti, hän voi kostaa ja palauttaa kortit suoraan sinulle. Jokerin pelaamisen jälkeen saat uuden vuoron.</td></tr>
       </tbody>
     </table>
@@ -610,8 +651,9 @@
   <p>Har du mer enn ett kort med samme verdi? Spill dem alle i samme runde. Slik kvitter du deg med hånden raskt, og slik forbereder du også en brenning.</p>
   <p><strong>Fire like kort på rad brenner bunken.</strong> Det spiller ingen rolle om én spiller la på alle fire, eller om fire spillere la på ett hver. Bunken fjernes helt fra spillet, og spilleren som fullførte fireren får en ekstra tur.</p>
 
-  <h2>Spesialkortene</h2>
-  <p>Dette er spesialkort med en ekstra funksjon:</p>
+  <h2>Spillets kort</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Tallkort med en ekstra funksjon:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kort</th><th>Navn</th><th>Hva det gjør</th></tr></thead>
@@ -619,9 +661,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - Vendingen" loading="lazy" /></td><td>Vendingen</td><td>La du dette kortet? Spilleren etter deg kan bare legge kort med verdien <strong>4 eller lavere</strong> (4, 3, 2, 1) eller et av spesialkortene (Det gjennomsiktige, Null, Bomben eller Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stopp" loading="lazy" /></td><td>Stopp</td><td>Hopper over neste spiller. Har du lagt flere enn ett, hoppes det over tilsvarende mange spillere.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Reverser" loading="lazy" /></td><td>Reverser</td><td>Snur spillretningen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Spillets sterkeste kort — de kan legges på hvilket som helst kort:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Navn</th><th>Hva det gjør</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Null" loading="lazy" /></td><td>Null</td><td>Kan legges på et hvilket som helst kort, og nullstiller bunken — neste spiller kan legge hva som helst.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Sprenger bunken og fjerner den fra spillet. Den som la kortet får en ekstra tur og kan legge hva som helst.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det gjennomsiktige" loading="lazy" /></td><td>Det gjennomsiktige</td><td>Kan legges på hvilket som helst kort, og som navnet tilsier beholder det verdien til kortet det ble lagt på. Neste spiller forholder seg til kortet under det gjennomsiktige.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Sprenger bunken og fjerner den fra spillet. Den som la kortet får en ekstra tur og kan legge hva som helst.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Spillets sterkeste kort. Det finnes bare to av dem. Den som legger det kan gi bunken som har samlet seg på bordet til en av motstanderne, helst den som er i ferd med å vinne. Men pass på: hvis motstanderen du ga kortene til også har et Hit Head-kort, kan vedkommende ta hevn og gi deg tilbake kortene du ga. Etter å ha brukt jokeren får du en ekstra tur.</td></tr>
       </tbody>
     </table>
@@ -698,8 +748,9 @@
   <p>Har du mere end ét kort med samme værdi? Spil dem alle i samme tur. Sådan slipper du hurtigt af med hånden, og sådan forbereder du også en afbrænding.</p>
   <p><strong>Fire ens kort i træk brænder bunken.</strong> Det er lige meget, om én spiller lagde alle fire, eller om fire spillere hver lagde ét. Bunken fjernes helt fra spillet, og spilleren, der fuldførte de fire ens, får en ekstra tur.</p>
 
-  <h2>Specialkortene</h2>
-  <p>Det er specialkort med en ekstra funktion:</p>
+  <h2>Spillets kort</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Talkort med en ekstra funktion:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kort</th><th>Navn</th><th>Hvad det gør</th></tr></thead>
@@ -707,9 +758,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - Vendingen" loading="lazy" /></td><td>Vendingen</td><td>Har du lagt dette kort? Spilleren efter dig kan kun lægge kort med værdien <strong>4 eller lavere</strong> (4, 3, 2, 1) eller et af specialkortene (Det gennemsigtige, Nulkortet, Bomben eller Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stop" loading="lazy" /></td><td>Stop</td><td>Springer næste spiller over. Har du lagt mere end ét, springes der tilsvarende over.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Vend om" loading="lazy" /></td><td>Vend om</td><td>Vender spilretningen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Spillets stærkeste kort — de kan lægges på et hvilket som helst kort:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kort</th><th>Navn</th><th>Hvad det gør</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Nulkortet" loading="lazy" /></td><td>Nulkortet</td><td>Kan lægges på et hvilket som helst kort og nulstiller bunken — næste spiller kan lægge hvad som helst.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Sprænger bunken i luften og fjerner den fra spillet. Den, der lagde kortet, får en ekstra tur og kan lægge et hvilket som helst kort.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Det gennemsigtige" loading="lazy" /></td><td>Det gennemsigtige</td><td>Kan lægges på et hvilket som helst kort, og som navnet siger beholder det værdien af det kort, det blev lagt på. Næste spiller retter sig efter kortet under det gennemsigtige.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Bomben" loading="lazy" /></td><td>Bomben</td><td>Sprænger bunken i luften og fjerner den fra spillet. Den, der lagde kortet, får en ekstra tur og kan lægge et hvilket som helst kort.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Spillets stærkeste kort. Der findes kun to af dem. Den, der lægger det, kan give den bunke, der har samlet sig på bordet, til en af modstanderne, helst den, der er tæt på at vinde. Men pas på: hvis den modstander, du gav kortene til, også har et Hit Head-kort, kan vedkommende tage hævn og sende kortene direkte tilbage til dig. Efter du har brugt jokeren, får du en ekstra tur.</td></tr>
       </tbody>
     </table>
@@ -786,8 +845,9 @@
   <p>Hast du mehr als eine Karte mit demselben Wert? Spiele sie alle im selben Zug. So wirst du deine Hand schnell los, und so bereitest du auch ein Verbrennen vor.</p>
   <p><strong>Vier Karten mit demselben Wert in Folge verbrennen den Stapel.</strong> Es spielt keine Rolle, ob ein Spieler alle vier gelegt hat oder vier Spieler je eine beigesteuert haben. Der Stapel wird komplett aus dem Spiel entfernt, und der Spieler, der den Vierling vollendet hat, bekommt einen weiteren Zug.</p>
 
-  <h2>Die Sonderkarten</h2>
-  <p>Das sind Sonderkarten mit einer zusätzlichen Funktion:</p>
+  <h2>Die Spielkarten</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Zahlenkarten mit einer zusätzlichen Funktion:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Karte</th><th>Name</th><th>Was sie bewirkt</th></tr></thead>
@@ -795,9 +855,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - Die Umkehrung" loading="lazy" /></td><td>Die Umkehrung</td><td>Hast du diese Karte gelegt? Der Spieler nach dir darf nur Karten mit dem Wert <strong>4 oder niedriger</strong> (4, 3, 2, 1) legen oder eine der Sonderkarten (Die Transparente, die Null, die Bombe oder Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stopp" loading="lazy" /></td><td>Stopp</td><td>Überspringt den nächsten Spieler. Werden mehrere gelegt, werden entsprechend viele Spieler übersprungen.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Richtungswechsel" loading="lazy" /></td><td>Richtungswechsel</td><td>Kehrt die Spielrichtung um.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Die stärksten Karten im Spiel — sie dürfen auf jede Karte gelegt werden:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Karte</th><th>Name</th><th>Was sie bewirkt</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="Die Null" loading="lazy" /></td><td>Die Null</td><td>Kann auf jede Karte gelegt werden und setzt den Stapel auf null zurück — der nächste Spieler kann legen, was er will.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Die Bombe" loading="lazy" /></td><td>Die Bombe</td><td>Sprengt den Stapel und nimmt ihn aus dem Spiel. Wer sie gelegt hat, bekommt einen weiteren Zug und darf eine beliebige Karte legen.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="Die Transparente" loading="lazy" /></td><td>Die Transparente</td><td>Kann auf jede Karte gelegt werden und behält, wie der Name schon sagt, den Wert der Karte, auf die sie gelegt wurde. Der nächste Spieler richtet sich nach der Karte unter der Transparenten.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="Die Bombe" loading="lazy" /></td><td>Die Bombe</td><td>Sprengt den Stapel und nimmt ihn aus dem Spiel. Wer sie gelegt hat, bekommt einen weiteren Zug und darf eine beliebige Karte legen.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>Die stärkste Karte im Spiel. Es gibt nur zwei davon. Wer sie legt, kann den Stapel, der sich auf dem Tisch angesammelt hat, einem der Gegner geben, am besten dem, der kurz vor dem Sieg steht. Aber Vorsicht: Hat der Gegner, dem du die Karten gegeben hast, ebenfalls eine Hit-Head-Karte, kann er sich rächen und dir die Karten zurückgeben. Nach dem Einsatz des Jokers bekommst du einen weiteren Zug.</td></tr>
       </tbody>
     </table>
@@ -874,8 +942,9 @@
   <p>Heb je meer dan één kaart met dezelfde waarde? Speel ze allemaal in dezelfde beurt. Zo kom je snel van je hand af, en zo bereid je ook een verbranding voor.</p>
   <p><strong>Vier kaarten met dezelfde waarde op rij verbranden de stapel.</strong> Het maakt niet uit of één speler ze alle vier neerlegde of dat vier spelers er elk één bijdroegen. De stapel gaat volledig uit het spel, en de speler die de vier voltooide krijgt een extra beurt.</p>
 
-  <h2>De speciale kaarten</h2>
-  <p>Dit zijn speciale kaarten met een extra functie:</p>
+  <h2>De spelkaarten</h2>
+  <div class="plain-cards"><figure><img src="cards/card-1.webp" width="120" height="164" alt="1" loading="lazy" /><figcaption>1</figcaption></figure><figure><img src="cards/card-2.webp" width="120" height="164" alt="2" loading="lazy" /><figcaption>2</figcaption></figure><figure><img src="cards/card-3.webp" width="120" height="164" alt="3" loading="lazy" /><figcaption>3</figcaption></figure><figure><img src="cards/card-7.webp" width="120" height="164" alt="7" loading="lazy" /><figcaption>7</figcaption></figure><figure><img src="cards/card-8.webp" width="120" height="164" alt="8" loading="lazy" /><figcaption>8</figcaption></figure><figure><img src="cards/card-9.webp" width="120" height="164" alt="9" loading="lazy" /><figcaption>9</figcaption></figure><figure><img src="cards/card-10.webp" width="120" height="164" alt="10" loading="lazy" /><figcaption>10</figcaption></figure></div>
+  <h3>Cijferkaarten met een extra functie:</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kaart</th><th>Naam</th><th>Wat hij doet</th></tr></thead>
@@ -883,9 +952,17 @@
         <tr><td class="card-cell"><img src="cards/card-4.webp" width="120" height="164" alt="4 - De omkeer" loading="lazy" /></td><td>De omkeer</td><td>Heb je deze kaart gelegd? De speler na jou mag alleen kaarten met de waarde <strong>4 of lager</strong> (4, 3, 2, 1) leggen of een van de speciale kaarten (de Transparante kaart, de Nulkaart, de Bom of Hit Head).</td></tr>
         <tr><td class="card-cell"><img src="cards/card-5.webp" width="120" height="164" alt="5 - Stop" loading="lazy" /></td><td>Stop</td><td>Slaat de volgende speler over. Speel je er meer dan één, dan worden er evenveel spelers overgeslagen.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-6.webp" width="120" height="164" alt="6 - Omkering" loading="lazy" /></td><td>Omkering</td><td>Draait de speelrichting om.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>De sterkste kaarten in het spel — ze mogen op elke kaart gelegd worden:</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Kaart</th><th>Naam</th><th>Wat hij doet</th></tr></thead>
+      <tbody>
         <tr><td class="card-cell"><img src="cards/card-zero.webp" width="120" height="164" alt="De Nulkaart" loading="lazy" /></td><td>De Nulkaart</td><td>Kan op elke kaart gelegd worden en zet de stapel terug op nul — de volgende speler mag spelen wat hij wil.</td></tr>
-        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="De Bom" loading="lazy" /></td><td>De Bom</td><td>Blaast de stapel op en haalt hem uit het spel. Wie hem speelde, krijgt een extra beurt en mag elke kaart spelen die hij wil.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-transparent.webp" width="120" height="164" alt="De Transparante kaart" loading="lazy" /></td><td>De Transparante kaart</td><td>Kan op elke kaart gelegd worden en behoudt, zoals de naam al zegt, de waarde van de kaart waar hij bovenop ligt. De volgende speler kijkt naar de kaart onder de Transparante kaart.</td></tr>
+        <tr><td class="card-cell"><img src="cards/card-bomb.webp" width="120" height="164" alt="De Bom" loading="lazy" /></td><td>De Bom</td><td>Blaast de stapel op en haalt hem uit het spel. Wie hem speelde, krijgt een extra beurt en mag elke kaart spelen die hij wil.</td></tr>
         <tr><td class="card-cell"><img src="cards/card-hithead.webp" width="120" height="164" alt="Hit Head" loading="lazy" /></td><td>Hit Head</td><td>De sterkste kaart in het spel. Er zijn er maar twee. Wie hem speelt, kan de stapel die zich op tafel heeft opgebouwd geven aan een van de tegenstanders, bij voorkeur degene die op het punt staat te winnen. Maar pas op: heeft de tegenstander aan wie je de kaarten gaf ook een Hit Head-kaart, dan kan die wraak nemen en de kaarten meteen aan jou teruggeven. Na het gebruik van de joker krijg je een extra beurt.</td></tr>
       </tbody>
     </table>
