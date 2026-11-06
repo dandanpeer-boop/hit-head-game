@@ -9,6 +9,18 @@
     gtag('js', new Date());
     gtag('config', 'G-64WQEY2K8E');
   </script>
+  <!-- Google Analytics: clicks on the Google Play download buttons (event play_store_click) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="play.google.com/store/apps/details"]');
+      if (!a) return;
+      gtag('event', 'play_store_click', {
+        link_location: a.getAttribute('data-i18n') || a.className || 'link',
+        link_text: (a.textContent || '').trim().slice(0, 60),
+        transport_type: 'beacon'
+      });
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIT HEAD — Shithead / Palace Card Game, the Next Generation</title>
