@@ -9,6 +9,18 @@
     gtag('js', new Date());
     gtag('config', 'G-64WQEY2K8E');
   </script>
+  <!-- Google Analytics: clicks on the Google Play download buttons (event play_store_click) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="play.google.com/store/apps/details"]');
+      if (!a) return;
+      gtag('event', 'play_store_click', {
+        link_location: a.getAttribute('data-i18n') || a.className || 'link',
+        link_text: (a.textContent || '').trim().slice(0, 60),
+        transport_type: 'beacon'
+      });
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>נו שיט — משחק קלפים | Hit Head</title>
@@ -93,6 +105,7 @@
     }
     .hithead p { color: var(--muted); }
     .hithead a { font-weight: 700; }
+    .hithead a.btn-buy { color: #fff; }
 
     footer {
       text-align: center; padding: 30px 20px; border-top: 1px solid #2a2a2a;
@@ -143,7 +156,8 @@
   </section>
 
   <section class="hithead">
-    <p>מכירים את <bdi>Hit Head</bdi>? משחק הקלפים שלנו לאנדרואיד, חינם ב-<bdi>Google Play</bdi>.</p>
+    <p>מכירים את נו שיט מהחנויות? עכשיו גם כמשחק חינמי באנדרואיד: <bdi>Hit Head</bdi>.</p>
+    <p style="margin-top:14px;"><a class="btn btn-buy noshit-play" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead" target="_blank" rel="noopener">&#9654; הורדה חינם ב-<bdi>Google Play</bdi></a></p>
     <p style="margin-top:8px;"><a href="../">לעמוד של המשחק</a></p>
   </section>
 </main>
