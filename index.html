@@ -478,10 +478,10 @@
     {
       "@type": ["VideoGame", "MobileApplication"],
       "@id": "https://hithead.app/#app",
-      "name": "Hit Head: Palace & Classic",
-      "alternateName": ["Hit Head", "HitHead"],
+      "name": "Hit Head",
+      "alternateName": ["HitHead"],
       "url": "https://hithead.app/",
-      "description": "Hit Head is a free Android version of the card game known as Shithead, Palace, Karma or Idiot. Play single-player against bots, pass-and-play on one device, or online against friends, with jokers, bombs, reverses and streaks.",
+      "description": "Hit Head is a free Android version of the card game known as Shithead, Palace, Karma or Idiot. Play single-player against bots, online against real players, or at a table with friends, with jokers, bombs, reverses and streaks.",
       "image": "https://hithead.app/images/icon.png",
       "screenshot": [
         "https://hithead.app/images/Screenshot_20260528_115622_HIT%20HEAD.jpg",
@@ -494,12 +494,10 @@
       "applicationCategory": "GameApplication",
       "applicationSubCategory": "Card Game",
       "genre": ["Card Game", "Strategy", "Multiplayer"],
-      "operatingSystem": "Android 6.0+",
+      "operatingSystem": "Android 7.0+",
       "gamePlatform": "Android",
       "playMode": ["SinglePlayer", "MultiPlayer"],
       "numberOfPlayers": { "@type": "QuantitativeValue", "value": 4 },
-      "inLanguage": ["en", "he"],
-      "softwareVersion": "1.0.6",
       "isBasedOn": { "@id": "https://hithead.app/#cardgame" },
       "about": { "@id": "https://hithead.app/#cardgame" },
       "author": { "@id": "https://hithead.app/#publisher" },
@@ -800,6 +798,7 @@
   <p>
     <a href="#privacy" data-i18n="nav_privacy">Privacy Policy</a>
     <a href="#support" data-i18n="nav_support">Support</a>
+    <a id="android-link" href="shithead-card-game-android/">Shithead card game for Android</a>
     <a id="noshit-link" href="noshit/" hidden>נו שיט &mdash; משחק הקלפים</a>
     <a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Facebook</a>
     <a href="mailto:hithead.game@gmail.com">hithead.game@gmail.com</a>
@@ -1409,6 +1408,9 @@ function setLang(lang) {
   });
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
   // Hebrew-only: the No Shit section and its footer link show for Hebrew and nothing else
+  // The Android landing page is English: its footer link shows only for English
+  var androidLink = document.getElementById('android-link');
+  if (androidLink) androidLink.hidden = lang !== 'en';
   ['noshit', 'noshit-link'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.hidden = lang !== 'he';
