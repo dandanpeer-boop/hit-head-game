@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (website visits) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-64WQEY2K8E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-64WQEY2K8E');
+  </script>
+  <!-- Google Analytics: clicks on the Google Play download buttons (event play_store_click) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="play.google.com/store/apps/details"]');
+      if (!a) return;
+      gtag('event', 'play_store_click', {
+        link_location: a.getAttribute('data-i18n') || a.className || 'link',
+        link_text: (a.textContent || '').trim().slice(0, 60),
+        transport_type: 'beacon'
+      });
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shithead Card Game for Android: Play Hit Head Free</title>
+  <meta name="description" content="Play the Shithead (Palace, Karma, Shed) card game on Android. Hit Head is free: single-player, online multiplayer, friends tables and tournaments." />
+  <link rel="canonical" href="https://hithead.app/shithead-card-game-android/" />
+
+  <meta property="og:site_name" content="Hit Head" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hithead.app/shithead-card-game-android/" />
+  <meta property="og:title" content="Shithead Card Game for Android: Hit Head" />
+  <meta property="og:description" content="Play the Shithead (Palace, Karma, Shed) card game on Android. Hit Head is free: single-player, online multiplayer, friends tables and tournaments." />
+  <meta property="og:image" content="https://hithead.app/images/Screenshot_20260528_115850_HIT%20HEAD.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#e03030" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #e03030; --dark: #1a1a1a; --darker: #111111;
+      --gold: #d4a017; --text: #f0f0f0; --muted: #999; --card-bg: #222;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--darker); color: var(--text); line-height: 1.75;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 14px 32px; display: flex; align-items: center;
+      justify-content: space-between; z-index: 100; border-bottom: 1px solid #2a2a2a;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo:hover { text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-logo-text { font-size: 1.4rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; }
+    .nav-logo-text span { color: var(--red); }
+    .lang-toggle { display: flex; gap: 6px; }
+    .lang-btn {
+      background: transparent; border: 1px solid #444; color: var(--muted);
+      padding: 5px 11px; border-radius: 6px; cursor: pointer;
+      font-size: 0.82rem; font-family: inherit;
+    }
+    .lang-btn.active, .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    main { max-width: 780px; margin: 0 auto; padding: 120px 24px 90px; }
+    h1, .page-title { font-size: 2.3rem; font-weight: 900; line-height: 1.25; margin-bottom: 10px; }
+    h1 span, .page-title span { color: var(--red); }
+    .lede { color: var(--muted); font-size: 1.05rem; margin-bottom: 12px; }
+    h2 {
+      font-size: 1.45rem; font-weight: 900; color: var(--gold);
+      margin: 46px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #2a2a2a;
+    }
+    h3 { font-size: 1.08rem; margin: 26px 0 8px; }
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 0 0 16px; padding-inline-start: 24px; }
+    li { margin-bottom: 8px; }
+    strong { color: #fff; }
+
+    .table-wrap { overflow-x: auto; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; min-width: 520px; }
+    th, td { padding: 11px 13px; border-bottom: 1px solid #2a2a2a; text-align: start; vertical-align: top; }
+    th { color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    td:first-child { font-weight: 900; color: var(--red); white-space: nowrap; }
+    tbody tr:hover { background: #191919; }
+
+    .callout {
+      background: var(--card-bg); border-inline-start: 3px solid var(--gold);
+      padding: 16px 18px; border-radius: 6px; margin: 22px 0;
+    }
+    .cta { text-align: center; margin: 50px 0 10px; }
+    .btn-primary {
+      display: inline-block; background: var(--red); color: #fff;
+      padding: 15px 34px; border-radius: 8px; font-weight: 700; font-size: 1.05rem;
+    }
+    .btn-primary:hover { text-decoration: none; opacity: 0.92; }
+    .backlink { display: block; margin-top: 34px; color: var(--muted); font-size: 0.9rem; }
+    footer { border-top: 1px solid #2a2a2a; padding: 26px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 16px; }
+      nav .nav-logo-text { font-size: 1.15rem; }
+      main { padding: 100px 18px 70px; }
+      h1, .page-title { font-size: 1.7rem; }
+    }
+
+    /* special-card pictures in the card table (replace the placeholder numbers 11-14) */
+    td.card-cell { width: 70px; }
+    td.card-cell img { display: block; width: 46px; height: auto; }
+    img.done-inline { display: inline; height: 2.6em; width: auto; vertical-align: middle; margin: 0 3px; }
+    /* a whole card picture used inside a sentence */
+    img.card-inline { display: inline; height: 2.8em; width: auto; vertical-align: middle; margin: 0 3px; }
+    /* plain number cards row (1,2,3,7-10) */
+    .plain-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 28px; }
+    .plain-cards figure { margin: 0; width: 64px; text-align: center; }
+    .plain-cards img { display: block; width: 100%; height: auto; }
+    .plain-cards figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    /* [visual guide] 27 step pictures from the app (Settings, Instructions) */
+    #visual-guide { max-width: 980px; margin: 0 auto; padding: 8px 24px 48px; }
+    #visual-guide h2 { margin-bottom: 6px; }
+    [data-vg] { display: none; }
+    [data-vg="en"] { display: block; }
+    .vg-note { color: var(--muted); margin: 0 0 20px; }
+    .vg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .vg-grid figure { margin: 0; }
+    .vg-grid img { display: block; width: 100%; height: auto; }
+
+    .hero-cta { margin: 22px 0 8px; }
+    .shot-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 26px 0 10px; }
+    .shot-row figure { margin: 0; }
+    .shot-row img { display: block; width: 100%; height: auto; border-radius: 8px; }
+    .shot-row figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
+    .note { color: var(--muted); font-size: 0.9rem; }
+    td.plain, td.plain:first-child { font-weight: 400; color: var(--text); white-space: normal; }
+    td.name { font-weight: 900; color: #fff; white-space: normal; }
+    @media (max-width: 640px) {
+      table { min-width: 0; }
+      th, td { padding: 9px 7px; font-size: 0.92rem; }
+      th { font-size: 0.72rem; letter-spacing: 0; }
+    }
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://hithead.app/shithead-card-game-android/#webpage",
+      "url": "https://hithead.app/shithead-card-game-android/",
+      "name": "Shithead Card Game for Android: Play Hit Head Free",
+      "description": "Play the Shithead (Palace, Karma, Shed) card game on Android. Hit Head is free: single-player, online multiplayer, friends tables and tournaments.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://hithead.app/#website"
+      },
+      "about": {
+        "@id": "https://hithead.app/shithead-card-game-android/#app"
+      },
+      "dateModified": "2026-11-11",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://hithead.app/images/Screenshot_20260528_115850_HIT%20HEAD.jpg"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hit Head",
+          "item": "https://hithead.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shithead card game for Android",
+          "item": "https://hithead.app/shithead-card-game-android/"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://hithead.app/shithead-card-game-android/#app",
+      "name": "Hit Head",
+      "url": "https://hithead.app/shithead-card-game-android/",
+      "description": "Hit Head is a free Android card game in the Shithead (Palace, Karma, Shed) family, with single-player against bots, online multiplayer, friends tables and tournaments.",
+      "image": "https://hithead.app/images/icon.png",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Card Game",
+      "operatingSystem": "Android",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dshithead_page",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dshithead_page",
+      "author": {
+        "@id": "https://hithead.app/#publisher"
+      },
+      "publisher": {
+        "@id": "https://hithead.app/#publisher"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://play.google.com/store/apps/details?id=com.matterfullgames.hithead&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dshithead_page"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Shithead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shithead is a card game where everyone tries to get rid of all their cards, and the last player still holding cards is the shithead. It is also called Palace, Karma, Shed and many other names, and the house rules change from group to group."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Hit Head the same as Shithead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hit Head is a Shithead-style game (the Palace and Karma family) with one fixed rule set and its own special cards: Zero, Transparent, Bomb and the Hit Head card. The full rules are on the how-to-play page, so you can check them before you play with a group used to different house rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Hit Head free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Hit Head is free to download and play. It contains third-party ads and optional in-app purchases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play Hit Head on an iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Hit Head is available for Android only. On an iPhone you can play Shithead in a web browser or with another app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Single-player mode against bots works offline. Multiplayer and friends tables need a connection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I play with my friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Open a friends table, share the invite code, and your friends join your table. A table seats up to four players, and bots fill empty seats."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo" aria-label="Hit Head — home">
+    <img src="../images/icon.png" alt="Hit Head icon" />
+    <span class="nav-logo-text">HIT <span>HEAD</span></span>
+  </a>
+</nav>
+
+<main>
+  <h1>Shithead Card Game for <span>Android</span></h1>
+  <p class="lede">Hit Head is a free Android version of the card game known as Shithead, Palace, Karma and Shed. Play against bots offline, play online, or open a table for your friends.</p>
+  <p class="hero-cta"><a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dshithead_page" target="_blank" rel="noopener">&#9654; Get Hit Head free on Google Play</a></p>
+  <p class="note">Android only. Free to play, with ads and optional in-app purchases.</p>
+
+  <div class="shot-row">
+    <figure>
+      <img src="../images/Screenshot_20260528_115850_HIT%20HEAD.jpg" alt="Hit Head table with four players, each with face-up cards, the draw pile in the middle and the direction arrows" width="1000" height="462" loading="eager" />
+      <figcaption>A four-player table.</figcaption>
+    </figure>
+    <figure>
+      <img src="../images/Screenshot_20260528_115622_HIT%20HEAD.jpg" alt="Hit Head main menu with Single-player, Multi-player, Tournament and Game Store buttons" width="1000" height="462" loading="lazy" />
+      <figcaption>The main menu: single-player, multiplayer, tournament and the game store.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Why a Shithead app?</h2>
+  <p>Anyone who has played Shithead knows the argument at the start: which cards burn the pile, which ones reverse, what happens with a 2. Hit Head plays one fixed rule set with its own special cards, so the table agrees before the first card is down. You also never need a full deck, and you never need to find three other players: bots fill the empty seats.</p>
+
+  <h2>What you get in Hit Head</h2>
+  <ul>
+    <li><strong>Single-player against bots.</strong> It works offline.</li>
+    <li><strong>Online multiplayer.</strong> Live games against real players.</li>
+    <li><strong>Friends tables.</strong> Open a table, share the invite code, and play with people you know.</li>
+    <li><strong>Tournament mode.</strong> Work your way through the Bronze, Silver and Gold tables to win the cup.</li>
+    <li><strong>Global Top 20 leaderboard.</strong> Win games, earn coins and climb the ranks.</li>
+    <li><strong>Game store.</strong> Spend your coins on profile avatars.</li>
+  </ul>
+
+  <h2>How a game works</h2>
+  <p>Each player gets three hidden cards, three face-up cards and three cards in hand. You play a card equal to or higher than the top of the pile, or you pick the pile up. Empty your hand, then your face-up cards, and finally take your chances on the hidden ones. The last player holding cards loses. <a href="../how-to-play/">Read the complete rules</a>.</p>
+
+  <h2>The special cards</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Card</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Hit Head</td><td class="plain">The game's joker. Throw it at an opponent and they take the whole pile, unless they have a Hit Head card of their own and fire it back.</td></tr>
+        <tr><td class="name">Bomb</td><td class="plain">Burns the pile and gives you an extra turn.</td></tr>
+        <tr><td class="name">Zero</td><td class="plain">Resets the pile value to zero, so the next player can play any card.</td></tr>
+        <tr><td class="name">Transparent</td><td class="plain">Copies the card beneath it.</td></tr>
+        <tr><td class="name">4</td><td class="plain">The next player must play a 4 or lower.</td></tr>
+        <tr><td class="name">5</td><td class="plain">Skips the next player.</td></tr>
+        <tr><td class="name">6</td><td class="plain">Reverses the direction of play.</td></tr>
+        <tr><td class="name">Four of a kind</td><td class="plain">Four identical cards in a row burn the pile and give you an extra turn.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Playing Shithead on your phone: the options</h2>
+  <p>There are several ways to play Shithead on a phone. They differ in the rules and in how you play, so here is a plain comparison. The notes on other games come from their own websites, checked on 11 November 2026.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Option</th><th>How you play</th><th>Good to know</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Hit Head</td><td class="plain">Android app</td><td class="plain">Single-player against bots offline, online multiplayer, friends tables, tournament and leaderboard. Free, with ads. Not available on iPhone.</td></tr>
+        <tr><td class="name"><a href="https://jokerpalace.com/" target="_blank" rel="nofollow noopener">Joker Palace</a></td><td class="plain">Android and iPhone apps</td><td class="plain">Free. According to its site: real-time multiplayer, private tables with invite links, four rule sets and a weekly league.</td></tr>
+        <tr><td class="name"><a href="https://shithead.app/" target="_blank" rel="nofollow noopener">shithead.app</a></td><td class="plain">In the browser</td><td class="plain">According to its site: no download or account, 2 to 5 players, play against the computer or friends, and you can set the special-card rules yourself.</td></tr>
+        <tr><td class="name"><a href="https://cardgames.io/shithead/" target="_blank" rel="nofollow noopener">CardGames.io</a></td><td class="plain">In the browser</td><td class="plain">According to its page: no download, play against the computer or another player.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The rules are not the same in every game. If your group plays with its own house rules, check the rules of the game before you start.</p>
+
+  <div class="cta">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.matterfullgames.hithead&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dshithead_page" target="_blank" rel="noopener">&#9654; Get Hit Head free on Google Play</a>
+  </div>
+
+  <h2>Questions</h2>
+    <h3>What is Shithead?</h3>
+    <p>Shithead is a card game where everyone tries to get rid of all their cards, and the last player still holding cards is the shithead. It is also called Palace, Karma, Shed and many other names, and the house rules change from group to group.</p>
+    <h3>Is Hit Head the same as Shithead?</h3>
+    <p>Hit Head is a Shithead-style game (the Palace and Karma family) with one fixed rule set and its own special cards: Zero, Transparent, Bomb and the Hit Head card. The full rules are on the <a href="../how-to-play/">how-to-play page</a>, so you can check them before you play with a group used to different house rules.</p>
+    <h3>Is Hit Head free?</h3>
+    <p>Yes. Hit Head is free to download and play. It contains third-party ads and optional in-app purchases.</p>
+    <h3>Can I play Hit Head on an iPhone?</h3>
+    <p>No. Hit Head is available for Android only. On an iPhone you can play Shithead in a web browser or with another app.</p>
+    <h3>Can I play without an internet connection?</h3>
+    <p>Yes. Single-player mode against bots works offline. Multiplayer and friends tables need a connection.</p>
+    <h3>Can I play with my friends?</h3>
+    <p>Yes. Open a friends table, share the invite code, and your friends join your table. A table seats up to four players, and bots fill empty seats.</p>
+
+  <a class="backlink" href="../how-to-play/">&larr; Complete rules</a>
+  <a class="backlink" href="../">&larr; Hit Head home</a>
+</main>
+
+<footer><a href="https://www.facebook.com/Hitheadgame/" target="_blank" rel="noopener">Hit Head on Facebook</a> &nbsp;&middot;&nbsp; &copy; 2026 Dan Peer</footer>
+
+</body>
+</html>
